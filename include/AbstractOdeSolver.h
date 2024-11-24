@@ -5,6 +5,7 @@
 #ifndef ABSTRACTODESOLVER_H
 #define ABSTRACTODESOLVER_H
 #include <ostream>
+#include <memory>
 #include "ODERightHandSide.h"
 
 class AbstractOdeSolver {
