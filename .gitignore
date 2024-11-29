@@ -15,6 +15,7 @@ starting_point
 .vscode/     # Visual Studio Code settings
 .vs/         # Visual Studio cache files
 *.sublime-*  # Sublime Text temporary files
+cmake-build-debug/
 
 # Operating system generated files
 Thumbs.db    # Windows thumbnail cache

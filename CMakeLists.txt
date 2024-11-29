@@ -12,6 +12,8 @@ add_library(fe_solver src/ForwardEulerSolver.cc
 )
 
 add_subdirectory(googletest)
+add_subdirectory(eigen)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 
 add_executable(main src/main.cc)
 target_link_libraries(main ode_solver fe_solver)

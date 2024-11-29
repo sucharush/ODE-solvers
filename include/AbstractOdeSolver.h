@@ -5,6 +5,8 @@
 #ifndef ABSTRACTODESOLVER_H
 #define ABSTRACTODESOLVER_H
 #include <ostream>
+#include <Eigen/Dense>
+#include <Eigen/Sparse>
 #include <memory>
 #include "ODERightHandSide.h"
 
@@ -29,11 +31,13 @@ public:
     // Solve the equation over the time interval
     void SolveEquation(std::ostream& stream);
 
+    // Result vector
+    Eigen::VectorXd results;
+    void PrintResults(std::ostream& stream) const;
+
 protected:
     virtual double step(double y, double t) = 0; // Pure virtual step function
     std::unique_ptr<ODERightHandSide> f_rhs;
-
-private:
     double stepSize;
     double initialTime;
     double finalTime;
