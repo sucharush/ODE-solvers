@@ -11,14 +11,22 @@ add_library(ode_solver src/AbstractOdeSolver.cc
 add_library(fe_solver src/ForwardEulerSolver.cc
 )
 
-add_subdirectory(googletest)
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 
 add_executable(main src/main.cc)
 target_link_libraries(main ode_solver fe_solver)
 
-add_executable(test_pcsc test/test.cc)
-target_link_libraries(test_pcsc gtest_main gtest pthread)
+set(TEST_DIR ${CMAKE_SOURCE_DIR}/test)
 
-add_custom_target(test ./test_pcsc DEPENDS test_pcsc)
+option(TESTS "Activate tests" ON)
+if (TESTS)
+    add_subdirectory(googletest)
+    add_executable(tests ${TEST_DIR}/test.cc)
+    target_link_libraries(tests gtest_main gtest pthread)
+
+    add_custom_target(test
+            COMMAND tests
+            WORKING_DIRECTORY ${CMAKE_CURRENT_BUILD_DIR}
+            COMMENT "Running tests")
+endif(TESTS)
