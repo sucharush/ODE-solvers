@@ -9,6 +9,7 @@
 class ModelProblemRHS : public ODERightHandSide {
 public:
     ModelProblemRHS(double k) : k_(k) {}
+    ModelProblemRHS() : k_(0.0) {}
     virtual ~ModelProblemRHS() {}
 
     double value(double y, double t) const override {

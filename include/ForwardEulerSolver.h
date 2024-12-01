@@ -1,10 +1,11 @@
 //
 // Created by csy on 2024/11/22.
 //
-#include "AbstractOdeSolver.h"
 
 #ifndef FORWARDEULERSOLVER_H
 #define FORWARDEULERSOLVER_H
+
+#include "AbstractOdeSolver.h"
 
 class ForwardEulerSolver : public AbstractOdeSolver {
   public:
