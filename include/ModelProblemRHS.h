@@ -8,8 +8,8 @@
 
 class ModelProblemRHS : public ODERightHandSide {
 public:
-    ModelProblemRHS(double k) : k_(k) {}
-    ModelProblemRHS() : k_(0.0) {}
+    // Constructor (default and with parameter k)
+    ModelProblemRHS(double k = 0.0) : k_(k) {}
     virtual ~ModelProblemRHS() {}
 
     double value(double y, double t) const override {
