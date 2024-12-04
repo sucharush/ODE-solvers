@@ -4,6 +4,12 @@
 #include "ForwardEulerSolver.h"
 #include "ModelProblemRHS.h"
 #include "UnknownDerivativeRHS.cpp"
+#include "AdamsBashforthSolver.h"
+#include "RungeKuttaSolver.h"
+
+double computeAnalyticalSolution(double t, double y0, double k) {
+    return y0 * std::exp(-k * t);
+}
 
 int main() {
 
@@ -17,7 +23,8 @@ int main() {
     std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
 
     // Set up the solver
-    ForwardEulerSolver solver;
+    // ForwardEulerSolver solver;
+    AdamsBashforthSolver solver(4, "RK4");
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
@@ -26,6 +33,20 @@ int main() {
     // Solve the ODE
     solver.SolveEquation(std::cout);  // Assuming SolveEquation outputs to a given stream
     solver.PrintResults(std::cout);
+    double t = initialTime;
+    int numSteps = solver.results.size();
+    std::cout << "\nComparison with Analytical Solution:\n";
+    std::cout << "t\tNumerical\tAnalytical\tError\n";
+
+    for (int i = 0; i < numSteps; ++i, t += stepSize) {
+        double numerical = solver.results[i];
+        double analytical = computeAnalyticalSolution(t, initialValue, k);
+        double error = std::abs(numerical - analytical);
+
+        std::cout << t << "\t" << numerical << "\t" << analytical << "\t" << error << "\n";
+    }
+
+
 
    //  FuncType func_test(
    //     [](double y, double t) { return y * y + std::cos(y)*t; } // f(y, t) = y^2 + t + cos(y)t

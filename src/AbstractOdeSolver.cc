@@ -47,3 +47,4 @@ void AbstractOdeSolver::PrintResults(std::ostream& stream) const {
         t += stepSize;  // Increment time by step size
     }
 }
+
