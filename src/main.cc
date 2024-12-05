@@ -2,6 +2,7 @@
 #include <memory>
 #include <cmath>
 #include "ForwardEulerSolver.h"
+#include "BackwardEulerSolver.h"
 #include "ModelProblemRHS.h"
 #include "UnknownDerivativeRHS.cpp"
 #include "AdamsBashforthSolver.h"
@@ -24,7 +25,8 @@ int main() {
 
     // Set up the solver
     // ForwardEulerSolver solver;
-    AdamsBashforthSolver solver(4, "RK4");
+    // AdamsBashforthSolver solver(4, "RK4");
+    BackwardEulerSolver solver;
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);

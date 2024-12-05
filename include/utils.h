@@ -24,4 +24,6 @@ typedef double var_y; //TODO: change to Eigen::VectorXf, do we need the dimensio
 typedef std::function<double(double, double)> FuncType;
 typedef std::function<double(double, double)> DerivativeType; // TODO: do we use it?
 
+
+
 #endif //UTILS_H
