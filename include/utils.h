@@ -1,5 +1,4 @@
 /**
- Created by ebaup on 01.12.24.
  * @file utils.h
  * @brief Utility functions, type definitions and constants for the project.
  *
@@ -17,13 +16,14 @@
 
 #include <functional>
 
+// Useful constants
+double const TOL = 1e-6;
+double const MAX_ITER = 50;
+
 // Typedef for space variable type (y)
 typedef double var_y; //TODO: change to Eigen::VectorXf, do we need the dimension as parameter in RHS?
 
-// Typedef for function and derivative type
+// Typedef for function type
 typedef std::function<double(double, double)> FuncType;
-typedef std::function<double(double, double)> DerivativeType; // TODO: do we use it?
-
-
 
 #endif //UTILS_H

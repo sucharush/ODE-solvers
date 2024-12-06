@@ -19,7 +19,7 @@ add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 
 add_executable(main src/main.cc)
-target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver)
+target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
 
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 option(TESTS "Activate tests" ON)

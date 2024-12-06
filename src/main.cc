@@ -2,10 +2,12 @@
 #include <memory>
 #include <cmath>
 #include "ForwardEulerSolver.h"
+#include "BackwardEulerSolver.h"
 #include "ModelProblemRHS.h"
 #include "UnknownDerivativeRHS.cpp"
 #include "AdamsBashforthSolver.h"
 #include "RungeKuttaSolver.h"
+#include "ImplicitSolver.cpp"
 
 double computeAnalyticalSolution(double t, double y0, double k) {
     return y0 * std::exp(-k * t);
@@ -24,7 +26,8 @@ int main() {
 
     // Set up the solver
     // ForwardEulerSolver solver;
-    AdamsBashforthSolver solver(4, "RK4");
+    // AdamsBashforthSolver solver(4, "RK4");
+    BackwardEulerSolver solver;
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
