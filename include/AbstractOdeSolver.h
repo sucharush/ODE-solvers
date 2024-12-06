@@ -29,7 +29,7 @@ public:
     double GetStepSize() const { return stepSize; }
 
     // Solve the equation over the time interval
-    void SolveEquation(std::ostream& stream);
+    virtual void SolveEquation(std::ostream& stream);
 
     // Result vector
     Eigen::VectorXd results;

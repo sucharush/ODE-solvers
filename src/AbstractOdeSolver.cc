@@ -21,21 +21,23 @@ void AbstractOdeSolver::SolveEquation(std::ostream& stream) {
     stream << "Time: " << t << "	Value: " << y << "\n";
 
     // Time-stepping loop
-    for (int i= 1; i < numSteps; ++i) {
-        double currentStepSize = stepSize;
+    for (int currentStep = 1; currentStep < numSteps; ++currentStep) {
+
+        y = step(y, t);
+        // double currentStepSize = stepSize;
         if (t + stepSize > finalTime) {
-            currentStepSize = finalTime - t;
+            t = finalTime;
+        } else {
+            t = initialTime + currentStep * stepSize; // Update time explicitly
         }
 
         // Compute the next step
-        y = step(y, t);
-        results[i] = y;
-        // e = std::exp(-0.3*t); // just to compare with the exact solution
-        // stream << "Time: " << t << "	Numerical: " << y <<"	Exact: " << e << "\n";
-        t += currentStepSize;
-        results[i] = y;
-        //updated state
-        // stream << "Time: " << t << "	Numerical: " << y << "\n";
+        // y = step(y, t);
+        // t = initialTime + currentStep * stepSize; // Update time explicitly
+        results[currentStep] = y;
+
+        // Optional debug output
+        stream << "Time: " << t << "	Value: " << y << "\n";
     }
 }
 

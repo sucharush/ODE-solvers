@@ -1,18 +1,16 @@
 //
 // Created by csy on 2024/12/3.
 //
-#include "AbstractOdeSolver.h"
+#include "ExplicitMultiStepSolver.h"
 
-#ifndef ADAMBASHFORTHSOLVER_H
-#define ADAMBASHFORTHSOLVER_H
-class AdamsBashforthSolver: public AbstractOdeSolver {
+#ifndef ADAMSBASHFORTHSOLVER_H
+#define ADAMSBASHFORTHSOLVER_H
+class AdamsBashforthSolver: public ExplicitMultiStepSolver {
   public:
-    AdamsBashforthSolver(int order_, const std::string& init_method_);
+    AdamsBashforthSolver(int steps, const std::string &initMethod);
     virtual ~AdamsBashforthSolver();
   protected:
     virtual double step(double y, double t) override;
-  private:
-    int order_;
-    std::string init_method_;
+    void SetCoeffs();
 };
-#endif //ADAMBASHFORTHSOLVER_H
+#endif //ADAMSBASHFORTHSOLVER_H

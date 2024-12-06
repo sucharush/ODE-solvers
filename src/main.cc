@@ -25,6 +25,7 @@ int main() {
     // Set up the solver
     // ForwardEulerSolver solver;
     AdamsBashforthSolver solver(4, "RK4");
+    // RungeKuttaSolver solver;
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
@@ -45,7 +46,6 @@ int main() {
 
         std::cout << t << "\t" << numerical << "\t" << analytical << "\t" << error << "\n";
     }
-
 
 
    //  FuncType func_test(

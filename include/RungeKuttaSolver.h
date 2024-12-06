@@ -2,10 +2,10 @@
 // Created by csy on 2024/11/29.
 //
 #include <iostream>
-#include "AbstractOdeSolver.h"
+#include "ExplicitSingleStepSolver.h"
 #ifndef RUNGEKUTTASOLVER_H
 #define RUNGEKUTTASOLVER_H
-class RungeKuttaSolver: public AbstractOdeSolver {
+class RungeKuttaSolver: public ExplicitSingleStepSolver {
   public:
     RungeKuttaSolver(): type_("RK4"){}; // set RK4 as default
     virtual ~RungeKuttaSolver() {};

@@ -5,9 +5,9 @@
 #ifndef FORWARDEULERSOLVER_H
 #define FORWARDEULERSOLVER_H
 
-#include "AbstractOdeSolver.h"
+#include "ExplicitSingleStepSolver.h"
 
-class ForwardEulerSolver : public AbstractOdeSolver {
+class ForwardEulerSolver : public ExplicitSingleStepSolver {
   public:
     ForwardEulerSolver();
     virtual ~ForwardEulerSolver();
