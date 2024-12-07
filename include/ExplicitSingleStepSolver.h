@@ -1,9 +1,12 @@
 //
 // Created by csy on 2024/12/5.
 //
-#include "ExplicitSolver.h"
+
 #ifndef EXPLICITSINGLESTEPSOLVER_H
 #define EXPLICITSINGLESTEPSOLVER_H
+
+#include "ExplicitSolver.h"
+
 class ExplicitSingleStepSolver : public ExplicitSolver {
   public:
     using ExplicitSolver::ExplicitSolver;

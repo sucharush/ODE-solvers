@@ -9,8 +9,8 @@
 
 class ForwardEulerSolver : public ExplicitSingleStepSolver {
   public:
-    ForwardEulerSolver();
-    virtual ~ForwardEulerSolver();
+    ForwardEulerSolver() {}
+    virtual ~ForwardEulerSolver() {}
   protected:
     virtual double step(double y, double t);
 };

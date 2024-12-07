@@ -1,6 +1,10 @@
 //
 // Created by csy on 2024/11/22.
 //
+
+#ifndef MODELPROBLEMSRHS_H
+#define MODELPROBLEMSRHS_H
+
 #include "KnownDerivativeRHS.h"
 
 // for model problem y'(t) = -ky(t)
@@ -15,3 +19,5 @@ public:
 private:
     double k_;
 };
+
+#endif //MODELPROBLEMSRHS_H

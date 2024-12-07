@@ -1,8 +1,11 @@
 //
 // Created by csy on 2024/11/22.
 //
-#include "ODERightHandSide.h"
 
+#ifndef UNKNOWNDERIVATIVERHS_H
+#define UNKNOWNDERIVATIVERHS_H
+
+#include "ODERightHandSide.h"
 #include "utils.h"
 
 
@@ -17,3 +20,5 @@ private:
     // member that defines the precision for the approximation of df
     double stepForDf;
 };
+
+#endif

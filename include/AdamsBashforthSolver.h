@@ -1,10 +1,12 @@
 //
 // Created by csy on 2024/12/3.
 //
-#include "ExplicitMultiStepSolver.h"
 
 #ifndef ADAMSBASHFORTHSOLVER_H
 #define ADAMSBASHFORTHSOLVER_H
+
+#include "ExplicitMultiStepSolver.h"
+
 class AdamsBashforthSolver: public ExplicitMultiStepSolver {
   public:
     AdamsBashforthSolver(int steps, const std::string &initMethod);

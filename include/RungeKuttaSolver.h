@@ -1,10 +1,13 @@
 //
 // Created by csy on 2024/11/29.
 //
-#include <iostream>
-#include "ExplicitSingleStepSolver.h"
+
 #ifndef RUNGEKUTTASOLVER_H
 #define RUNGEKUTTASOLVER_H
+
+#include <iostream>
+#include "ExplicitSingleStepSolver.h"
+
 class RungeKuttaSolver: public ExplicitSingleStepSolver {
   public:
     RungeKuttaSolver(): type_("RK4"){}; // set RK4 as default

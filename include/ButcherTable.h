@@ -4,6 +4,7 @@
 
 #ifndef BUTCHERTABLE_H
 #define BUTCHERTABLE_H
+
 #include <unordered_map>
 #include <vector>
 #include <Eigen/Dense>

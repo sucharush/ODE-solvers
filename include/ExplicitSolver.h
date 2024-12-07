@@ -1,9 +1,12 @@
 //
 // Created by csy on 2024/12/5.
 //
-#include "AbstractOdeSolver.h"
+
 #ifndef EXPLICITSOLVER_H
 #define EXPLICITSOLVER_H
+
+#include "AbstractOdeSolver.h"
+
 class ExplicitSolver : public AbstractOdeSolver {
   public:
     using AbstractOdeSolver::AbstractOdeSolver;

@@ -32,6 +32,7 @@ int main() {
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
+
     solver.SetRightHandSide(std::move(rhs));
 
     // Solve the ODE

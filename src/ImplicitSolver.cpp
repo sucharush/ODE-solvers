@@ -4,11 +4,15 @@
 
 #include "ImplicitSolver.h"
 #include <cassert>
-double ImplicitSolver::newton(double yn, double tn1){
-    double err = TOL + 1;
+
+ImplicitSolver::ImplicitSolver(double tol, double n_max)
+    :tolerance(tol), max_iter(n_max) {}
+
+double ImplicitSolver::newton(double yn, double tn1) {
+    double err = tolerance + 1;
     int iter = 0;
     double xi = yn;
-    while (err > TOL && iter < MAX_ITER) {
+    while (err > tolerance && iter < max_iter) {
         double gx = xi - yn - GetStepSize()*f_rhs->value(xi, tn1);
         double dgx = 1 - GetStepSize()*f_rhs->derivative(xi, tn1);
         double delta = - gx / dgx;
@@ -16,6 +20,13 @@ double ImplicitSolver::newton(double yn, double tn1){
         iter++;
         err = std::abs(delta);
     }
-    assert(iter < MAX_ITER);
+    assert(iter < max_iter);
     return xi;
+}
+
+void ImplicitSolver::SetTolerance(double tol) {
+    tolerance = tol;
+}
+void ImplicitSolver::SetMaxIter(double n_max) {
+    max_iter = n_max;
 }

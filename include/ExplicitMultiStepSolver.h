@@ -1,12 +1,15 @@
 //
 // Created by csy on 2024/12/5.
 //
+
+#ifndef EXPLICITMULTISTEPSOLVER_H
+#define EXPLICITMULTISTEPSOLVER_H
+
 #include <Eigen/Dense>
 #include "ExplicitSolver.h"
 #include "ExplicitSingleStepSolver.h"
 #include <iostream>
-#ifndef EXPLICITMULTISTEPSOLVER_H
-#define EXPLICITMULTISTEPSOLVER_H
+
 class ExplicitMultiStepSolver : public ExplicitSolver {
   public:
     ExplicitMultiStepSolver(int steps, const std::string &initMethod);

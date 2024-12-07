@@ -7,6 +7,7 @@
 
 #include "utils.h"
 #include <iostream>
+
 class ODERightHandSide {
 public:
     ODERightHandSide(): f(nullptr) {}
