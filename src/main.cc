@@ -3,8 +3,9 @@
 #include <cmath>
 #include "ForwardEulerSolver.h"
 #include "BackwardEulerSolver.h"
-#include "ModelProblemRHS.h"
-#include "UnknownDerivativeRHS.cpp"
+#include "ODERightHandSide.cpp"
+#include "ModelProblemRHS.cpp"
+#include "KnownDerivativeRHS.cpp"
 #include "AdamsBashforthSolver.h"
 #include "RungeKuttaSolver.h"
 #include "ImplicitSolver.cpp"
@@ -25,9 +26,9 @@ int main() {
     std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
 
     // Set up the solver
-    // ForwardEulerSolver solver;
-    // AdamsBashforthSolver solver(4, "RK4");
     BackwardEulerSolver solver;
+    // AdamsBashforthSolver solver(4, "RK4");
+    // ForwardEulerSolver solver;
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);

@@ -4,8 +4,9 @@
 
 #include "UnknownDerivativeRHS.h"
 
-UnknownDerivativeRHS::UnknownDerivativeRHS(FuncType func, double h)  : fun(func), stepForDfun(h) {};
+UnknownDerivativeRHS::UnknownDerivativeRHS(FuncType* fun, double h)  : ODERightHandSide(fun), stepForDf(h) {}
 
 double UnknownDerivativeRHS::derivative(double y, double t) const{
-  return (fun(y + stepForDfun, t) - fun(y - stepForDfun, t)) / (2 * stepForDfun);
+  // we compute the approximate derivative with centered difference
+  return ((*f)(y + stepForDf, t) - (*f)(y - stepForDf, t)) / (2 * stepForDf);
 }
