@@ -13,7 +13,8 @@
 class ModelProblemRHS : public KnownDerivativeRHS {
 public:
     // Constructor (default and with parameter k)
-    ModelProblemRHS(double k = 0.0);
+    ModelProblemRHS(): k_(0.0) {}
+    ModelProblemRHS(double k);
     ~ModelProblemRHS() {}
 
 private:

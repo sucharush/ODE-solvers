@@ -10,8 +10,8 @@
 
 class ODERightHandSide {
 public:
-    ODERightHandSide(): f(nullptr) {}
-    ODERightHandSide(FuncType* fun): f(fun) {}
+    // Constructor (with parameter and default)
+    ODERightHandSide(FuncType* fun = nullptr): f(fun) {}
     virtual ~ODERightHandSide() {
         delete f;
     }

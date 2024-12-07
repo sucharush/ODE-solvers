@@ -9,8 +9,9 @@
 
 class KnownDerivativeRHS: public ODERightHandSide {
 public:
-    KnownDerivativeRHS(): df(nullptr) {}
-    KnownDerivativeRHS(FuncType* func, FuncType* deriv);
+    // Constructor
+    //KnownDerivativeRHS(): df(nullptr) {}
+    KnownDerivativeRHS(FuncType* func = nullptr, FuncType* deriv = nullptr);
     virtual ~KnownDerivativeRHS();
     virtual double derivative(double y, double t) const override;
 protected:

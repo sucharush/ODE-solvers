@@ -12,6 +12,7 @@ add_library(rk_solver src/RungeKuttaSolver.cc)
 add_library(ab_solver src/AdamsBashforthSolver.cc)
 add_library(ex_multi_solver src/ExplicitMultiStepSolver.cc)
 add_library(be_solver src/BackwardEulerSolver.cpp)
+add_library(imp_solver src/ImplicitSolver.cpp)
 
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
@@ -19,12 +20,14 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 add_executable(main src/main.cc)
 target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
 
+add_library(modelpb_rhs src/ModelProblemRHS.cpp src/KnownDerivativeRHS.cpp src/ODERightHandSide.cpp)
+
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
-option(TESTS "Activate tests" OFF)
+option(TESTS "Activate tests" ON)
 if (TESTS)
     add_subdirectory(googletest)
     add_executable(tests ${TEST_DIR}/test.cc ${TEST_DIR}/model_problem_test.cpp)
-    target_link_libraries(tests gtest_main gtest pthread)
+    target_link_libraries(tests gtest_main gtest pthread modelpb_rhs ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver imp_solver)
 
     add_custom_target(test
             COMMAND tests
