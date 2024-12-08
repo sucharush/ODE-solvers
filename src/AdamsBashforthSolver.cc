@@ -12,8 +12,8 @@ AdamsBashforthSolver::~AdamsBashforthSolver() {}
 
 void AdamsBashforthSolver::SetCoeffs() {
     int steps = getSteps();  // Ensure steps are set before setting coeffs
-    if (steps <= 0) {
-        throw std::logic_error("Steps must be set before coefficients.");
+    if (steps <= 0 || steps > 4) {
+        throw std::logic_error("Steps must be set as a positive integer between 1 and 4.");
     }
     coeffs_.resize(steps);  // Resize the coefficient vector to the number of steps
     switch(steps) {

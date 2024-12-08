@@ -2,14 +2,13 @@
 // Created by csy on 2024/11/29.
 //
 #include "RungeKuttaSolver.h"
-#include "ButcherTable.h"
+#include "ButcherTableau.h"
 
 
 double RungeKuttaSolver::step(double y, double t){
 
   // get Butcher tableau
-  std::string method = type_;
-  ButcherTableau tableau = getButcherTableau(method);
+  ButcherTableau tableau = getButcherTableau(order_);
 
   int s = tableau.c.size();
   Eigen::VectorXd k(s);
@@ -32,10 +31,3 @@ double RungeKuttaSolver::step(double y, double t){
   return nextY;
 }
 
-void RungeKuttaSolver::SetType(const std::string &type) {
-  type_ = type;
-}
-
-const std::string &RungeKuttaSolver::GetType() const {
-  return type_;
-}

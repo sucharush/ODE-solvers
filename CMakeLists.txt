@@ -6,19 +6,32 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 include_directories(src)
 
-add_library(ode_solver src/AbstractOdeSolver.cc)
-add_library(fe_solver src/ForwardEulerSolver.cc)
-add_library(rk_solver src/RungeKuttaSolver.cc)
-add_library(ab_solver src/AdamsBashforthSolver.cc)
-add_library(ex_multi_solver src/ExplicitMultiStepSolver.cc)
-add_library(be_solver src/BackwardEulerSolver.cpp)
-add_library(imp_solver src/ImplicitSolver.cpp)
+#add_library(ode_solver src/AbstractOdeSolver.cc)
+#add_library(fe_solver src/ForwardEulerSolver.cc)
+#add_library(rk_solver src/RungeKuttaSolver.cc)
+#add_library(ab_solver src/AdamsBashforthSolver.cc)
+#add_library(ex_multi_solver src/ExplicitMultiStepSolver.cc)
+#add_library(be_solver src/BackwardEulerSolver.cpp)
+#add_library(imp_solver src/ImplicitSolver.cpp)
+add_library(solvers
+        src/AbstractOdeSolver.cc
+        src/AdamsBashforthSolver.cc
+        src/BackwardEulerSolver.cpp
+        src/ForwardEulerSolver.cc
+        src/RungeKuttaSolver.cc
+        src/ExplicitMultiStepSolver.cc
+        src/ImplicitSolver.cpp
+#        src/SolverFactory.cc
+        src/ConfigParser.cc
+)
+
 
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 
-add_executable(main src/main.cc)
-target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
+add_executable(main main.cc)
+#target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
+target_link_libraries(main solvers)
 
 add_library(modelpb_rhs src/ModelProblemRHS.cpp src/KnownDerivativeRHS.cpp src/ODERightHandSide.cpp)
 

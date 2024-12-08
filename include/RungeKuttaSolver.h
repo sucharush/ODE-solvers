@@ -10,14 +10,15 @@
 
 class RungeKuttaSolver: public ExplicitSingleStepSolver {
   public:
-    RungeKuttaSolver(): type_("RK4"){}; // set RK4 as default
+    explicit RungeKuttaSolver(const int order): order_(order){};
     virtual ~RungeKuttaSolver() {};
     // setter and getter
-    void SetType(const std::string& type);
-    const std::string& GetType() const;
+    void SetType(const int order) {order_ = order;};
+    int GetType() const {return order_;};
 
   protected:
-    virtual double step(double y, double t);
-    std::string type_;
+    double step(double y, double t) override;
+  private:
+    int order_;
 };
 #endif //RUNGEKUTTASOLVER_H

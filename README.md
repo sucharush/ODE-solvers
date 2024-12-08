@@ -7,11 +7,17 @@
 - [Limitations](#limitations)
 
 ## Description of the project
-This project focuses on ODE, with generic non-linear function, i.e. $y'(t)=f(t,y(t)).$
+This project focuses on ODE, with generic non-linear function, i.e. $y^{'}(t)=f(t,y(t))$.
 
 We are interested in developping different methods to solve this problem.
 
 ## How to
+### Quick Start
+```
+git clone git@gitlab.epfl.ch:ebaup/pcsc-project.git
+cd pcsc-project
+```
+### Set-up
 In order to compile it you should first install *googletest* and *eigen*
 
 ```
@@ -26,7 +32,9 @@ cd build
 cmake ..
 make
 ```
-After these lines, executable files are produced. To execute the mail file, you can either run 'main' on your IDE, or run the following lines on your terminal:
+After these lines, executable files are produced. To execute the main file, 
+you can either run 'main' on your IDE, 
+or run the following lines on your terminal:
 
 ```
 cd .. // or simply open your terminal in the root project folder

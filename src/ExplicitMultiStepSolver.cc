@@ -41,7 +41,7 @@ void ExplicitMultiStepSolver::SolveEquation(std::ostream& stream) {
         }
         t += stepSize;
         results[i] = y;
-        stream << "Time: " << t << " Value: " << y << "\n";
+        // stream << "Time: " << t << " Value: " << y << "\n";
     }
 
     // Continue
@@ -80,16 +80,4 @@ int ExplicitMultiStepSolver::getSteps() const {
 std::string ExplicitMultiStepSolver::getInitMethod() const {
     return initMethod_;
 }
-
-//const Eigen::VectorXd &getCoefficients() const {
-//    return coeffs_;
-//}
-//
-//void setCoefficients(const Eigen::VectorXd &coeffs) {
-//    if (coeffs.size() != steps_) {
-//        throw std::runtime_error("Coefficient vector size does not match the number of steps.");
-//    }
-//    coeffs_ = coeffs;
-//}
-
 
