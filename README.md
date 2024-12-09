@@ -19,8 +19,9 @@ i.e. $y^{'}(t)=f(t,y(t)).$. The solvers currently support the following methods:
 - **Adams-Bashforth (AB)**: Explict multistep solver with configurable order and initialization method (e.g., RK4, Forward Euler).
 - **Backward Euler (BE)**: Implicit single-step solver with optional tolerance and iteration settings.
 
-The default implementation solves the model problem $ y^{'} = -0.3y$ using a 4th-order Runge-Kutta method. 
+The default implementation solves the model problem $y^{'} = -0.3y$ using a 4th-order Runge-Kutta method. 
 The project is modular, allowing customization of solvers, models, and configurations.
+
 The main structure of the project is as follows:
 ```
     pcsc-project/
