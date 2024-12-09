@@ -4,18 +4,18 @@
 #include <cmath>
 #include "include/ForwardEulerSolver.h"
 #include "include/BackwardEulerSolver.h"
-#include "src/ODERightHandSide.cpp"
-#include "src/ModelProblemRHS.cpp"
-#include "src/KnownDerivativeRHS.cpp"
+#include "src/ODERightHandSide.cc"
+#include "src/ExampleRHS.cc"
+#include "src/KnownDerivativeRHS.cc"
 #include "include/AdamsBashforthSolver.h"
 #include "include/RungeKuttaSolver.h"
-#include "src/ImplicitSolver.cpp"
+#include "src/ImplicitSolver.cc"
 #include "ConfigParser.h"
-#include "ModelProblemRHS.h"
+#include "ExampleRHS.h"
 #include "SolverFactory.h"
 
 double computeAnalyticalSolution(double t, double y0, double k) {
-    return y0 * std::exp(-k * t);
+    return y0 * std::exp(-k * t); // define analytical solution if you know
 }
 int main() {
     try {
@@ -29,7 +29,7 @@ int main() {
 
         // set right hand side function
         double k = 0.3; // Decay constant
-        std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
+        std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ExampleRHS>(k);
         solver->SetRightHandSide(std::move(rhs));
         solver->SolveEquation(std::cout);
 

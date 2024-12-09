@@ -16,24 +16,24 @@ include_directories(src)
 add_library(solvers
         src/AbstractOdeSolver.cc
         src/AdamsBashforthSolver.cc
-        src/BackwardEulerSolver.cpp
+        src/BackwardEulerSolver.cc
         src/ForwardEulerSolver.cc
         src/RungeKuttaSolver.cc
         src/ExplicitMultiStepSolver.cc
-        src/ImplicitSolver.cpp
+        src/ImplicitSolver.cc
 #        src/SolverFactory.cc
         src/ConfigParser.cc
+        src/SolverFactory.cc
 )
-
+add_library(rhs src/ExampleRHS.cc src/KnownDerivativeRHS.cc src/ODERightHandSide.cc)
 
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
 
 add_executable(main main.cc)
 #target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
-target_link_libraries(main solvers)
+target_link_libraries(main solvers rhs)
 
-add_library(modelpb_rhs src/ModelProblemRHS.cpp src/KnownDerivativeRHS.cpp src/ODERightHandSide.cpp)
 
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 option(TESTS "Activate tests" ON)

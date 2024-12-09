@@ -6,7 +6,7 @@
     "initialValue": 1.0
   },
   "solver": {
-    "method": "FE",
+    "method": "RK",
     "parameters": {
       "order": 4,
       "steps": 4,

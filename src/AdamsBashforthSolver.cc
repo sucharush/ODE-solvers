@@ -39,7 +39,8 @@ double AdamsBashforthSolver::step(double y, double t) {
         throw std::logic_error("Coefficients not properly initialized.");
     }
     double sum = 0;
-    int currentStep = static_cast<int>((t - initialTime) / GetStepSize());
+
+    int currentStep = static_cast<int>((t - GetInitialTime()) / GetStepSize());
     for (int i = 0; i < getSteps(); ++i) {
         sum += coeffs_[i] * f_rhs->value(results[currentStep - i], t - i * GetStepSize());
     }

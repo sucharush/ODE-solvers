@@ -15,6 +15,10 @@ ExplicitMultiStepSolver::ExplicitMultiStepSolver(int steps, const std::string &i
 ExplicitMultiStepSolver::~ExplicitMultiStepSolver() {}
 
 void ExplicitMultiStepSolver::SolveEquation(std::ostream& stream) {
+    double initialTime = GetInitialTime();
+    double finalTime = GetFinalTime();
+    double stepSize = GetStepSize();
+    double initialValue = GetInitialValue();
     stream << std::fixed << std::setprecision(5);
 
     double t = initialTime;

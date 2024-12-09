@@ -11,14 +11,13 @@ void AbstractOdeSolver::SolveEquation(std::ostream& stream) {
 
     double t = initialTime;
     double y = initialValue;
-    double e = 0;
 
     int numSteps = static_cast<int>((finalTime - initialTime) / stepSize) + 1;
     results.resize(numSteps);
     results[0] = y;
 
     // initial state
-    stream << "Time: " << t << "	Value: " << y << "\n";
+    // stream << "Time: " << t << "	Value: " << y << "\n";
 
     // Time-stepping loop
     for (int currentStep = 1; currentStep < numSteps; ++currentStep) {
@@ -30,14 +29,11 @@ void AbstractOdeSolver::SolveEquation(std::ostream& stream) {
         } else {
             t = initialTime + currentStep * stepSize; // Update time explicitly
         }
-
         // Compute the next step
-        // y = step(y, t);
-        // t = initialTime + currentStep * stepSize; // Update time explicitly
         results[currentStep] = y;
 
         // Optional debug output
-        stream << "Time: " << t << "	Value: " << y << "\n";
+        // stream << "Time: " << t << "	Value: " << y << "\n";
     }
 }
 

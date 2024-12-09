@@ -38,6 +38,7 @@ public:
 protected:
     virtual double step(double y, double t) = 0; // Pure virtual step function
     std::unique_ptr<ODERightHandSide> f_rhs;
+private:
     double stepSize;
     double initialTime;
     double finalTime;
