@@ -10,22 +10,33 @@
 #include <memory>
 #include "ODERightHandSide.h"
 
+/**
+ *@file AbstractOdeSolver.h
+ *@brief Base solver class
+ * This is the base solver class
+ */
+
 class AbstractOdeSolver {
 public:
-    // Constructor and destructor
+
     AbstractOdeSolver() : stepSize(0), initialTime(0), finalTime(0), initialValue(0), f_rhs(nullptr) {}
     virtual ~AbstractOdeSolver() {}
 
     // Setters
+
     void SetStepSize(double h) { stepSize = h; }
     void SetTimeInterval(double t0, double t1) { initialTime = t0; finalTime = t1; }
     void SetInitialValue(double y0) { initialValue = y0; }
     void SetRightHandSide(std::unique_ptr<ODERightHandSide> f) { f_rhs = std::move(f); }
 
     // Getters
+    /// This is a final time accessor
     double GetFinalTime() const { return finalTime; }
+    /// This is a initial time accessor
     double GetInitialTime() const { return initialTime; }
+    /// This is a initial value (y0) accessor
     double GetInitialValue() const { return initialValue; }
+    /// This is a step size accessor
     double GetStepSize() const { return stepSize; }
 
     // Solve the equation over the time interval

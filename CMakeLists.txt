@@ -34,6 +34,16 @@ add_executable(main main.cc)
 #target_link_libraries(main ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver)
 target_link_libraries(main solvers rhs)
 
+option(DOCUMENTATION "Activate documentation" ON)
+if (DOCUMENTATION)
+    set(DOXYGEN_EXECUTABLE doxygen)
+    set(DOXYFILE Doxyfile)
+    add_custom_target(doc_doxygen ALL
+            COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/${DOXYFILE}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            COMMENT "Generating API documentation with Doxygen"
+            VERBATIM)
+endif(DOCUMENTATION)
 
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 option(TESTS "Activate tests" ON)
