@@ -1,0 +1,47 @@
+\hypertarget{class_explicit_multi_step_solver}{}\doxysection{Explicit\+Multi\+Step\+Solver Class Reference}
+\label{class_explicit_multi_step_solver}\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+Inheritance diagram for Explicit\+Multi\+Step\+Solver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_explicit_multi_step_solver}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}\label{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}} 
+{\bfseries Explicit\+Multi\+Step\+Solver} (int steps, const std\+::string \&init\+Method)
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a82160a1eafea81eaac1c0413184aaddb}\label{class_explicit_multi_step_solver_a82160a1eafea81eaac1c0413184aaddb}} 
+void {\bfseries set\+Steps} (int steps)
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_ac762c34e8f32c03e4a8b8cf162be25bc}\label{class_explicit_multi_step_solver_ac762c34e8f32c03e4a8b8cf162be25bc}} 
+void {\bfseries set\+Init\+Method} (const std\+::string \&init\+Method)
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a306332016025b771244b70ee34b42cdb}\label{class_explicit_multi_step_solver_a306332016025b771244b70ee34b42cdb}} 
+int {\bfseries get\+Steps} () const
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}\label{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}} 
+std\+::string {\bfseries get\+Init\+Method} () const
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}\label{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}} 
+virtual void {\bfseries Solve\+Equation} (std\+::ostream \&stream) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}\label{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}} 
+virtual double {\bfseries step} (double y, double t)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_ae1bffc07eba9f1dfcd7643036cb9a464}\label{class_explicit_multi_step_solver_ae1bffc07eba9f1dfcd7643036cb9a464}} 
+Eigen\+::\+Vector\+Xd {\bfseries coeffs\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Explicit\+Multi\+Step\+Solver.\+h\end{DoxyCompactItemize}
