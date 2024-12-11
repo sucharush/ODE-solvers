@@ -64,7 +64,6 @@ TEST_F(ModelProblemTest, FE) {
     solver.SetInitialValue(initialValue);
     solver.SetRightHandSide(std::move(model));
     solver.SolveEquation(std::cout);
-    double y = 1.0;
     int numSteps = solver.results.size();
 
     double t = initialTime;
@@ -85,7 +84,6 @@ TEST_F(ModelProblemTest, BE) {
     solver.SetInitialValue(initialValue);
     solver.SetRightHandSide(std::move(model));
     solver.SolveEquation(std::cout);
-    double y = 1.0;
     int numSteps = solver.results.size();
 
     double t = initialTime;
@@ -94,3 +92,53 @@ TEST_F(ModelProblemTest, BE) {
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
+
+#include "RungeKuttaSolver.h"
+TEST_F(ModelProblemTest, RK2) {
+    RungeKuttaSolver solver(2);
+    solver.SetStepSize(stepSize);
+    solver.SetTimeInterval(initialTime, finalTime);
+    solver.SetInitialValue(initialValue);
+    solver.SetRightHandSide(std::move(model));
+    solver.SolveEquation(std::cout);
+    int numSteps = solver.results.size();
+
+    double t = initialTime;
+    for (int i = 0; i < numSteps; ++i, t += stepSize) {
+        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
+    }
+}
+
+TEST_F(ModelProblemTest, RK4) {
+    RungeKuttaSolver solver(4);
+    solver.SetStepSize(stepSize);
+    solver.SetTimeInterval(initialTime, finalTime);
+    solver.SetInitialValue(initialValue);
+    solver.SetRightHandSide(std::move(model));
+    solver.SolveEquation(std::cout);
+    int numSteps = solver.results.size();
+
+    double t = initialTime;
+    for (int i = 0; i < numSteps; ++i, t += stepSize) {
+        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
+    }
+}
+/*
+TEST_F(ModelProblemTest, AB) {
+    RungeKuttaSolver solver(4);
+    solver.SetStepSize(stepSize);
+    solver.SetTimeInterval(initialTime, finalTime);
+    solver.SetInitialValue(initialValue);
+    solver.SetRightHandSide(std::move(model));
+    solver.SolveEquation(std::cout);
+    int numSteps = solver.results.size();
+
+    double t = initialTime;
+    for (int i = 0; i < numSteps; ++i, t += stepSize) {
+        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
+    }
+}
+*/
