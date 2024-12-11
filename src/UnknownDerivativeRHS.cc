@@ -8,5 +8,5 @@ UnknownDerivativeRHS::UnknownDerivativeRHS(FuncType* fun, double h)  : ODERightH
 
 double UnknownDerivativeRHS::derivative(double y, double t) const{
   // we compute the approximate derivative with centered difference
-  return ((*f)(y + stepForDf, t) - (*f)(y - stepForDf, t)) / (2 * stepForDf);
+  return ((*f)(y , t+ stepForDf) - (*f)(y , t- stepForDf)) / (2 * stepForDf);
 }

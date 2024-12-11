@@ -25,7 +25,7 @@ add_library(solvers
         src/ConfigParser.cc
         src/SolverFactory.cc
 )
-add_library(rhs src/ExampleRHS.cc src/KnownDerivativeRHS.cc src/ODERightHandSide.cc)
+add_library(rhs src/ExampleRHS.cc src/KnownDerivativeRHS.cc src/ODERightHandSide.cc src/UnknownDerivativeRHS.cc)
 
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)
@@ -39,8 +39,8 @@ set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 option(TESTS "Activate tests" ON)
 if (TESTS)
     add_subdirectory(googletest)
-    add_executable(tests ${TEST_DIR}/test.cc ${TEST_DIR}/model_problem_test.cpp)
-    target_link_libraries(tests gtest_main gtest pthread modelpb_rhs ode_solver fe_solver rk_solver ab_solver ex_multi_solver be_solver imp_solver)
+    add_executable(tests ${TEST_DIR}/test.cc ${TEST_DIR}/auxiliary_test.cpp) #${TEST_DIR}/model_problem_test.cpp
+    target_link_libraries(tests gtest_main gtest pthread solvers rhs)
 
     add_custom_target(test
             COMMAND tests

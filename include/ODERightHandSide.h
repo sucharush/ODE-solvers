@@ -19,7 +19,7 @@ public:
     // the function at (y, t)
     virtual double value(double y, double t) const;
 
-    // derivative with respect to y at time t
+    // derivative with respect to t
     virtual double derivative(double y, double t) const = 0;
 protected:
     FuncType* f;

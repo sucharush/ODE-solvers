@@ -22,6 +22,8 @@ double const TOL = 1e-6;
 double const MAX_ITER = 50;
 // for error between numerical and analytical solutions
 double const TOL_SOLUTION = 1e-2;
+// for expecting two double to be equal
+double const TOL_EQ = 1e-8;
 // Typedef for space variable type (y)
 typedef double var_y; //TODO: change to Eigen::VectorXf, do we need the dimension as parameter in RHS?
 

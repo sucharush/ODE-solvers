@@ -6,7 +6,7 @@
 #include <Eigen/Dense>
 #include <iostream>
 #include <memory>
-#include "ModelProblemRHS.h"
+#include "ExampleRHS.h"
 #include "ODERightHandSide.h"
 #include "utils.h"
 
@@ -26,7 +26,7 @@ protected:
     }
     */
     // Shared resource for tests
-    std::unique_ptr<ODERightHandSide> model = std::make_unique<ModelProblemRHS>(k_test);
+    std::unique_ptr<ODERightHandSide> model = std::make_unique<ExampleRHS>(k_test);
 
     double initialTime = 0.0;
     double finalTime = 10.0;
