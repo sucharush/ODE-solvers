@@ -15,13 +15,37 @@ Inheritance diagram for Adams\+Bashforth\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}\label{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}} 
-virtual double {\bfseries step} (double y, double t) override
+virtual double \mbox{\hyperlink{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}{step}} (double y, double t) override
 \item 
 \mbox{\Hypertarget{class_adams_bashforth_solver_a6cccd382df5b3e74e6aae7c1e905370c}\label{class_adams_bashforth_solver_a6cccd382df5b3e74e6aae7c1e905370c}} 
 void {\bfseries Set\+Coeffs} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}\label{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}} 
+\index{AdamsBashforthSolver@{AdamsBashforthSolver}!step@{step}}
+\index{step@{step}!AdamsBashforthSolver@{AdamsBashforthSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Adams\+Bashforth\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}{Explicit\+Multi\+Step\+Solver}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

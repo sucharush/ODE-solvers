@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PCSC Project: Solvers for Ordinary Differential Equations
    </div>
-   <div id="projectbrief">his project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
+   <div id="projectbrief">This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
   </td>
  </tr>
  </tbody>
@@ -76,14 +76,13 @@ Inheritance diagram for BackwardEulerSolver:</div>
   <img src="class_backward_euler_solver.png" usemap="#BackwardEulerSolver_map" alt=""/>
   <map id="BackwardEulerSolver_map" name="BackwardEulerSolver_map">
 <area href="class_implicit_solver.html" alt="ImplicitSolver" shape="rect" coords="0,56,135,80"/>
-<area href="class_abstract_ode_solver.html" alt="AbstractOdeSolver" shape="rect" coords="0,0,135,24"/>
+<area href="class_abstract_ode_solver.html" title="Base solver class." alt="AbstractOdeSolver" shape="rect" coords="0,0,135,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ada7bbe94179e6f45857c55f5f51b0e2b"><td class="memItemLeft" align="right" valign="top"><a id="ada7bbe94179e6f45857c55f5f51b0e2b"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>step</b> (double y, double t)</td></tr>
+<tr class="memitem:ada7bbe94179e6f45857c55f5f51b0e2b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_backward_euler_solver.html#ada7bbe94179e6f45857c55f5f51b0e2b">step</a> (double y, double t)</td></tr>
 <tr class="separator:ada7bbe94179e6f45857c55f5f51b0e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_implicit_solver"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_implicit_solver')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_implicit_solver.html">ImplicitSolver</a></td></tr>
 <tr class="memitem:a7f6f44fec519212aeae6b71533419601 inherit pro_methods_class_implicit_solver"><td class="memItemLeft" align="right" valign="top"><a id="a7f6f44fec519212aeae6b71533419601"></a>
@@ -94,7 +93,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>newton</b> (double 
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_class_implicit_solver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_implicit_solver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_implicit_solver.html">ImplicitSolver</a></td></tr>
 <tr class="memitem:a0cda5780c1b11f3ec3e587879abf9e47 inherit pub_methods_class_implicit_solver"><td class="memItemLeft" align="right" valign="top"><a id="a0cda5780c1b11f3ec3e587879abf9e47"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ImplicitSolver</b> (double tol=TOL, double n_max=MAX_ITER)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ImplicitSolver</b> (double tol=<a class="el" href="utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2">TOL</a>, double n_max=<a class="el" href="utils_8h.html#a09cfa273ee18061e71f83944582b4cd1">MAX_ITER</a>)</td></tr>
 <tr class="separator:a0cda5780c1b11f3ec3e587879abf9e47 inherit pub_methods_class_implicit_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5539771d21b156db98ddfbd930ceb95 inherit pub_methods_class_implicit_solver"><td class="memItemLeft" align="right" valign="top"><a id="ac5539771d21b156db98ddfbd930ceb95"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTolerance</b> (double tol)</td></tr>
@@ -103,17 +102,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTolerance</b> (dou
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetMaxIter</b> (double n_max)</td></tr>
 <tr class="separator:a6e9dc50173db44c3c2ab1f640382ed05 inherit pub_methods_class_implicit_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_ode_solver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_abstract_ode_solver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a></td></tr>
+<tr class="memitem:a03edbae822c8ff26c61f85dd6cfd3d71 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a03edbae822c8ff26c61f85dd6cfd3d71">AbstractOdeSolver</a> ()</td></tr>
+<tr class="memdesc:a03edbae822c8ff26c61f85dd6cfd3d71 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for Abstract Solver.  <a href="class_abstract_ode_solver.html#a03edbae822c8ff26c61f85dd6cfd3d71">More...</a><br /></td></tr>
+<tr class="separator:a03edbae822c8ff26c61f85dd6cfd3d71 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed085a5a3e3c7dbf734635b3006da453 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="aed085a5a3e3c7dbf734635b3006da453"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aed085a5a3e3c7dbf734635b3006da453">~AbstractOdeSolver</a> ()</td></tr>
+<tr class="memdesc:aed085a5a3e3c7dbf734635b3006da453 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for Abstract Solver. <br /></td></tr>
+<tr class="separator:aed085a5a3e3c7dbf734635b3006da453 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25158e31a950d0757fdb03b814e50d06 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="a25158e31a950d0757fdb03b814e50d06"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetStepSize</b> (double h)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a25158e31a950d0757fdb03b814e50d06">SetStepSize</a> (double h)</td></tr>
+<tr class="memdesc:a25158e31a950d0757fdb03b814e50d06 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the step size for the solver. <br /></td></tr>
 <tr class="separator:a25158e31a950d0757fdb03b814e50d06 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa538dd3bcac6ba5c784dec442333686f inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="aa538dd3bcac6ba5c784dec442333686f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTimeInterval</b> (double t0, double t1)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aa538dd3bcac6ba5c784dec442333686f">SetTimeInterval</a> (double t0, double t1)</td></tr>
+<tr class="memdesc:aa538dd3bcac6ba5c784dec442333686f inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the initial and final time of the ODE. <br /></td></tr>
 <tr class="separator:aa538dd3bcac6ba5c784dec442333686f inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0340b4da640c8c9131363d0525d9223b inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="a0340b4da640c8c9131363d0525d9223b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInitialValue</b> (double y0)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a0340b4da640c8c9131363d0525d9223b">SetInitialValue</a> (double y0)</td></tr>
+<tr class="memdesc:a0340b4da640c8c9131363d0525d9223b inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the initial value of the ODE. <br /></td></tr>
 <tr class="separator:a0340b4da640c8c9131363d0525d9223b inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b4afc9ef64780f3758461f45ec853e inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="a57b4afc9ef64780f3758461f45ec853e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRightHandSide</b> (std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt; f)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a57b4afc9ef64780f3758461f45ec853e">SetRightHandSide</a> (std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt; f)</td></tr>
+<tr class="memdesc:a57b4afc9ef64780f3758461f45ec853e inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the right hand side of the ODE. <br /></td></tr>
 <tr class="separator:a57b4afc9ef64780f3758461f45ec853e inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0086075915c39f11a22845a7f2b2d11 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="ac0086075915c39f11a22845a7f2b2d11"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#ac0086075915c39f11a22845a7f2b2d11">GetFinalTime</a> () const</td></tr>
@@ -131,21 +141,70 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aae60901c523d49d3507d5b640ad67a73">GetStepSize</a> () const</td></tr>
 <tr class="memdesc:aae60901c523d49d3507d5b640ad67a73 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a step size accessor. <br /></td></tr>
 <tr class="separator:aae60901c523d49d3507d5b640ad67a73 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2a8a3d7362918f63b9689b8e4e9c085 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="aa2a8a3d7362918f63b9689b8e4e9c085"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SolveEquation</b> (std::ostream &amp;stream)</td></tr>
+<tr class="memitem:aa2a8a3d7362918f63b9689b8e4e9c085 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085">SolveEquation</a> (std::ostream &amp;stream)</td></tr>
+<tr class="memdesc:aa2a8a3d7362918f63b9689b8e4e9c085 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the ODE.  <a href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085">More...</a><br /></td></tr>
 <tr class="separator:aa2a8a3d7362918f63b9689b8e4e9c085 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefe6a9a405d7dd1c00138f8e35b0e130 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="aefe6a9a405d7dd1c00138f8e35b0e130"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintResults</b> (std::ostream &amp;stream) const</td></tr>
+<tr class="memitem:aefe6a9a405d7dd1c00138f8e35b0e130 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130">PrintResults</a> (std::ostream &amp;stream) const</td></tr>
+<tr class="memdesc:aefe6a9a405d7dd1c00138f8e35b0e130 inherit pub_methods_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that outputs the result in the given stream.  <a href="class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130">More...</a><br /></td></tr>
 <tr class="separator:aefe6a9a405d7dd1c00138f8e35b0e130 inherit pub_methods_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_abstract_ode_solver"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_abstract_ode_solver')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a></td></tr>
-<tr class="memitem:a908c0174d5f62852275bad7eb171e2b3 inherit pub_attribs_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="a908c0174d5f62852275bad7eb171e2b3"></a>
-Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><b>results</b></td></tr>
+<tr class="memitem:a908c0174d5f62852275bad7eb171e2b3 inherit pub_attribs_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a908c0174d5f62852275bad7eb171e2b3">results</a></td></tr>
+<tr class="memdesc:a908c0174d5f62852275bad7eb171e2b3 inherit pub_attribs_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result vector.  <a href="class_abstract_ode_solver.html#a908c0174d5f62852275bad7eb171e2b3">More...</a><br /></td></tr>
 <tr class="separator:a908c0174d5f62852275bad7eb171e2b3 inherit pub_attribs_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_abstract_ode_solver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_abstract_ode_solver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a></td></tr>
 <tr class="memitem:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top"><a id="af73bcbe1180313a10d26998d9e6d5e06"></a>
-std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>f_rhs</b></td></tr>
+std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#af73bcbe1180313a10d26998d9e6d5e06">f_rhs</a></td></tr>
+<tr class="memdesc:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right hand side of the ODE. <br /></td></tr>
 <tr class="separator:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada7bbe94179e6f45857c55f5f51b0e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7bbe94179e6f45857c55f5f51b0e2b">&#9670;&nbsp;</a></span>step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double BackwardEulerSolver::step </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the ODE.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>space variable. </td></tr>
+    <tr><td class="paramname">t</td><td>time variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085" title="Solves the ODE.">SolveEquation</a> </dd></dl>
+
+<p>Implements <a class="el" href="class_implicit_solver.html#a3d773d7645e0f74f978eb0a7afa4e380">ImplicitSolver</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="_backward_euler_solver_8h_source.html">BackwardEulerSolver.h</a></li>
 </ul>

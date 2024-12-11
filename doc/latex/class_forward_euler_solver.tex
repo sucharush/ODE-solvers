@@ -9,10 +9,34 @@ Inheritance diagram for Forward\+Euler\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}\label{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}} 
-virtual double {\bfseries step} (double y, double t)
+virtual double \mbox{\hyperlink{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}{step}} (double y, double t)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}\label{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}} 
+\index{ForwardEulerSolver@{ForwardEulerSolver}!step@{step}}
+\index{step@{step}!ForwardEulerSolver@{ForwardEulerSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Forward\+Euler\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_explicit_single_step_solver_ada3a420e30943f941d483820efbf585a}{Explicit\+Single\+Step\+Solver}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

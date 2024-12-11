@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PCSC Project: Solvers for Ordinary Differential Equations
    </div>
-   <div id="projectbrief">his project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
+   <div id="projectbrief">This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
   </td>
  </tr>
  </tbody>
@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Utility functions, type definitions and constants for the project.  
+<p>Type definitions and constants for the project.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
 </div>
@@ -83,32 +83,37 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a804cef9b9d884e258bad2cb5f855f63e"><td class="memItemLeft" align="right" valign="top"><a id="a804cef9b9d884e258bad2cb5f855f63e"></a>
-typedef double&#160;</td><td class="memItemRight" valign="bottom"><b>var_y</b></td></tr>
+typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a804cef9b9d884e258bad2cb5f855f63e">var_y</a></td></tr>
+<tr class="memdesc:a804cef9b9d884e258bad2cb5f855f63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">[unused] Typedef for the space parameter of the ODE <br /></td></tr>
 <tr class="separator:a804cef9b9d884e258bad2cb5f855f63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6bfdc8a2afc3edc1b432c5440b6ca6"><td class="memItemLeft" align="right" valign="top"><a id="a4f6bfdc8a2afc3edc1b432c5440b6ca6"></a>
-typedef std::function&lt; double(double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FuncType</b></td></tr>
+typedef std::function&lt; double(double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a></td></tr>
+<tr class="memdesc:a4f6bfdc8a2afc3edc1b432c5440b6ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for function type (right hand side object of the ODE) <br /></td></tr>
 <tr class="separator:a4f6bfdc8a2afc3edc1b432c5440b6ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a826e1b6d8f7888032cded335c8f5a8b2"><td class="memItemLeft" align="right" valign="top"><a id="a826e1b6d8f7888032cded335c8f5a8b2"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>TOL</b> = 1e-6</td></tr>
+const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2">TOL</a> = 1e-6</td></tr>
+<tr class="memdesc:a826e1b6d8f7888032cded335c8f5a8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default tolerance threshold for Newton method. <br /></td></tr>
 <tr class="separator:a826e1b6d8f7888032cded335c8f5a8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09cfa273ee18061e71f83944582b4cd1"><td class="memItemLeft" align="right" valign="top"><a id="a09cfa273ee18061e71f83944582b4cd1"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_ITER</b> = 50</td></tr>
+const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a09cfa273ee18061e71f83944582b4cd1">MAX_ITER</a> = 50</td></tr>
+<tr class="memdesc:a09cfa273ee18061e71f83944582b4cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default maximum number of iterations for Newton method. <br /></td></tr>
 <tr class="separator:a09cfa273ee18061e71f83944582b4cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd8d9fcc4973d25b6f128095aa89cfa6"><td class="memItemLeft" align="right" valign="top"><a id="afd8d9fcc4973d25b6f128095aa89cfa6"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>TOL_SOLUTION</b> = 1e-2</td></tr>
+const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#afd8d9fcc4973d25b6f128095aa89cfa6">TOL_SOLUTION</a> = 1e-2</td></tr>
+<tr class="memdesc:afd8d9fcc4973d25b6f128095aa89cfa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tolerance threshold for error. <br /></td></tr>
 <tr class="separator:afd8d9fcc4973d25b6f128095aa89cfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f70de3553e8d7d8cf2df18163a6d5d9"><td class="memItemLeft" align="right" valign="top"><a id="a5f70de3553e8d7d8cf2df18163a6d5d9"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>TOL_EQ</b> = 1e-8</td></tr>
+const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a5f70de3553e8d7d8cf2df18163a6d5d9">TOL_EQ</a> = 1e-8</td></tr>
+<tr class="memdesc:a5f70de3553e8d7d8cf2df18163a6d5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tolerance threshold for double comparison. <br /></td></tr>
 <tr class="separator:a5f70de3553e8d7d8cf2df18163a6d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility functions, type definitions and constants for the project. </p>
+<div class="textblock"><p>Type definitions and constants for the project. </p>
 <p>This header file contains:</p><ul>
 <li>Commonly used type definitions (<code>typedef</code>) to simplify code readability.</li>
-<li>General-purpose utility functions (helpers) used throughout the project, reusable in different contexts.</li>
 <li>Constants variables shared across multiple modules.</li>
 </ul>
 <dl class="section author"><dt>Author</dt><dd>ebaup </dd></dl>

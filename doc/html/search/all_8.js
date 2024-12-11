@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oderighthandside_17',['ODERightHandSide',['../class_o_d_e_right_hand_side.html',1,'']]]
+  ['knownderivativerhs_19',['KnownDerivativeRHS',['../class_known_derivative_r_h_s.html',1,'KnownDerivativeRHS'],['../class_known_derivative_r_h_s.html#a078aa62e6edc486247030c0774d4dc84',1,'KnownDerivativeRHS::KnownDerivativeRHS()']]]
 ];

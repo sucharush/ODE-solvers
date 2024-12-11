@@ -8,21 +8,46 @@
 #include "utils.h"
 #include <iostream>
 
+//!  Base function class.
+/*!
+This is the base function class, that allows us to represent a function (together with its derivative).
+@note We kept the name ODERightHandSide, but it could have been renamed simply to Function.
+*/
+
 class ODERightHandSide {
 public:
-    // Constructor (with parameter and default)
+    //! Constructor of a function instance
+    /*!
+    This constructor sets the function object of the right hand side of the ODE.
+    @param fun Pointer to a FuncType, by default: null pointer.
+    @see FuncType in utils.h
+    */
     ODERightHandSide(FuncType* fun = nullptr): f(fun) {}
+    //! Destructor
+    /*!
+    This destructor deallocates the memory used by the right hand side.
+    */
     virtual ~ODERightHandSide() {
         delete f;
     }
 
-    // the function at (y, t)
+    /// Computes the value at the function.
+    /*!
+    @param y space variable
+    @param t time varianle
+    @return f(y,t)
+    */
     virtual double value(double y, double t) const;
 
-    // derivative with respect to t
+    /// Computes the value of the derivative with respect to t.
+    /*!
+    @param y space variable
+    @param t time varianle
+    @return (df/dt)(y,t)
+    */
     virtual double derivative(double y, double t) const = 0;
 protected:
-    FuncType* f;
+    FuncType* f; //!< Pointer to the right hand side function.
 };
 
 #endif //ODERIGHTHANDSIDE_H

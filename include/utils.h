@@ -1,10 +1,9 @@
 /**
  * @file utils.h
- * @brief Utility functions, type definitions and constants for the project.
+ * @brief Type definitions and constants for the project.
  *
  * This header file contains:
  * - Commonly used type definitions (`typedef`) to simplify code readability.
- * - General-purpose utility functions (helpers) used throughout the project, reusable in different contexts.
  * - Constants variables shared across multiple modules.
  *
  * @author ebaup
@@ -17,17 +16,16 @@
 #include <functional>
 
 // Useful constants
-// for newton
-double const TOL = 1e-6;
-double const MAX_ITER = 50;
-// for error between numerical and analytical solutions
-double const TOL_SOLUTION = 1e-2;
-// for expecting two double to be equal
-double const TOL_EQ = 1e-8;
-// Typedef for space variable type (y)
-typedef double var_y; //TODO: change to Eigen::VectorXf, do we need the dimension as parameter in RHS?
+double const TOL = 1e-6; //!< Default tolerance threshold for Newton method
+double const MAX_ITER = 50; //!< Default maximum number of iterations for Newton method
 
-// Typedef for function type
+double const TOL_SOLUTION = 1e-2; //!< Tolerance threshold for error
+
+double const TOL_EQ = 1e-8; //!< Tolerance threshold for double comparison
+
+typedef double var_y; //!< [unused] Typedef for the space parameter of the ODE
+
+/// Typedef for function type (right hand side object of the ODE)
 typedef std::function<double(double, double)> FuncType;
 
 #endif //UTILS_H

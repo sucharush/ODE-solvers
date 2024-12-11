@@ -1,5 +1,14 @@
 \hypertarget{class_abstract_ode_solver}{}\doxysection{Abstract\+Ode\+Solver Class Reference}
 \label{class_abstract_ode_solver}\index{AbstractOdeSolver@{AbstractOdeSolver}}
+
+
+Base solver class.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Ode\+Solver.\+h$>$}
+
 Inheritance diagram for Abstract\+Ode\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,18 +18,23 @@ Inheritance diagram for Abstract\+Ode\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_abstract_ode_solver_a03edbae822c8ff26c61f85dd6cfd3d71}{Abstract\+Ode\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for Abstract Solver. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_ode_solver_aed085a5a3e3c7dbf734635b3006da453}\label{class_abstract_ode_solver_aed085a5a3e3c7dbf734635b3006da453}} 
+virtual \mbox{\hyperlink{class_abstract_ode_solver_aed085a5a3e3c7dbf734635b3006da453}{$\sim$\+Abstract\+Ode\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for Abstract Solver. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_abstract_ode_solver_a25158e31a950d0757fdb03b814e50d06}\label{class_abstract_ode_solver_a25158e31a950d0757fdb03b814e50d06}} 
-void {\bfseries Set\+Step\+Size} (double h)
-\item 
+void \mbox{\hyperlink{class_abstract_ode_solver_a25158e31a950d0757fdb03b814e50d06}{Set\+Step\+Size}} (double h)
+\begin{DoxyCompactList}\small\item\em Sets the step size for the solver. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_abstract_ode_solver_aa538dd3bcac6ba5c784dec442333686f}\label{class_abstract_ode_solver_aa538dd3bcac6ba5c784dec442333686f}} 
-void {\bfseries Set\+Time\+Interval} (double t0, double t1)
-\item 
+void \mbox{\hyperlink{class_abstract_ode_solver_aa538dd3bcac6ba5c784dec442333686f}{Set\+Time\+Interval}} (double t0, double t1)
+\begin{DoxyCompactList}\small\item\em Sets the initial and final time of the O\+DE. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_abstract_ode_solver_a0340b4da640c8c9131363d0525d9223b}\label{class_abstract_ode_solver_a0340b4da640c8c9131363d0525d9223b}} 
-void {\bfseries Set\+Initial\+Value} (double y0)
-\item 
+void \mbox{\hyperlink{class_abstract_ode_solver_a0340b4da640c8c9131363d0525d9223b}{Set\+Initial\+Value}} (double y0)
+\begin{DoxyCompactList}\small\item\em Sets the initial value of the O\+DE. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_abstract_ode_solver_a57b4afc9ef64780f3758461f45ec853e}\label{class_abstract_ode_solver_a57b4afc9ef64780f3758461f45ec853e}} 
-void {\bfseries Set\+Right\+Hand\+Side} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+Hand\+Side}} $>$ f)
-\item 
+void \mbox{\hyperlink{class_abstract_ode_solver_a57b4afc9ef64780f3758461f45ec853e}{Set\+Right\+Hand\+Side}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+Hand\+Side}} $>$ f)
+\begin{DoxyCompactList}\small\item\em Sets the right hand side of the O\+DE. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_abstract_ode_solver_ac0086075915c39f11a22845a7f2b2d11}\label{class_abstract_ode_solver_ac0086075915c39f11a22845a7f2b2d11}} 
 double \mbox{\hyperlink{class_abstract_ode_solver_ac0086075915c39f11a22845a7f2b2d11}{Get\+Final\+Time}} () const
 \begin{DoxyCompactList}\small\item\em This is a final time accessor. \end{DoxyCompactList}\item 
@@ -33,32 +47,118 @@ double \mbox{\hyperlink{class_abstract_ode_solver_a602d6b6170573d1216272c6963faa
 \mbox{\Hypertarget{class_abstract_ode_solver_aae60901c523d49d3507d5b640ad67a73}\label{class_abstract_ode_solver_aae60901c523d49d3507d5b640ad67a73}} 
 double \mbox{\hyperlink{class_abstract_ode_solver_aae60901c523d49d3507d5b640ad67a73}{Get\+Step\+Size}} () const
 \begin{DoxyCompactList}\small\item\em This is a step size accessor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}\label{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}} 
-virtual void {\bfseries Solve\+Equation} (std\+::ostream \&stream)
-\item 
-\mbox{\Hypertarget{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}\label{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}} 
-void {\bfseries Print\+Results} (std\+::ostream \&stream) const
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Solve\+Equation}} (std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Solves the O\+DE. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}{Print\+Results}} (std\+::ostream \&stream) const
+\begin{DoxyCompactList}\small\item\em Method that outputs the result in the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}\label{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}} 
-Eigen\+::\+Vector\+Xd {\bfseries results}
-\end{DoxyCompactItemize}
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}{results}}
+\begin{DoxyCompactList}\small\item\em Result vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}\label{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}} 
-virtual double {\bfseries step} (double y, double t)=0
+virtual double \mbox{\hyperlink{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}{step}} (double y, double t)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}\label{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+Hand\+Side}} $>$ {\bfseries f\+\_\+rhs}
-\end{DoxyCompactItemize}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+Hand\+Side}} $>$ \mbox{\hyperlink{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}{f\+\_\+rhs}}
+\begin{DoxyCompactList}\small\item\em Right hand side of the O\+DE. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Base solver class. 
+
+This is the base solver class, that allows us to solve O\+D\+Es. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_ode_solver_a03edbae822c8ff26c61f85dd6cfd3d71}\label{class_abstract_ode_solver_a03edbae822c8ff26c61f85dd6cfd3d71}} 
+\index{AbstractOdeSolver@{AbstractOdeSolver}!AbstractOdeSolver@{AbstractOdeSolver}}
+\index{AbstractOdeSolver@{AbstractOdeSolver}!AbstractOdeSolver@{AbstractOdeSolver}}
+\doxysubsubsection{\texorpdfstring{AbstractOdeSolver()}{AbstractOdeSolver()}}
+{\footnotesize\ttfamily Abstract\+Ode\+Solver\+::\+Abstract\+Ode\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for Abstract Solver. 
+
+This constructor sets all scalar parameters to 0, and initializes the right hand side to be a null pointer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}\label{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}} 
+\index{AbstractOdeSolver@{AbstractOdeSolver}!PrintResults@{PrintResults}}
+\index{PrintResults@{PrintResults}!AbstractOdeSolver@{AbstractOdeSolver}}
+\doxysubsubsection{\texorpdfstring{PrintResults()}{PrintResults()}}
+{\footnotesize\ttfamily void Abstract\+Ode\+Solver\+::\+Print\+Results (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+
+
+Method that outputs the result in the given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream to put the results. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}\label{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}} 
+\index{AbstractOdeSolver@{AbstractOdeSolver}!SolveEquation@{SolveEquation}}
+\index{SolveEquation@{SolveEquation}!AbstractOdeSolver@{AbstractOdeSolver}}
+\doxysubsubsection{\texorpdfstring{SolveEquation()}{SolveEquation()}}
+{\footnotesize\ttfamily virtual void Abstract\+Ode\+Solver\+::\+Solve\+Equation (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Solves the O\+DE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream to put the numerical solution. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}{Explicit\+Multi\+Step\+Solver}}.
+
+\mbox{\Hypertarget{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}\label{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}} 
+\index{AbstractOdeSolver@{AbstractOdeSolver}!step@{step}}
+\index{step@{step}!AbstractOdeSolver@{AbstractOdeSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Abstract\+Ode\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}{Explicit\+Multi\+Step\+Solver}}, \mbox{\hyperlink{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}{Implicit\+Solver}}, \mbox{\hyperlink{class_explicit_single_step_solver_ada3a420e30943f941d483820efbf585a}{Explicit\+Single\+Step\+Solver}}, \mbox{\hyperlink{class_explicit_solver_a8d8a93bb506f655979f0122ad06dcfdb}{Explicit\+Solver}}, \mbox{\hyperlink{class_runge_kutta_solver_ac26c010f84c9929d2cce316d1ad20007}{Runge\+Kutta\+Solver}}, \mbox{\hyperlink{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}{Adams\+Bashforth\+Solver}}, \mbox{\hyperlink{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}{Backward\+Euler\+Solver}}, and \mbox{\hyperlink{class_forward_euler_solver_a6cc4b4e80e9ef9f2c7990b5e33964cb1}{Forward\+Euler\+Solver}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}\label{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}} 
+\index{AbstractOdeSolver@{AbstractOdeSolver}!results@{results}}
+\index{results@{results}!AbstractOdeSolver@{AbstractOdeSolver}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Abstract\+Ode\+Solver\+::results}
+
+
+
+Result vector. 
+
+Vector member that stores the results of the solution of the O\+DE with the solver. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_abstract_ode_solver_8h}{Abstract\+Ode\+Solver.\+h}}\end{DoxyCompactItemize}
+include/Abstract\+Ode\+Solver.\+h\end{DoxyCompactItemize}

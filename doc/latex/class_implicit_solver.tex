@@ -10,7 +10,7 @@ Inheritance diagram for Implicit\+Solver\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}\label{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}} 
-{\bfseries Implicit\+Solver} (double tol=T\+OL, double n\+\_\+max=M\+A\+X\+\_\+\+I\+T\+ER)
+{\bfseries Implicit\+Solver} (double tol=\mbox{\hyperlink{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}{T\+OL}}, double n\+\_\+max=\mbox{\hyperlink{utils_8h_a09cfa273ee18061e71f83944582b4cd1}{M\+A\+X\+\_\+\+I\+T\+ER}})
 \item 
 \mbox{\Hypertarget{class_implicit_solver_ac5539771d21b156db98ddfbd930ceb95}\label{class_implicit_solver_ac5539771d21b156db98ddfbd930ceb95}} 
 void {\bfseries Set\+Tolerance} (double tol)
@@ -21,13 +21,41 @@ void {\bfseries Set\+Max\+Iter} (double n\+\_\+max)
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}\label{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}} 
-virtual double {\bfseries step} (double y, double t)=0
+virtual double \mbox{\hyperlink{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}{step}} (double y, double t)=0
 \item 
 \mbox{\Hypertarget{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}\label{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}} 
 double {\bfseries newton} (double yn, double tn1)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}\label{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}} 
+\index{ImplicitSolver@{ImplicitSolver}!step@{step}}
+\index{step@{step}!ImplicitSolver@{ImplicitSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Implicit\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}{Abstract\+Ode\+Solver}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}{Backward\+Euler\+Solver}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

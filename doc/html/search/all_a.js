@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solverconfig_19',['SolverConfig',['../struct_solver_config.html',1,'']]],
-  ['solverfactory_20',['SolverFactory',['../class_solver_factory.html',1,'']]]
+  ['oderighthandside_21',['ODERightHandSide',['../class_o_d_e_right_hand_side.html',1,'ODERightHandSide'],['../class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e',1,'ODERightHandSide::ODERightHandSide()']]]
 ];

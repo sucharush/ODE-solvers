@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PCSC Project: Solvers for Ordinary Differential Equations
    </div>
-   <div id="projectbrief">his project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
+   <div id="projectbrief">This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
   </td>
  </tr>
  </tbody>
@@ -90,10 +90,10 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> setInitMethod(<span class="keyword">const</span> std::string &amp;initMethod);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> getSteps() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string getInitMethod() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SolveEquation(std::ostream&amp; stream) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">SolveEquation</a>(std::ostream&amp; stream) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> step(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">step</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) = 0;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Eigen::VectorXd coeffs_;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span>:</div>
@@ -104,7 +104,9 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif //EXPLICITMULTISTEPSOLVER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_explicit_multi_step_solver_html"><div class="ttname"><a href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:13</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_af6328087b18b8e23d484dfb113acda19"><div class="ttname"><a href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">ExplicitMultiStepSolver::step</a></div><div class="ttdeci">virtual double step(double y, double t)=0</div></div>
 <div class="ttc" id="aclass_explicit_solver_html"><div class="ttname"><a href="class_explicit_solver.html">ExplicitSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitSolver.h:10</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_af0655b872b4e0e5e4b360ce18d581ecc"><div class="ttname"><a href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">ExplicitMultiStepSolver::SolveEquation</a></div><div class="ttdeci">virtual void SolveEquation(std::ostream &amp;stream) override</div><div class="ttdoc">Solves the ODE.</div></div>
 <div class="ttc" id="aclass_explicit_single_step_solver_html"><div class="ttname"><a href="class_explicit_single_step_solver.html">ExplicitSingleStepSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitSingleStepSolver.h:10</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

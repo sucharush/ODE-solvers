@@ -24,14 +24,12 @@ int {\bfseries get\+Steps} () const
 \mbox{\Hypertarget{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}\label{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}} 
 std\+::string {\bfseries get\+Init\+Method} () const
 \item 
-\mbox{\Hypertarget{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}\label{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}} 
-virtual void {\bfseries Solve\+Equation} (std\+::ostream \&stream) override
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}{Solve\+Equation}} (std\+::ostream \&stream) override
+\begin{DoxyCompactList}\small\item\em Solves the O\+DE. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}\label{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}} 
-virtual double {\bfseries step} (double y, double t)=0
+virtual double \mbox{\hyperlink{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}{step}} (double y, double t)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -40,6 +38,54 @@ virtual double {\bfseries step} (double y, double t)=0
 Eigen\+::\+Vector\+Xd {\bfseries coeffs\+\_\+}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}\label{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}} 
+\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}!SolveEquation@{SolveEquation}}
+\index{SolveEquation@{SolveEquation}!ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+\doxysubsubsection{\texorpdfstring{SolveEquation()}{SolveEquation()}}
+{\footnotesize\ttfamily virtual void Explicit\+Multi\+Step\+Solver\+::\+Solve\+Equation (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Solves the O\+DE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & output stream to put the numerical solution. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Abstract\+Ode\+Solver}}.
+
+\mbox{\Hypertarget{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}\label{class_explicit_multi_step_solver_af6328087b18b8e23d484dfb113acda19}} 
+\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}!step@{step}}
+\index{step@{step}!ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Explicit\+Multi\+Step\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_explicit_solver_a8d8a93bb506f655979f0122ad06dcfdb}{Explicit\+Solver}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}{Adams\+Bashforth\+Solver}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

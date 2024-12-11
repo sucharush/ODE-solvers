@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PCSC Project: Solvers for Ordinary Differential Equations
    </div>
-   <div id="projectbrief">his project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
+   <div id="projectbrief">This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
   </td>
  </tr>
  </tbody>
@@ -72,6 +72,11 @@ $(function() {
 <div class="title">AbstractOdeSolver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base solver class.  
+ <a href="class_abstract_ode_solver.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_abstract_ode_solver_8h_source.html">AbstractOdeSolver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbstractOdeSolver:</div>
 <div class="dyncontent">
@@ -91,17 +96,28 @@ Inheritance diagram for AbstractOdeSolver:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a03edbae822c8ff26c61f85dd6cfd3d71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a03edbae822c8ff26c61f85dd6cfd3d71">AbstractOdeSolver</a> ()</td></tr>
+<tr class="memdesc:a03edbae822c8ff26c61f85dd6cfd3d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for Abstract Solver.  <a href="class_abstract_ode_solver.html#a03edbae822c8ff26c61f85dd6cfd3d71">More...</a><br /></td></tr>
+<tr class="separator:a03edbae822c8ff26c61f85dd6cfd3d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed085a5a3e3c7dbf734635b3006da453"><td class="memItemLeft" align="right" valign="top"><a id="aed085a5a3e3c7dbf734635b3006da453"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aed085a5a3e3c7dbf734635b3006da453">~AbstractOdeSolver</a> ()</td></tr>
+<tr class="memdesc:aed085a5a3e3c7dbf734635b3006da453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for Abstract Solver. <br /></td></tr>
+<tr class="separator:aed085a5a3e3c7dbf734635b3006da453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25158e31a950d0757fdb03b814e50d06"><td class="memItemLeft" align="right" valign="top"><a id="a25158e31a950d0757fdb03b814e50d06"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetStepSize</b> (double h)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a25158e31a950d0757fdb03b814e50d06">SetStepSize</a> (double h)</td></tr>
+<tr class="memdesc:a25158e31a950d0757fdb03b814e50d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the step size for the solver. <br /></td></tr>
 <tr class="separator:a25158e31a950d0757fdb03b814e50d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa538dd3bcac6ba5c784dec442333686f"><td class="memItemLeft" align="right" valign="top"><a id="aa538dd3bcac6ba5c784dec442333686f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTimeInterval</b> (double t0, double t1)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aa538dd3bcac6ba5c784dec442333686f">SetTimeInterval</a> (double t0, double t1)</td></tr>
+<tr class="memdesc:aa538dd3bcac6ba5c784dec442333686f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the initial and final time of the ODE. <br /></td></tr>
 <tr class="separator:aa538dd3bcac6ba5c784dec442333686f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0340b4da640c8c9131363d0525d9223b"><td class="memItemLeft" align="right" valign="top"><a id="a0340b4da640c8c9131363d0525d9223b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInitialValue</b> (double y0)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a0340b4da640c8c9131363d0525d9223b">SetInitialValue</a> (double y0)</td></tr>
+<tr class="memdesc:a0340b4da640c8c9131363d0525d9223b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the initial value of the ODE. <br /></td></tr>
 <tr class="separator:a0340b4da640c8c9131363d0525d9223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b4afc9ef64780f3758461f45ec853e"><td class="memItemLeft" align="right" valign="top"><a id="a57b4afc9ef64780f3758461f45ec853e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRightHandSide</b> (std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt; f)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a57b4afc9ef64780f3758461f45ec853e">SetRightHandSide</a> (std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt; f)</td></tr>
+<tr class="memdesc:a57b4afc9ef64780f3758461f45ec853e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the right hand side of the ODE. <br /></td></tr>
 <tr class="separator:a57b4afc9ef64780f3758461f45ec853e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0086075915c39f11a22845a7f2b2d11"><td class="memItemLeft" align="right" valign="top"><a id="ac0086075915c39f11a22845a7f2b2d11"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#ac0086075915c39f11a22845a7f2b2d11">GetFinalTime</a> () const</td></tr>
@@ -119,31 +135,191 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aae60901c523d49d3507d5b640ad67a73">GetStepSize</a> () const</td></tr>
 <tr class="memdesc:aae60901c523d49d3507d5b640ad67a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a step size accessor. <br /></td></tr>
 <tr class="separator:aae60901c523d49d3507d5b640ad67a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2a8a3d7362918f63b9689b8e4e9c085"><td class="memItemLeft" align="right" valign="top"><a id="aa2a8a3d7362918f63b9689b8e4e9c085"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SolveEquation</b> (std::ostream &amp;stream)</td></tr>
+<tr class="memitem:aa2a8a3d7362918f63b9689b8e4e9c085"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085">SolveEquation</a> (std::ostream &amp;stream)</td></tr>
+<tr class="memdesc:aa2a8a3d7362918f63b9689b8e4e9c085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the ODE.  <a href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085">More...</a><br /></td></tr>
 <tr class="separator:aa2a8a3d7362918f63b9689b8e4e9c085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefe6a9a405d7dd1c00138f8e35b0e130"><td class="memItemLeft" align="right" valign="top"><a id="aefe6a9a405d7dd1c00138f8e35b0e130"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintResults</b> (std::ostream &amp;stream) const</td></tr>
+<tr class="memitem:aefe6a9a405d7dd1c00138f8e35b0e130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130">PrintResults</a> (std::ostream &amp;stream) const</td></tr>
+<tr class="memdesc:aefe6a9a405d7dd1c00138f8e35b0e130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that outputs the result in the given stream.  <a href="class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130">More...</a><br /></td></tr>
 <tr class="separator:aefe6a9a405d7dd1c00138f8e35b0e130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a908c0174d5f62852275bad7eb171e2b3"><td class="memItemLeft" align="right" valign="top"><a id="a908c0174d5f62852275bad7eb171e2b3"></a>
-Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><b>results</b></td></tr>
+<tr class="memitem:a908c0174d5f62852275bad7eb171e2b3"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a908c0174d5f62852275bad7eb171e2b3">results</a></td></tr>
+<tr class="memdesc:a908c0174d5f62852275bad7eb171e2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result vector.  <a href="class_abstract_ode_solver.html#a908c0174d5f62852275bad7eb171e2b3">More...</a><br /></td></tr>
 <tr class="separator:a908c0174d5f62852275bad7eb171e2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac6202c4ed2f042e8a9381e3759a7e332"><td class="memItemLeft" align="right" valign="top"><a id="ac6202c4ed2f042e8a9381e3759a7e332"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>step</b> (double y, double t)=0</td></tr>
+<tr class="memitem:ac6202c4ed2f042e8a9381e3759a7e332"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#ac6202c4ed2f042e8a9381e3759a7e332">step</a> (double y, double t)=0</td></tr>
 <tr class="separator:ac6202c4ed2f042e8a9381e3759a7e332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af73bcbe1180313a10d26998d9e6d5e06"><td class="memItemLeft" align="right" valign="top"><a id="af73bcbe1180313a10d26998d9e6d5e06"></a>
-std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>f_rhs</b></td></tr>
+std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#af73bcbe1180313a10d26998d9e6d5e06">f_rhs</a></td></tr>
+<tr class="memdesc:af73bcbe1180313a10d26998d9e6d5e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right hand side of the ODE. <br /></td></tr>
 <tr class="separator:af73bcbe1180313a10d26998d9e6d5e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base solver class. </p>
+<p>This is the base solver class, that allows us to solve ODEs. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a03edbae822c8ff26c61f85dd6cfd3d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03edbae822c8ff26c61f85dd6cfd3d71">&#9670;&nbsp;</a></span>AbstractOdeSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractOdeSolver::AbstractOdeSolver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor for Abstract Solver. </p>
+<p>This constructor sets all scalar parameters to 0, and initializes the right hand side to be a null pointer. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aefe6a9a405d7dd1c00138f8e35b0e130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe6a9a405d7dd1c00138f8e35b0e130">&#9670;&nbsp;</a></span>PrintResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractOdeSolver::PrintResults </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method that outputs the result in the given stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>output stream to put the results. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa2a8a3d7362918f63b9689b8e4e9c085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a8a3d7362918f63b9689b8e4e9c085">&#9670;&nbsp;</a></span>SolveEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AbstractOdeSolver::SolveEquation </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solves the ODE. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>output stream to put the numerical solution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">ExplicitMultiStepSolver</a>.</p>
+
+</div>
+</div>
+<a id="ac6202c4ed2f042e8a9381e3759a7e332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6202c4ed2f042e8a9381e3759a7e332">&#9670;&nbsp;</a></span>step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double AbstractOdeSolver::step </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the ODE.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>space variable. </td></tr>
+    <tr><td class="paramname">t</td><td>time variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085" title="Solves the ODE.">SolveEquation</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">ExplicitMultiStepSolver</a>, <a class="el" href="class_implicit_solver.html#a3d773d7645e0f74f978eb0a7afa4e380">ImplicitSolver</a>, <a class="el" href="class_explicit_single_step_solver.html#ada3a420e30943f941d483820efbf585a">ExplicitSingleStepSolver</a>, <a class="el" href="class_explicit_solver.html#a8d8a93bb506f655979f0122ad06dcfdb">ExplicitSolver</a>, <a class="el" href="class_runge_kutta_solver.html#ac26c010f84c9929d2cce316d1ad20007">RungeKuttaSolver</a>, <a class="el" href="class_adams_bashforth_solver.html#ac4c59f0b1dfeaebe1988137e73e471cf">AdamsBashforthSolver</a>, <a class="el" href="class_backward_euler_solver.html#ada7bbe94179e6f45857c55f5f51b0e2b">BackwardEulerSolver</a>, and <a class="el" href="class_forward_euler_solver.html#a6cc4b4e80e9ef9f2c7990b5e33964cb1">ForwardEulerSolver</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a908c0174d5f62852275bad7eb171e2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908c0174d5f62852275bad7eb171e2b3">&#9670;&nbsp;</a></span>results</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd AbstractOdeSolver::results</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Result vector. </p>
+<p>Vector member that stores the results of the solution of the ODE with the solver. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="_abstract_ode_solver_8h_source.html">AbstractOdeSolver.h</a></li>
 </ul>

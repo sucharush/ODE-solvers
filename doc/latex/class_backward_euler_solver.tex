@@ -9,10 +9,34 @@ Inheritance diagram for Backward\+Euler\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}\label{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}} 
-virtual double {\bfseries step} (double y, double t)
+virtual double \mbox{\hyperlink{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}{step}} (double y, double t)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}\label{class_backward_euler_solver_ada7bbe94179e6f45857c55f5f51b0e2b}} 
+\index{BackwardEulerSolver@{BackwardEulerSolver}!step@{step}}
+\index{step@{step}!BackwardEulerSolver@{BackwardEulerSolver}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual double Backward\+Euler\+Solver\+::step (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Protected (pure virtual) method that computes only one step of the scheme. This method is called iteratively to solve the O\+DE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & space variable. \\
+\hline
+{\em t} & time variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Solve\+Equation}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}{Implicit\+Solver}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

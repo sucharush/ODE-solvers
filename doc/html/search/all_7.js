@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['knownderivativerhs_16',['KnownDerivativeRHS',['../class_known_derivative_r_h_s.html',1,'']]]
+  ['implicitsolver_18',['ImplicitSolver',['../class_implicit_solver.html',1,'']]]
 ];

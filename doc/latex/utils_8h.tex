@@ -2,7 +2,7 @@
 \label{utils_8h}\index{include/utils.h@{include/utils.h}}
 
 
-Utility functions, type definitions and constants for the project.  
+Type definitions and constants for the project.  
 
 
 {\ttfamily \#include $<$functional$>$}\newline
@@ -10,35 +10,34 @@ Utility functions, type definitions and constants for the project.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{utils_8h_a804cef9b9d884e258bad2cb5f855f63e}\label{utils_8h_a804cef9b9d884e258bad2cb5f855f63e}} 
-typedef double {\bfseries var\+\_\+y}
-\item 
+typedef double \mbox{\hyperlink{utils_8h_a804cef9b9d884e258bad2cb5f855f63e}{var\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}unused\mbox{]} Typedef for the space parameter of the O\+DE \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}\label{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}} 
-typedef std\+::function$<$ double(double, double)$>$ {\bfseries Func\+Type}
-\end{DoxyCompactItemize}
+typedef std\+::function$<$ double(double, double)$>$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}}
+\begin{DoxyCompactList}\small\item\em Typedef for function type (right hand side object of the O\+DE) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}\label{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}} 
-const double {\bfseries T\+OL} = 1e-\/6
-\item 
+const double \mbox{\hyperlink{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}{T\+OL}} = 1e-\/6
+\begin{DoxyCompactList}\small\item\em Default tolerance threshold for Newton method. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{utils_8h_a09cfa273ee18061e71f83944582b4cd1}\label{utils_8h_a09cfa273ee18061e71f83944582b4cd1}} 
-const double {\bfseries M\+A\+X\+\_\+\+I\+T\+ER} = 50
-\item 
+const double \mbox{\hyperlink{utils_8h_a09cfa273ee18061e71f83944582b4cd1}{M\+A\+X\+\_\+\+I\+T\+ER}} = 50
+\begin{DoxyCompactList}\small\item\em Default maximum number of iterations for Newton method. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{utils_8h_afd8d9fcc4973d25b6f128095aa89cfa6}\label{utils_8h_afd8d9fcc4973d25b6f128095aa89cfa6}} 
-const double {\bfseries T\+O\+L\+\_\+\+S\+O\+L\+U\+T\+I\+ON} = 1e-\/2
-\item 
+const double \mbox{\hyperlink{utils_8h_afd8d9fcc4973d25b6f128095aa89cfa6}{T\+O\+L\+\_\+\+S\+O\+L\+U\+T\+I\+ON}} = 1e-\/2
+\begin{DoxyCompactList}\small\item\em Tolerance threshold for error. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{utils_8h_a5f70de3553e8d7d8cf2df18163a6d5d9}\label{utils_8h_a5f70de3553e8d7d8cf2df18163a6d5d9}} 
-const double {\bfseries T\+O\+L\+\_\+\+EQ} = 1e-\/8
-\end{DoxyCompactItemize}
+const double \mbox{\hyperlink{utils_8h_a5f70de3553e8d7d8cf2df18163a6d5d9}{T\+O\+L\+\_\+\+EQ}} = 1e-\/8
+\begin{DoxyCompactList}\small\item\em Tolerance threshold for double comparison. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Utility functions, type definitions and constants for the project. 
+Type definitions and constants for the project. 
 
 This header file contains\+:
 \begin{DoxyItemize}
 \item Commonly used type definitions ({\ttfamily typedef}) to simplify code readability.
-\item General-\/purpose utility functions (helpers) used throughout the project, reusable in different contexts.
 \item Constants variables shared across multiple modules.
 \end{DoxyItemize}
 

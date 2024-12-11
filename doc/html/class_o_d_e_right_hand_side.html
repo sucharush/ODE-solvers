@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PCSC Project: Solvers for Ordinary Differential Equations
    </div>
-   <div id="projectbrief">his project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
+   <div id="projectbrief">This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs)</div>
   </td>
  </tr>
  </tbody>
@@ -70,13 +70,18 @@ $(function() {
 <div class="title">ODERightHandSide Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base function class.  
+ <a href="class_o_d_e_right_hand_side.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_o_d_e_right_hand_side_8h_source.html">ODERightHandSide.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ODERightHandSide:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_o_d_e_right_hand_side.png" usemap="#ODERightHandSide_map" alt=""/>
   <map id="ODERightHandSide_map" name="ODERightHandSide_map">
-<area href="class_known_derivative_r_h_s.html" alt="KnownDerivativeRHS" shape="rect" coords="0,56,146,80"/>
+<area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="0,56,146,80"/>
 <area href="class_unknown_derivative_r_h_s.html" alt="UnknownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
 <area href="class_example_r_h_s.html" alt="ExampleRHS" shape="rect" coords="0,112,146,136"/>
   </map>
@@ -84,22 +89,188 @@ Inheritance diagram for ODERightHandSide:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92ede53374a8b9f244aeb013351a346e"><td class="memItemLeft" align="right" valign="top"><a id="a92ede53374a8b9f244aeb013351a346e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ODERightHandSide</b> (FuncType *fun=nullptr)</td></tr>
+<tr class="memitem:a92ede53374a8b9f244aeb013351a346e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e">ODERightHandSide</a> (<a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *fun=nullptr)</td></tr>
+<tr class="memdesc:a92ede53374a8b9f244aeb013351a346e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a function instance.  <a href="class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e">More...</a><br /></td></tr>
 <tr class="separator:a92ede53374a8b9f244aeb013351a346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d8591f21b2a68624d6ef90bc167bbc5"><td class="memItemLeft" align="right" valign="top"><a id="a1d8591f21b2a68624d6ef90bc167bbc5"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> (double y, double t) const</td></tr>
+<tr class="memitem:a2a9a664b62685ce7b0676015eeff5bcb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb">~ODERightHandSide</a> ()</td></tr>
+<tr class="memdesc:a2a9a664b62685ce7b0676015eeff5bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb">More...</a><br /></td></tr>
+<tr class="separator:a2a9a664b62685ce7b0676015eeff5bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8591f21b2a68624d6ef90bc167bbc5"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a1d8591f21b2a68624d6ef90bc167bbc5">value</a> (double y, double t) const</td></tr>
+<tr class="memdesc:a1d8591f21b2a68624d6ef90bc167bbc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the value at the function.  <a href="class_o_d_e_right_hand_side.html#a1d8591f21b2a68624d6ef90bc167bbc5">More...</a><br /></td></tr>
 <tr class="separator:a1d8591f21b2a68624d6ef90bc167bbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f04d0ff1a1f165a1734b7210dcfad05"><td class="memItemLeft" align="right" valign="top"><a id="a0f04d0ff1a1f165a1734b7210dcfad05"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>derivative</b> (double y, double t) const =0</td></tr>
+<tr class="memitem:a0f04d0ff1a1f165a1734b7210dcfad05"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a0f04d0ff1a1f165a1734b7210dcfad05">derivative</a> (double y, double t) const =0</td></tr>
+<tr class="memdesc:a0f04d0ff1a1f165a1734b7210dcfad05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the value of the derivative with respect to t.  <a href="class_o_d_e_right_hand_side.html#a0f04d0ff1a1f165a1734b7210dcfad05">More...</a><br /></td></tr>
 <tr class="separator:a0f04d0ff1a1f165a1734b7210dcfad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0e65199f1e085d986893693f4ed4058e"><td class="memItemLeft" align="right" valign="top"><a id="a0e65199f1e085d986893693f4ed4058e"></a>
-FuncType *&#160;</td><td class="memItemRight" valign="bottom"><b>f</b></td></tr>
+<a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a0e65199f1e085d986893693f4ed4058e">f</a></td></tr>
+<tr class="memdesc:a0e65199f1e085d986893693f4ed4058e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the right hand side function. <br /></td></tr>
 <tr class="separator:a0e65199f1e085d986893693f4ed4058e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base function class. </p>
+<p>This is the base function class, that allows us to represent a function (together with its derivative). </p><dl class="section note"><dt>Note</dt><dd>We kept the name <a class="el" href="class_o_d_e_right_hand_side.html" title="Base function class.">ODERightHandSide</a>, but it could have been renamed simply to Function. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a92ede53374a8b9f244aeb013351a346e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ede53374a8b9f244aeb013351a346e">&#9670;&nbsp;</a></span>ODERightHandSide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ODERightHandSide::ODERightHandSide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *&#160;</td>
+          <td class="paramname"><em>fun</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor of a function instance. </p>
+<p>This constructor sets the function object of the right hand side of the ODE. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fun</td><td>Pointer to a FuncType, by default: null pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6" title="Typedef for function type (right hand side object of the ODE)">FuncType</a> in <a class="el" href="utils_8h.html" title="Type definitions and constants for the project.">utils.h</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2a9a664b62685ce7b0676015eeff5bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a9a664b62685ce7b0676015eeff5bcb">&#9670;&nbsp;</a></span>~ODERightHandSide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ODERightHandSide::~ODERightHandSide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+<p>This destructor deallocates the memory used by the right hand side. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0f04d0ff1a1f165a1734b7210dcfad05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f04d0ff1a1f165a1734b7210dcfad05">&#9670;&nbsp;</a></span>derivative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double ODERightHandSide::derivative </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the value of the derivative with respect to t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>space variable </td></tr>
+    <tr><td class="paramname">t</td><td>time varianle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(df/dt)(y,t) </dd></dl>
+
+<p>Implemented in <a class="el" href="class_known_derivative_r_h_s.html#a0faa0a49f55702f6bca70eb1abd2cfb9">KnownDerivativeRHS</a>, and <a class="el" href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">UnknownDerivativeRHS</a>.</p>
+
+</div>
+</div>
+<a id="a1d8591f21b2a68624d6ef90bc167bbc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8591f21b2a68624d6ef90bc167bbc5">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double ODERightHandSide::value </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the value at the function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>space variable </td></tr>
+    <tr><td class="paramname">t</td><td>time varianle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>f(y,t) </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="_o_d_e_right_hand_side_8h_source.html">ODERightHandSide.h</a></li>
 </ul>
