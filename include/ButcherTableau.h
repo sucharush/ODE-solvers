@@ -34,14 +34,22 @@ ButcherTableau getButcherTableau(const int order) {
                 (Eigen::MatrixXd(2, 2) << 0.0, 0.0, 0.5, 0.0).finished(), // a matrix
                 {0.0, 1.0} // b values
         };
+    } else if (order == 3) {
+        return {
+                    {0.0, 0.5, 1.0}, // c values
+                    (Eigen::MatrixXd(3, 3) << 0.0, 0.0, 0.0,
+                                                     0.5, 0.0, 0.0,
+                                                     -1.0, 2.0, 0.0).finished(), // a matrix
+                    {1.0/6.0, 2.0/3.0, 1.0/6.0} // b values
+        };
     } else if (order == 4) {
         return {
-                {0.0, 0.5, 0.5, 1.0}, // c values
-                (Eigen::MatrixXd(4, 4) << 0.0, 0.0, 0.0, 0.0,
-                                          0.5, 0.0, 0.0, 0.0,
-                                          0.0, 0.5, 0.0, 0.0,
-                                          0.0, 0.0, 1.0, 0.0).finished(), // a matrix
-                {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} // b values
+                    {0.0, 0.5, 0.5, 1.0}, // c values
+                    (Eigen::MatrixXd(4, 4) << 0.0, 0.0, 0.0, 0.0,
+                                              0.5, 0.0, 0.0, 0.0,
+                                              0.0, 0.5, 0.0, 0.0,
+                                              0.0, 0.0, 1.0, 0.0).finished(), // a matrix
+                    {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} // b values
         };
         // Here we can add more tables for different orders
     } else {

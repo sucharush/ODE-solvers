@@ -16,7 +16,7 @@
 class RungeKuttaSolver: public ExplicitSingleStepSolver {
 public:
     /// Constructor
-    /*! This constructor sets the order of the RUnge Kutta method.
+    /*! This constructor sets the order of the Runge Kutta method.
      @param order order of the method
      */
     explicit RungeKuttaSolver(const int order): order_(order){}
