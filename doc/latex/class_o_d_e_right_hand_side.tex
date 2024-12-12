@@ -84,7 +84,7 @@ This destructor deallocates the memory used by the right hand side.
 
 Computes the value of the derivative with respect to t. 
 
-
+Depending on the function, it will either call the real derivative, or approximate it. 
 \begin{DoxyParams}{Parameters}
 {\em y} & space variable \\
 \hline
@@ -92,7 +92,7 @@ Computes the value of the derivative with respect to t.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-(df/dt)(y,t) 
+(df/dt)(y,t) or an approximation 
 \end{DoxyReturn}
 
 
@@ -122,4 +122,4 @@ f(y,t)
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/O\+D\+E\+Right\+Hand\+Side.\+h\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_o_d_e_right_hand_side_8h}{O\+D\+E\+Right\+Hand\+Side.\+h}}\end{DoxyCompactItemize}

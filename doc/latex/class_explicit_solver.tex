@@ -1,5 +1,14 @@
 \hypertarget{class_explicit_solver}{}\doxysection{Explicit\+Solver Class Reference}
 \label{class_explicit_solver}\index{ExplicitSolver@{ExplicitSolver}}
+
+
+Class for explicit solvers.  
+
+
+
+
+{\ttfamily \#include $<$Explicit\+Solver.\+h$>$}
+
 Inheritance diagram for Explicit\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,6 +26,14 @@ Inheritance diagram for Explicit\+Solver\+:\begin{figure}[H]
 virtual double \mbox{\hyperlink{class_explicit_solver_a8d8a93bb506f655979f0122ad06dcfdb}{step}} (double y, double t)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for explicit solvers. 
+
+This is the base function class, that allows us to represent a function (together with its derivative). \begin{DoxyNote}{Note}
+We kept the name \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+Hand\+Side}}, but it could have been renamed simply to Function. 
+\end{DoxyNote}
 
 
 \doxysubsection{Member Function Documentation}

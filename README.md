@@ -148,9 +148,9 @@ The user would also need to specify if they want to use the known derivative for
 
 
 ### Dimension of the ODE
-The main limitation of our project is that it focuses strictly on ODEs that are from $ R x  R$ to $ R$, i.e. $y,t$ real and $f(t,y)$ real.
+The main limitation of our project is that it focuses strictly on ODEs that are from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$, i.e. $y,t$ are real and so is $f(t,y)$.
 Possible extensions could be 
-- allowing $y$ to be a vector, i.e. in $R^n$
+- allowing $y$ to be a vector, i.e. in $\mathbb{R}^n$
 - allowing $f$ to be a vector-valued function, i.e. solve a system of ODEs
 - allowing $y$ to be a complex number, or a complex-valued vector, etc.
 

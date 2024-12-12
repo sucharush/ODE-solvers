@@ -14,8 +14,6 @@ This is a class that represents function for which we know the derivative with r
 
 class KnownDerivativeRHS: public ODERightHandSide {
 public:
-    // Constructor
-    //KnownDerivativeRHS(): df(nullptr) {}
     //! Constructor
     /*!
     This constructor sets the function and its derivative. By default, non-specified functions are set to null pointers.
@@ -24,10 +22,20 @@ public:
     */
     KnownDerivativeRHS(FuncType* func = nullptr, FuncType* deriv = nullptr);
     /// Destructor
+    /*! This destructor deallocates the memory used by the derivative.
+     * The memory used by the function is deallocated in the parent's destructor.
+    */
     virtual ~KnownDerivativeRHS();
+    /// Overriden implementation of the derivative evaluation.
+    /*!
+    This computes the exact value of the derivative at (y,t) with the given df.
+    @param y space variable
+    @param t time varianle
+    @return (df/dt)(y,t)
+    */
     virtual double derivative(double y, double t) const override;
 protected:
-    FuncType* df;
+    FuncType* df; //!< Pointer to the derivative (wrt t) of the right hand side function.
 };
 
 #endif //KNOWNDERIVATIVERHS_H

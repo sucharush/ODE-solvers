@@ -77,30 +77,32 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef UNKNOWNDERIVATIVERHS_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define UNKNOWNDERIVATIVERHS_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;ODERightHandSide.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_o_d_e_right_hand_side_8h.html">ODERightHandSide.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_unknown_derivative_r_h_s.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a> : <span class="keyword">public</span> <a class="code" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a>(<a class="code" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a>* fun = <span class="keyword">nullptr</span>, <span class="keywordtype">double</span> h = 1e-8);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a>() { <span class="keyword">delete</span> <a class="code" href="class_o_d_e_right_hand_side.html#a0e65199f1e085d986893693f4ed4058e">f</a>;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">derivative</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// member that defines the precision for the approximation of df</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> stepForDf;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_unknown_derivative_r_h_s.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a> : <span class="keyword">public</span> <a class="code" href="class_o_d_e_right_hand_side.html">ODERightHandSide</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_unknown_derivative_r_h_s.html#a1dfc42ea7c896b81be2846655dcf89a0">UnknownDerivativeRHS</a>(<a class="code" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a>* func = <span class="keyword">nullptr</span>, <span class="keywordtype">double</span> h = 1e-8);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f">   27</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f">~UnknownDerivativeRHS</a>() {}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">derivative</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">double</span> stepForDf; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_unknown_derivative_r_h_s_html_ae54bbcf21738dbe0a6af12f09430e73a"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">UnknownDerivativeRHS::derivative</a></div><div class="ttdeci">virtual double derivative(double y, double t) const override</div><div class="ttdoc">Computes the value of the derivative with respect to t.</div></div>
+<div class="ttc" id="a_o_d_e_right_hand_side_8h_html"><div class="ttname"><a href="_o_d_e_right_hand_side_8h.html">ODERightHandSide.h</a></div><div class="ttdoc">Header file for the base function class.</div></div>
+<div class="ttc" id="aclass_unknown_derivative_r_h_s_html_ae54bbcf21738dbe0a6af12f09430e73a"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">UnknownDerivativeRHS::derivative</a></div><div class="ttdeci">virtual double derivative(double y, double t) const override</div><div class="ttdoc">Overriden implementation of the derivative evaluation.</div></div>
 <div class="ttc" id="autils_8h_html_a4f6bfdc8a2afc3edc1b432c5440b6ca6"><div class="ttname"><a href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a></div><div class="ttdeci">std::function&lt; double(double, double)&gt; FuncType</div><div class="ttdoc">Typedef for function type (right hand side object of the ODE)</div><div class="ttdef"><b>Definition:</b> utils.h:29</div></div>
+<div class="ttc" id="aclass_unknown_derivative_r_h_s_html_a1dfc42ea7c896b81be2846655dcf89a0"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html#a1dfc42ea7c896b81be2846655dcf89a0">UnknownDerivativeRHS::UnknownDerivativeRHS</a></div><div class="ttdeci">UnknownDerivativeRHS(FuncType *func=nullptr, double h=1e-8)</div><div class="ttdoc">Constructor.</div></div>
 <div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div><div class="ttdoc">Type definitions and constants for the project.</div></div>
-<div class="ttc" id="aclass_o_d_e_right_hand_side_html"><div class="ttname"><a href="class_o_d_e_right_hand_side.html">ODERightHandSide</a></div><div class="ttdoc">Base function class.</div><div class="ttdef"><b>Definition:</b> ODERightHandSide.h:17</div></div>
-<div class="ttc" id="aclass_o_d_e_right_hand_side_html_a0e65199f1e085d986893693f4ed4058e"><div class="ttname"><a href="class_o_d_e_right_hand_side.html#a0e65199f1e085d986893693f4ed4058e">ODERightHandSide::f</a></div><div class="ttdeci">FuncType * f</div><div class="ttdoc">Pointer to the right hand side function.</div><div class="ttdef"><b>Definition:</b> ODERightHandSide.h:50</div></div>
-<div class="ttc" id="aclass_unknown_derivative_r_h_s_html"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a></div><div class="ttdef"><b>Definition:</b> UnknownDerivativeRHS.h:12</div></div>
+<div class="ttc" id="aclass_o_d_e_right_hand_side_html"><div class="ttname"><a href="class_o_d_e_right_hand_side.html">ODERightHandSide</a></div><div class="ttdoc">Base function class.</div><div class="ttdef"><b>Definition:</b> ODERightHandSide.h:20</div></div>
+<div class="ttc" id="aclass_unknown_derivative_r_h_s_html_aeca0b89d37ede2e7f49ae4b8e8cc674f"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f">UnknownDerivativeRHS::~UnknownDerivativeRHS</a></div><div class="ttdeci">virtual ~UnknownDerivativeRHS()</div><div class="ttdoc">Destructor (the memory for f is deallocated in the parent's destructor)</div><div class="ttdef"><b>Definition:</b> UnknownDerivativeRHS.h:27</div></div>
+<div class="ttc" id="aclass_unknown_derivative_r_h_s_html"><div class="ttname"><a href="class_unknown_derivative_r_h_s.html">UnknownDerivativeRHS</a></div><div class="ttdoc">Class for function with unknown derivative.</div><div class="ttdef"><b>Definition:</b> UnknownDerivativeRHS.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

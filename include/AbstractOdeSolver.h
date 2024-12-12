@@ -1,6 +1,9 @@
-//
-// Created by csy on 2024/11/22.
-//
+/**
+ * @file AbstractOdeSolver.h
+ * @brief Header file for the base solver class.
+ * @author csy
+ * @date 22.11.24.
+ */
 
 #ifndef ABSTRACTODESOLVER_H
 #define ABSTRACTODESOLVER_H

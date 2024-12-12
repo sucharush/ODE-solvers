@@ -1,5 +1,14 @@
 \hypertarget{class_unknown_derivative_r_h_s}{}\doxysection{Unknown\+Derivative\+R\+HS Class Reference}
 \label{class_unknown_derivative_r_h_s}\index{UnknownDerivativeRHS@{UnknownDerivativeRHS}}
+
+
+Class for function with unknown derivative.  
+
+
+
+
+{\ttfamily \#include $<$Unknown\+Derivative\+R\+H\+S.\+h$>$}
+
 Inheritance diagram for Unknown\+Derivative\+R\+HS\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +18,39 @@ Inheritance diagram for Unknown\+Derivative\+R\+HS\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_unknown_derivative_r_h_s_a78322148169bed8170559d68e05a6b03}\label{class_unknown_derivative_r_h_s_a78322148169bed8170559d68e05a6b03}} 
-{\bfseries Unknown\+Derivative\+R\+HS} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$fun=nullptr, double h=1e-\/8)
-\item 
+\mbox{\hyperlink{class_unknown_derivative_r_h_s_a1dfc42ea7c896b81be2846655dcf89a0}{Unknown\+Derivative\+R\+HS}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$func=nullptr, double h=1e-\/8)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unknown_derivative_r_h_s_aeca0b89d37ede2e7f49ae4b8e8cc674f}\label{class_unknown_derivative_r_h_s_aeca0b89d37ede2e7f49ae4b8e8cc674f}} 
+virtual \mbox{\hyperlink{class_unknown_derivative_r_h_s_aeca0b89d37ede2e7f49ae4b8e8cc674f}{$\sim$\+Unknown\+Derivative\+R\+HS}} ()
+\begin{DoxyCompactList}\small\item\em Destructor (the memory for f is deallocated in the parent\textquotesingle{}s destructor) \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_unknown_derivative_r_h_s_ae54bbcf21738dbe0a6af12f09430e73a}{derivative}} (double y, double t) const override
-\begin{DoxyCompactList}\small\item\em Computes the value of the derivative with respect to t. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overriden implementation of the derivative evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for function with unknown derivative. 
+
+This is a class that represents function for which we don\textquotesingle{}t know the derivative with respect to t. The derivative is approximated with a centered difference scheme. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_unknown_derivative_r_h_s_a1dfc42ea7c896b81be2846655dcf89a0}\label{class_unknown_derivative_r_h_s_a1dfc42ea7c896b81be2846655dcf89a0}} 
+\index{UnknownDerivativeRHS@{UnknownDerivativeRHS}!UnknownDerivativeRHS@{UnknownDerivativeRHS}}
+\index{UnknownDerivativeRHS@{UnknownDerivativeRHS}!UnknownDerivativeRHS@{UnknownDerivativeRHS}}
+\doxysubsubsection{\texorpdfstring{UnknownDerivativeRHS()}{UnknownDerivativeRHS()}}
+{\footnotesize\ttfamily Unknown\+Derivative\+R\+H\+S\+::\+Unknown\+Derivative\+R\+HS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$}]{func = {\ttfamily nullptr},  }\item[{double}]{h = {\ttfamily 1e-\/8} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+This constructor sets the function and its derivative and the step size for the approximation scheme. 
+\begin{DoxyParams}{Parameters}
+{\em func} & (pointer on) function object for the right hand side, default\+: null pointer \\
+\hline
+{\em h} & step size for the approximation scheme \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -26,9 +62,9 @@ virtual double \mbox{\hyperlink{class_unknown_derivative_r_h_s_ae54bbcf21738dbe0
 
 
 
-Computes the value of the derivative with respect to t. 
+Overriden implementation of the derivative evaluation. 
 
-
+This computes an approximation of the derivative, using a centered difference scheme. 
 \begin{DoxyParams}{Parameters}
 {\em y} & space variable \\
 \hline
@@ -36,7 +72,7 @@ Computes the value of the derivative with respect to t.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-(df/dt)(y,t) 
+an approximation of (df/dt)(y,t) 
 \end{DoxyReturn}
 
 

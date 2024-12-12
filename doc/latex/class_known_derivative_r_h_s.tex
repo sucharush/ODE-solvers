@@ -20,17 +20,16 @@ Inheritance diagram for Known\+Derivative\+R\+HS\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}{Known\+Derivative\+R\+HS}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$func=nullptr, \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$deriv=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}\label{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}} 
 virtual \mbox{\hyperlink{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}{$\sim$\+Known\+Derivative\+R\+HS}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}{derivative}} (double y, double t) const override
-\begin{DoxyCompactList}\small\item\em Computes the value of the derivative with respect to t. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overriden implementation of the derivative evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}\label{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}} 
-\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$ {\bfseries df}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$ \mbox{\hyperlink{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}{df}}
+\begin{DoxyCompactList}\small\item\em Pointer to the derivative (wrt t) of the right hand side function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -56,7 +55,17 @@ This constructor sets the function and its derivative. By default, non-\/specifi
 {\em deriv} & (pointer on) function object for the derivative of the right hand side \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}\label{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}} 
+\index{KnownDerivativeRHS@{KnownDerivativeRHS}!````~KnownDerivativeRHS@{$\sim$KnownDerivativeRHS}}
+\index{````~KnownDerivativeRHS@{$\sim$KnownDerivativeRHS}!KnownDerivativeRHS@{KnownDerivativeRHS}}
+\doxysubsubsection{\texorpdfstring{$\sim$KnownDerivativeRHS()}{~KnownDerivativeRHS()}}
+{\footnotesize\ttfamily virtual Known\+Derivative\+R\+H\+S\+::$\sim$\+Known\+Derivative\+R\+HS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Destructor. 
+
+This destructor deallocates the memory used by the derivative. The memory used by the function is deallocated in the parent\textquotesingle{}s destructor. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}\label{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}} 
@@ -67,9 +76,9 @@ This constructor sets the function and its derivative. By default, non-\/specifi
 
 
 
-Computes the value of the derivative with respect to t. 
+Overriden implementation of the derivative evaluation. 
 
-
+This computes the exact value of the derivative at (y,t) with the given df. 
 \begin{DoxyParams}{Parameters}
 {\em y} & space variable \\
 \hline

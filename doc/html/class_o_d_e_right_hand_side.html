@@ -82,7 +82,7 @@ Inheritance diagram for ODERightHandSide:</div>
   <img src="class_o_d_e_right_hand_side.png" usemap="#ODERightHandSide_map" alt=""/>
   <map id="ODERightHandSide_map" name="ODERightHandSide_map">
 <area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="0,56,146,80"/>
-<area href="class_unknown_derivative_r_h_s.html" alt="UnknownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
+<area href="class_unknown_derivative_r_h_s.html" title="Class for function with unknown derivative." alt="UnknownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
 <area href="class_example_r_h_s.html" alt="ExampleRHS" shape="rect" coords="0,112,146,136"/>
   </map>
 </div></div>
@@ -212,14 +212,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the value of the derivative with respect to t. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Depending on the function, it will either call the real derivative, or approximate it. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">y</td><td>space variable </td></tr>
     <tr><td class="paramname">t</td><td>time varianle </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>(df/dt)(y,t) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>(df/dt)(y,t) or an approximation </dd></dl>
 
 <p>Implemented in <a class="el" href="class_known_derivative_r_h_s.html#a0faa0a49f55702f6bca70eb1abd2cfb9">KnownDerivativeRHS</a>, and <a class="el" href="class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a">UnknownDerivativeRHS</a>.</p>
 

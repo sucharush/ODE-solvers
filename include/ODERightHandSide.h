@@ -1,6 +1,9 @@
-//
-// Created by csy on 2024/11/22.
-//
+/**
+ * @file ODERightHandSide.h
+ * @brief Header file for the base function class.
+ * @author csy
+ * @date 22.11.24.
+ */
 
 #ifndef ODERIGHTHANDSIDE_H
 #define ODERIGHTHANDSIDE_H
@@ -41,9 +44,10 @@ public:
 
     /// Computes the value of the derivative with respect to t.
     /*!
+    Depending on the function, it will either call the real derivative, or approximate it.
     @param y space variable
     @param t time varianle
-    @return (df/dt)(y,t)
+    @return (df/dt)(y,t) or an approximation
     */
     virtual double derivative(double y, double t) const = 0;
 protected:

@@ -7,6 +7,12 @@
 
 #include "AbstractOdeSolver.h"
 
+//!  Class for explicit solvers.
+/*!
+This is the base function class, that allows us to represent a function (together with its derivative).
+@note We kept the name ODERightHandSide, but it could have been renamed simply to Function.
+*/
+
 class ExplicitSolver : public AbstractOdeSolver {
   public:
     using AbstractOdeSolver::AbstractOdeSolver;
