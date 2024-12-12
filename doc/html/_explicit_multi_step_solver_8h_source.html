@@ -70,44 +70,52 @@ $(function() {
 <div class="title">ExplicitMultiStepSolver.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by csy on 2024/12/5.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef EXPLICITMULTISTEPSOLVER_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define EXPLICITMULTISTEPSOLVER_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;ExplicitSolver.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;ExplicitSingleStepSolver.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_explicit_multi_step_solver.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a> : <span class="keyword">public</span> <a class="code" href="class_explicit_solver.html">ExplicitSolver</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a>(<span class="keywordtype">int</span> steps, <span class="keyword">const</span> std::string &amp;initMethod);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> setSteps(<span class="keywordtype">int</span> steps);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> setInitMethod(<span class="keyword">const</span> std::string &amp;initMethod);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> getSteps() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string getInitMethod() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">SolveEquation</a>(std::ostream&amp; stream) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">step</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) = 0;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Eigen::VectorXd coeffs_;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> setupSolver(<a class="code" href="class_explicit_single_step_solver.html">ExplicitSingleStepSolver</a>&amp; solver);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> steps_;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string initMethod_;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif //EXPLICITMULTISTEPSOLVER_H</span></div>
+<a href="_explicit_multi_step_solver_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef EXPLICITMULTISTEPSOLVER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define EXPLICITMULTISTEPSOLVER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_explicit_solver_8h.html">ExplicitSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ExplicitSingleStepSolver.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_explicit_multi_step_solver.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a> : <span class="keyword">public</span> <a class="code" href="class_explicit_solver.html">ExplicitSolver</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_explicit_multi_step_solver.html#a854a6da1ea5ac11f02f15748ada8638d">ExplicitMultiStepSolver</a>(<span class="keywordtype">int</span> steps, <span class="keyword">const</span> std::string &amp;initMethod);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_explicit_multi_step_solver.html#a624aeaefaccb5fbc1a3a4912ccff3124">~ExplicitMultiStepSolver</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_explicit_multi_step_solver.html#a82160a1eafea81eaac1c0413184aaddb">setSteps</a>(<span class="keywordtype">int</span> steps);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_explicit_multi_step_solver.html#ac762c34e8f32c03e4a8b8cf162be25bc">setInitMethod</a>(<span class="keyword">const</span> std::string &amp;initMethod);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_explicit_multi_step_solver.html#a306332016025b771244b70ee34b42cdb">getSteps</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string <a class="code" href="class_explicit_multi_step_solver.html#a1e0d0b39f69550e7d4af39fdfc21eb92">getInitMethod</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">SolveEquation</a>(std::ostream&amp; stream) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">step</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_explicit_multi_step_solver.html#ae1bffc07eba9f1dfcd7643036cb9a464">   44</a></span>&#160;    Eigen::VectorXd <a class="code" href="class_explicit_multi_step_solver.html#ae1bffc07eba9f1dfcd7643036cb9a464">coeffs_</a>; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> setupSolver(<a class="code" href="class_explicit_single_step_solver.html">ExplicitSingleStepSolver</a>&amp; solver);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> steps_; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::string initMethod_; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif //EXPLICITMULTISTEPSOLVER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_explicit_multi_step_solver_html"><div class="ttname"><a href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:13</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_a1e0d0b39f69550e7d4af39fdfc21eb92"><div class="ttname"><a href="class_explicit_multi_step_solver.html#a1e0d0b39f69550e7d4af39fdfc21eb92">ExplicitMultiStepSolver::getInitMethod</a></div><div class="ttdeci">std::string getInitMethod() const</div><div class="ttdoc">This is an accessor to the initial method.</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html"><div class="ttname"><a href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a></div><div class="ttdoc">(Abstract) class for explicit multi-step solvers</div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:17</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_a82160a1eafea81eaac1c0413184aaddb"><div class="ttname"><a href="class_explicit_multi_step_solver.html#a82160a1eafea81eaac1c0413184aaddb">ExplicitMultiStepSolver::setSteps</a></div><div class="ttdeci">void setSteps(int steps)</div><div class="ttdoc">This sets the order of the solver.</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_ae1bffc07eba9f1dfcd7643036cb9a464"><div class="ttname"><a href="class_explicit_multi_step_solver.html#ae1bffc07eba9f1dfcd7643036cb9a464">ExplicitMultiStepSolver::coeffs_</a></div><div class="ttdeci">Eigen::VectorXd coeffs_</div><div class="ttdoc">Coefficients (weights) that determine the method.</div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:44</div></div>
 <div class="ttc" id="aclass_explicit_multi_step_solver_html_af6328087b18b8e23d484dfb113acda19"><div class="ttname"><a href="class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19">ExplicitMultiStepSolver::step</a></div><div class="ttdeci">virtual double step(double y, double t)=0</div></div>
-<div class="ttc" id="aclass_explicit_solver_html"><div class="ttname"><a href="class_explicit_solver.html">ExplicitSolver</a></div><div class="ttdoc">Class for explicit solvers.</div><div class="ttdef"><b>Definition:</b> ExplicitSolver.h:16</div></div>
-<div class="ttc" id="aclass_explicit_multi_step_solver_html_af0655b872b4e0e5e4b360ce18d581ecc"><div class="ttname"><a href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">ExplicitMultiStepSolver::SolveEquation</a></div><div class="ttdeci">virtual void SolveEquation(std::ostream &amp;stream) override</div><div class="ttdoc">Solves the ODE.</div></div>
+<div class="ttc" id="aclass_explicit_solver_html"><div class="ttname"><a href="class_explicit_solver.html">ExplicitSolver</a></div><div class="ttdoc">Class for explicit solvers. It is an abstract class.</div><div class="ttdef"><b>Definition:</b> ExplicitSolver.h:14</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_af0655b872b4e0e5e4b360ce18d581ecc"><div class="ttname"><a href="class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc">ExplicitMultiStepSolver::SolveEquation</a></div><div class="ttdeci">virtual void SolveEquation(std::ostream &amp;stream) override</div><div class="ttdoc">Overriden implementation of the solver.</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_a624aeaefaccb5fbc1a3a4912ccff3124"><div class="ttname"><a href="class_explicit_multi_step_solver.html#a624aeaefaccb5fbc1a3a4912ccff3124">ExplicitMultiStepSolver::~ExplicitMultiStepSolver</a></div><div class="ttdeci">virtual ~ExplicitMultiStepSolver()</div><div class="ttdoc">Simple destructor.</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_a306332016025b771244b70ee34b42cdb"><div class="ttname"><a href="class_explicit_multi_step_solver.html#a306332016025b771244b70ee34b42cdb">ExplicitMultiStepSolver::getSteps</a></div><div class="ttdeci">int getSteps() const</div><div class="ttdoc">This is an accessor to the steps number of the solver (its order)</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_a854a6da1ea5ac11f02f15748ada8638d"><div class="ttname"><a href="class_explicit_multi_step_solver.html#a854a6da1ea5ac11f02f15748ada8638d">ExplicitMultiStepSolver::ExplicitMultiStepSolver</a></div><div class="ttdeci">ExplicitMultiStepSolver(int steps, const std::string &amp;initMethod)</div><div class="ttdoc">Constructor.</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html_ac762c34e8f32c03e4a8b8cf162be25bc"><div class="ttname"><a href="class_explicit_multi_step_solver.html#ac762c34e8f32c03e4a8b8cf162be25bc">ExplicitMultiStepSolver::setInitMethod</a></div><div class="ttdeci">void setInitMethod(const std::string &amp;initMethod)</div><div class="ttdoc">This sets the initial auxiliary method to compute the initial values.</div></div>
 <div class="ttc" id="aclass_explicit_single_step_solver_html"><div class="ttname"><a href="class_explicit_single_step_solver.html">ExplicitSingleStepSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitSingleStepSolver.h:10</div></div>
+<div class="ttc" id="a_explicit_solver_8h_html"><div class="ttname"><a href="_explicit_solver_8h.html">ExplicitSolver.h</a></div><div class="ttdoc">Header file for the explicit solver class.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

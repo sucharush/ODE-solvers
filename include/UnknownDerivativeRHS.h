@@ -1,7 +1,9 @@
-//
-// Created by csy on 2024/11/22.
-//
-
+/**
+ * @file UnknownDerivativeRHS.h
+ * @brief Function with unknown derivative
+ * @author ebaup
+ * @date 22.11.24.
+ */
 #ifndef UNKNOWNDERIVATIVERHS_H
 #define UNKNOWNDERIVATIVERHS_H
 

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['unknownderivativerhs_40',['UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html',1,'UnknownDerivativeRHS'],['../class_unknown_derivative_r_h_s.html#a1dfc42ea7c896b81be2846655dcf89a0',1,'UnknownDerivativeRHS::UnknownDerivativeRHS()']]],
-  ['utils_2eh_41',['utils.h',['../utils_8h.html',1,'']]]
+  ['tol_51',['TOL',['../utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2',1,'utils.h']]],
+  ['tol_5feq_52',['TOL_EQ',['../utils_8h.html#a5f70de3553e8d7d8cf2df18163a6d5d9',1,'utils.h']]],
+  ['tol_5fsolution_53',['TOL_SOLUTION',['../utils_8h.html#afd8d9fcc4973d25b6f128095aa89cfa6',1,'utils.h']]]
 ];

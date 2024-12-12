@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['printresults_25',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]]
+  ['oderighthandside_32',['ODERightHandSide',['../class_o_d_e_right_hand_side.html',1,'ODERightHandSide'],['../class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e',1,'ODERightHandSide::ODERightHandSide()']]],
+  ['oderighthandside_2eh_33',['ODERightHandSide.h',['../_o_d_e_right_hand_side_8h.html',1,'']]]
 ];

@@ -1,6 +1,6 @@
 /**
  * @file AbstractOdeSolver.h
- * @brief Header file for the base solver class.
+ * @brief Base solver class.
  * @author csy
  * @date 22.11.24.
  */
@@ -13,7 +13,7 @@
 #include <memory>
 #include "ODERightHandSide.h"
 
-//!  Base solver class.
+//!  (Abtrsact) base solver class.
 /*!
 This is the base solver class, that allows us to solve ODEs.
 */

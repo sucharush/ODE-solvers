@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['df_89',['df',['../class_known_derivative_r_h_s.html#ad36ca5282cf79c4a41791727038c0419',1,'KnownDerivativeRHS']]]
+  ['coeffs_5f_124',['coeffs_',['../class_explicit_multi_step_solver.html#ae1bffc07eba9f1dfcd7643036cb9a464',1,'ExplicitMultiStepSolver']]]
 ];

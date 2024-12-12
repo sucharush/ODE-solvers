@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['results_26',['results',['../class_abstract_ode_solver.html#a908c0174d5f62852275bad7eb171e2b3',1,'AbstractOdeSolver']]],
-  ['rungekuttasolver_27',['RungeKuttaSolver',['../class_runge_kutta_solver.html',1,'']]]
+  ['printresults_34',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]]
 ];

@@ -1,6 +1,9 @@
-//
-// Created by ebaup on 07.12.24.
-//
+/**
+ * @file KnownDerivativeRHS.h
+ * @brief Function with known derivative
+ * @author ebaup
+ * @date 07.12.24.
+ */
 
 #ifndef KNOWNDERIVATIVERHS_H
 #define KNOWNDERIVATIVERHS_H

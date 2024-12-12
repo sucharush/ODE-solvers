@@ -1,20 +1,19 @@
-//
-// Created by csy on 2024/12/5.
-//
-
+/**
+ * @file ExplicitSolver.h
+ * @brief Explicit solver class.
+ * @author csy
+ * @date 05.12.24.
+ */
 #ifndef EXPLICITSOLVER_H
 #define EXPLICITSOLVER_H
 
 #include "AbstractOdeSolver.h"
 
-//!  Class for explicit solvers.
-/*!
-This is the base function class, that allows us to represent a function (together with its derivative).
-@note We kept the name ODERightHandSide, but it could have been renamed simply to Function.
-*/
+//!  Class for explicit solvers. It is an abstract class.
 
 class ExplicitSolver : public AbstractOdeSolver {
   public:
+    /// Constructor from the parent used
     using AbstractOdeSolver::AbstractOdeSolver;
    protected:
      virtual double step(double y, double t) = 0;

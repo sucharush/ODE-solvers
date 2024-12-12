@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unknownderivativerhs_83',['UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#a1dfc42ea7c896b81be2846655dcf89a0',1,'UnknownDerivativeRHS']]]
+  ['newton_102',['newton',['../class_implicit_solver.html#a7f6f44fec519212aeae6b71533419601',1,'ImplicitSolver']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['getfinaltime_70',['GetFinalTime',['../class_abstract_ode_solver.html#ac0086075915c39f11a22845a7f2b2d11',1,'AbstractOdeSolver']]],
-  ['getinitialtime_71',['GetInitialTime',['../class_abstract_ode_solver.html#a7339e2a431b3b8ca75e9ad40092267a6',1,'AbstractOdeSolver']]],
-  ['getinitialvalue_72',['GetInitialValue',['../class_abstract_ode_solver.html#a602d6b6170573d1216272c6963faac76',1,'AbstractOdeSolver']]],
-  ['getstepsize_73',['GetStepSize',['../class_abstract_ode_solver.html#aae60901c523d49d3507d5b640ad67a73',1,'AbstractOdeSolver']]]
+  ['derivative_92',['derivative',['../class_known_derivative_r_h_s.html#a0faa0a49f55702f6bca70eb1abd2cfb9',1,'KnownDerivativeRHS::derivative()'],['../class_o_d_e_right_hand_side.html#a0f04d0ff1a1f165a1734b7210dcfad05',1,'ODERightHandSide::derivative()'],['../class_unknown_derivative_r_h_s.html#ae54bbcf21738dbe0a6af12f09430e73a',1,'UnknownDerivativeRHS::derivative()']]]
 ];

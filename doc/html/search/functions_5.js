@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printresults_76',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]]
+  ['implicitsolver_100',['ImplicitSolver',['../class_implicit_solver.html#a0cda5780c1b11f3ec3e587879abf9e47',1,'ImplicitSolver']]]
 ];

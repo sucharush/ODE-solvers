@@ -1,5 +1,14 @@
 \hypertarget{class_implicit_solver}{}\doxysection{Implicit\+Solver Class Reference}
 \label{class_implicit_solver}\index{ImplicitSolver@{ImplicitSolver}}
+
+
+(Abstract) class for implicit solvers.  
+
+
+
+
+{\ttfamily \#include $<$Implicit\+Solver.\+h$>$}
+
 Inheritance diagram for Implicit\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,27 +18,68 @@ Inheritance diagram for Implicit\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}\label{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}} 
-{\bfseries Implicit\+Solver} (double tol=\mbox{\hyperlink{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}{T\+OL}}, double n\+\_\+max=\mbox{\hyperlink{utils_8h_a09cfa273ee18061e71f83944582b4cd1}{M\+A\+X\+\_\+\+I\+T\+ER}})
-\item 
+\mbox{\hyperlink{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}{Implicit\+Solver}} (double tol=\mbox{\hyperlink{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}{T\+OL}}, double n\+\_\+max=\mbox{\hyperlink{utils_8h_a09cfa273ee18061e71f83944582b4cd1}{M\+A\+X\+\_\+\+I\+T\+ER}})
+\begin{DoxyCompactList}\small\item\em Simple constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_implicit_solver_ac5539771d21b156db98ddfbd930ceb95}\label{class_implicit_solver_ac5539771d21b156db98ddfbd930ceb95}} 
-void {\bfseries Set\+Tolerance} (double tol)
-\item 
+void \mbox{\hyperlink{class_implicit_solver_ac5539771d21b156db98ddfbd930ceb95}{Set\+Tolerance}} (double tol)
+\begin{DoxyCompactList}\small\item\em Sets the tolerance criteria for Newton. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_implicit_solver_a6e9dc50173db44c3c2ab1f640382ed05}\label{class_implicit_solver_a6e9dc50173db44c3c2ab1f640382ed05}} 
-void {\bfseries Set\+Max\+Iter} (double n\+\_\+max)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_implicit_solver_a6e9dc50173db44c3c2ab1f640382ed05}{Set\+Max\+Iter}} (double n\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Sets the maximum iteration number for Newton. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual double \mbox{\hyperlink{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}{step}} (double y, double t)=0
 \item 
-\mbox{\Hypertarget{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}\label{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}} 
-double {\bfseries newton} (double yn, double tn1)
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}{newton}} (double yn, double tn1)
+\begin{DoxyCompactList}\small\item\em Newton\textquotesingle{}s method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+(Abstract) class for implicit solvers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}\label{class_implicit_solver_a0cda5780c1b11f3ec3e587879abf9e47}} 
+\index{ImplicitSolver@{ImplicitSolver}!ImplicitSolver@{ImplicitSolver}}
+\index{ImplicitSolver@{ImplicitSolver}!ImplicitSolver@{ImplicitSolver}}
+\doxysubsubsection{\texorpdfstring{ImplicitSolver()}{ImplicitSolver()}}
+{\footnotesize\ttfamily Implicit\+Solver\+::\+Implicit\+Solver (\begin{DoxyParamCaption}\item[{double}]{tol = {\ttfamily \mbox{\hyperlink{utils_8h_a826e1b6d8f7888032cded335c8f5a8b2}{T\+OL}}},  }\item[{double}]{n\+\_\+max = {\ttfamily \mbox{\hyperlink{utils_8h_a09cfa273ee18061e71f83944582b4cd1}{M\+A\+X\+\_\+\+I\+T\+ER}}} }\end{DoxyParamCaption})}
+
+
+
+Simple constructor. 
+
+This constructor sets the tolerance and maximum iterations variable, and use default parameters if they are unspecified. 
+\begin{DoxyParams}{Parameters}
+{\em tol} & tolerance criteria for Newton\textquotesingle{}s method, default\+: T\+OL (1e-\/6) \\
+\hline
+{\em n\+\_\+max} & maximum iterations for Newton\textquotesingle{}s method, default\+: M\+A\+X\+\_\+\+I\+T\+ER (50) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utils_8h}{utils.\+h}} for the default parameters 
+\end{DoxySeeAlso}
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}\label{class_implicit_solver_a7f6f44fec519212aeae6b71533419601}} 
+\index{ImplicitSolver@{ImplicitSolver}!newton@{newton}}
+\index{newton@{newton}!ImplicitSolver@{ImplicitSolver}}
+\doxysubsubsection{\texorpdfstring{newton()}{newton()}}
+{\footnotesize\ttfamily double Implicit\+Solver\+::newton (\begin{DoxyParamCaption}\item[{double}]{yn,  }\item[{double}]{tn1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Newton\textquotesingle{}s method. 
+
+This method implements Newton\textquotesingle{}s algorithm for finding the zero of the following function\+: g(x) = x -\/ yn -\/ h$\ast$f(x, t\+\_\+\{n+1\}), which is equivalent to solving y\+\_\+\{n+1\} = y\+\_\+n + h$\ast$f(y\+\_\+\{n+1\}, t\+\_\+\{n+1\}). 
+\begin{DoxyParams}{Parameters}
+{\em yn} & the current approximation of y(t\+\_\+n) \\
+\hline
+{\em tn1} & the time variable t\+\_\+\{n+1\} = t0 + n$\ast$h \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}\label{class_implicit_solver_a3d773d7645e0f74f978eb0a7afa4e380}} 
 \index{ImplicitSolver@{ImplicitSolver}!step@{step}}
 \index{step@{step}!ImplicitSolver@{ImplicitSolver}}
@@ -60,4 +110,4 @@ Implemented in \mbox{\hyperlink{class_backward_euler_solver_ada7bbe94179e6f45857
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/Implicit\+Solver.\+h\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_implicit_solver_8h}{Implicit\+Solver.\+h}}\end{DoxyCompactItemize}

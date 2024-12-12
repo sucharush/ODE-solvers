@@ -1,5 +1,14 @@
 \hypertarget{class_adams_bashforth_solver}{}\doxysection{Adams\+Bashforth\+Solver Class Reference}
 \label{class_adams_bashforth_solver}\index{AdamsBashforthSolver@{AdamsBashforthSolver}}
+
+
+Class for Adams-\/\+Bashforth solvers.  
+
+
+
+
+{\ttfamily \#include $<$Adams\+Bashforth\+Solver.\+h$>$}
+
 Inheritance diagram for Adams\+Bashforth\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,18 +18,43 @@ Inheritance diagram for Adams\+Bashforth\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_adams_bashforth_solver_a36dbdf2fcd70d77b214d90585a0b54e5}\label{class_adams_bashforth_solver_a36dbdf2fcd70d77b214d90585a0b54e5}} 
-{\bfseries Adams\+Bashforth\+Solver} (int steps, const std\+::string \&init\+Method)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_adams_bashforth_solver_a36dbdf2fcd70d77b214d90585a0b54e5}{Adams\+Bashforth\+Solver}} (int steps, const std\+::string \&init\+Method)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual double \mbox{\hyperlink{class_adams_bashforth_solver_ac4c59f0b1dfeaebe1988137e73e471cf}{step}} (double y, double t) override
 \item 
 \mbox{\Hypertarget{class_adams_bashforth_solver_a6cccd382df5b3e74e6aae7c1e905370c}\label{class_adams_bashforth_solver_a6cccd382df5b3e74e6aae7c1e905370c}} 
-void {\bfseries Set\+Coeffs} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_adams_bashforth_solver_a6cccd382df5b3e74e6aae7c1e905370c}{Set\+Coeffs}} ()
+\begin{DoxyCompactList}\small\item\em Auxiliary method to set up the coefficients associated with the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for Adams-\/\+Bashforth solvers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_adams_bashforth_solver_a36dbdf2fcd70d77b214d90585a0b54e5}\label{class_adams_bashforth_solver_a36dbdf2fcd70d77b214d90585a0b54e5}} 
+\index{AdamsBashforthSolver@{AdamsBashforthSolver}!AdamsBashforthSolver@{AdamsBashforthSolver}}
+\index{AdamsBashforthSolver@{AdamsBashforthSolver}!AdamsBashforthSolver@{AdamsBashforthSolver}}
+\doxysubsubsection{\texorpdfstring{AdamsBashforthSolver()}{AdamsBashforthSolver()}}
+{\footnotesize\ttfamily Adams\+Bashforth\+Solver\+::\+Adams\+Bashforth\+Solver (\begin{DoxyParamCaption}\item[{int}]{steps,  }\item[{const std\+::string \&}]{init\+Method }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+This constructor sets the order and initial method of an explicit multi-\/step solver with the parent\textquotesingle{}s constructor, and initialize the coefficients associated with the solver (weights). 
+\begin{DoxyParams}{Parameters}
+{\em steps} & order of the solver \\
+\hline
+{\em init\+Method} & initial method to compute the initial values \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}{Explicit\+Multi\+Step\+Solver\+::\+Explicit\+Multi\+Step\+Solver}} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Member Function Documentation}
@@ -50,4 +84,4 @@ Implements \mbox{\hyperlink{class_explicit_multi_step_solver_af6328087b18b8e23d4
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/Adams\+Bashforth\+Solver.\+h\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_adams_bashforth_solver_8h}{Adams\+Bashforth\+Solver.\+h}}\end{DoxyCompactItemize}

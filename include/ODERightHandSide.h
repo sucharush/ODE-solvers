@@ -1,6 +1,6 @@
 /**
  * @file ODERightHandSide.h
- * @brief Header file for the base function class.
+ * @brief Base function class.
  * @author csy
  * @date 22.11.24.
  */
@@ -11,7 +11,7 @@
 #include "utils.h"
 #include <iostream>
 
-//!  Base function class.
+//!  (Abstract) base function class.
 /*!
 This is the base function class, that allows us to represent a function (together with its derivative).
 @note We kept the name ODERightHandSide, but it could have been renamed simply to Function.

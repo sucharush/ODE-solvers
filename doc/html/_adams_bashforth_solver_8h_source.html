@@ -70,28 +70,31 @@ $(function() {
 <div class="title">AdamsBashforthSolver.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by csy on 2024/12/3.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef ADAMSBASHFORTHSOLVER_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define ADAMSBASHFORTHSOLVER_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;ExplicitMultiStepSolver.h&quot;</span></div>
+<a href="_adams_bashforth_solver_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef ADAMSBASHFORTHSOLVER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define ADAMSBASHFORTHSOLVER_H</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_adams_bashforth_solver.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a>: <span class="keyword">public</span> <a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a>(<span class="keywordtype">int</span> steps, <span class="keyword">const</span> std::string &amp;initMethod);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_adams_bashforth_solver.html#ac4c59f0b1dfeaebe1988137e73e471cf">step</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> SetCoeffs();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif //ADAMSBASHFORTHSOLVER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_explicit_multi_step_solver_8h.html">ExplicitMultiStepSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_adams_bashforth_solver.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a>: <span class="keyword">public</span> <a class="code" href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_adams_bashforth_solver.html#a36dbdf2fcd70d77b214d90585a0b54e5">AdamsBashforthSolver</a>(<span class="keywordtype">int</span> steps, <span class="keyword">const</span> std::string &amp;initMethod);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Simple destructor</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_adams_bashforth_solver.html#ac4c59f0b1dfeaebe1988137e73e471cf">step</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> t) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_adams_bashforth_solver.html#a6cccd382df5b3e74e6aae7c1e905370c">SetCoeffs</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif //ADAMSBASHFORTHSOLVER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_adams_bashforth_solver_html"><div class="ttname"><a href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a></div><div class="ttdef"><b>Definition:</b> AdamsBashforthSolver.h:10</div></div>
-<div class="ttc" id="aclass_explicit_multi_step_solver_html"><div class="ttname"><a href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a></div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:13</div></div>
+<div class="ttc" id="aclass_adams_bashforth_solver_html"><div class="ttname"><a href="class_adams_bashforth_solver.html">AdamsBashforthSolver</a></div><div class="ttdoc">Class for Adams-Bashforth solvers.</div><div class="ttdef"><b>Definition:</b> AdamsBashforthSolver.h:14</div></div>
+<div class="ttc" id="aclass_explicit_multi_step_solver_html"><div class="ttname"><a href="class_explicit_multi_step_solver.html">ExplicitMultiStepSolver</a></div><div class="ttdoc">(Abstract) class for explicit multi-step solvers</div><div class="ttdef"><b>Definition:</b> ExplicitMultiStepSolver.h:17</div></div>
 <div class="ttc" id="aclass_adams_bashforth_solver_html_ac4c59f0b1dfeaebe1988137e73e471cf"><div class="ttname"><a href="class_adams_bashforth_solver.html#ac4c59f0b1dfeaebe1988137e73e471cf">AdamsBashforthSolver::step</a></div><div class="ttdeci">virtual double step(double y, double t) override</div></div>
+<div class="ttc" id="a_explicit_multi_step_solver_8h_html"><div class="ttname"><a href="_explicit_multi_step_solver_8h.html">ExplicitMultiStepSolver.h</a></div><div class="ttdoc">Header file for the explicit multi-step solvers.</div></div>
+<div class="ttc" id="aclass_adams_bashforth_solver_html_a6cccd382df5b3e74e6aae7c1e905370c"><div class="ttname"><a href="class_adams_bashforth_solver.html#a6cccd382df5b3e74e6aae7c1e905370c">AdamsBashforthSolver::SetCoeffs</a></div><div class="ttdeci">void SetCoeffs()</div><div class="ttdoc">Auxiliary method to set up the coefficients associated with the solver.</div></div>
+<div class="ttc" id="aclass_adams_bashforth_solver_html_a36dbdf2fcd70d77b214d90585a0b54e5"><div class="ttname"><a href="class_adams_bashforth_solver.html#a36dbdf2fcd70d77b214d90585a0b54e5">AdamsBashforthSolver::AdamsBashforthSolver</a></div><div class="ttdeci">AdamsBashforthSolver(int steps, const std::string &amp;initMethod)</div><div class="ttdoc">Constructor.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

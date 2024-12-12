@@ -1,5 +1,14 @@
 \hypertarget{class_explicit_multi_step_solver}{}\doxysection{Explicit\+Multi\+Step\+Solver Class Reference}
 \label{class_explicit_multi_step_solver}\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+
+
+(Abstract) class for explicit multi-\/step solvers  
+
+
+
+
+{\ttfamily \#include $<$Explicit\+Multi\+Step\+Solver.\+h$>$}
+
 Inheritance diagram for Explicit\+Multi\+Step\+Solver\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,23 +18,25 @@ Inheritance diagram for Explicit\+Multi\+Step\+Solver\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}\label{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}} 
-{\bfseries Explicit\+Multi\+Step\+Solver} (int steps, const std\+::string \&init\+Method)
-\item 
+\mbox{\hyperlink{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}{Explicit\+Multi\+Step\+Solver}} (int steps, const std\+::string \&init\+Method)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a624aeaefaccb5fbc1a3a4912ccff3124}\label{class_explicit_multi_step_solver_a624aeaefaccb5fbc1a3a4912ccff3124}} 
+virtual \mbox{\hyperlink{class_explicit_multi_step_solver_a624aeaefaccb5fbc1a3a4912ccff3124}{$\sim$\+Explicit\+Multi\+Step\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em Simple destructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_explicit_multi_step_solver_a82160a1eafea81eaac1c0413184aaddb}\label{class_explicit_multi_step_solver_a82160a1eafea81eaac1c0413184aaddb}} 
-void {\bfseries set\+Steps} (int steps)
-\item 
+void \mbox{\hyperlink{class_explicit_multi_step_solver_a82160a1eafea81eaac1c0413184aaddb}{set\+Steps}} (int steps)
+\begin{DoxyCompactList}\small\item\em This sets the order of the solver. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_explicit_multi_step_solver_ac762c34e8f32c03e4a8b8cf162be25bc}\label{class_explicit_multi_step_solver_ac762c34e8f32c03e4a8b8cf162be25bc}} 
-void {\bfseries set\+Init\+Method} (const std\+::string \&init\+Method)
-\item 
+void \mbox{\hyperlink{class_explicit_multi_step_solver_ac762c34e8f32c03e4a8b8cf162be25bc}{set\+Init\+Method}} (const std\+::string \&init\+Method)
+\begin{DoxyCompactList}\small\item\em This sets the initial auxiliary method to compute the initial values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_explicit_multi_step_solver_a306332016025b771244b70ee34b42cdb}\label{class_explicit_multi_step_solver_a306332016025b771244b70ee34b42cdb}} 
-int {\bfseries get\+Steps} () const
-\item 
+int \mbox{\hyperlink{class_explicit_multi_step_solver_a306332016025b771244b70ee34b42cdb}{get\+Steps}} () const
+\begin{DoxyCompactList}\small\item\em This is an accessor to the steps number of the solver (its order) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}\label{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}} 
-std\+::string {\bfseries get\+Init\+Method} () const
-\item 
+std\+::string \mbox{\hyperlink{class_explicit_multi_step_solver_a1e0d0b39f69550e7d4af39fdfc21eb92}{get\+Init\+Method}} () const
+\begin{DoxyCompactList}\small\item\em This is an accessor to the initial method. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_explicit_multi_step_solver_af0655b872b4e0e5e4b360ce18d581ecc}{Solve\+Equation}} (std\+::ostream \&stream) override
-\begin{DoxyCompactList}\small\item\em Solves the O\+DE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overriden implementation of the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,9 +46,32 @@ virtual double \mbox{\hyperlink{class_explicit_multi_step_solver_af6328087b18b8e
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_explicit_multi_step_solver_ae1bffc07eba9f1dfcd7643036cb9a464}\label{class_explicit_multi_step_solver_ae1bffc07eba9f1dfcd7643036cb9a464}} 
-Eigen\+::\+Vector\+Xd {\bfseries coeffs\+\_\+}
-\end{DoxyCompactItemize}
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_explicit_multi_step_solver_ae1bffc07eba9f1dfcd7643036cb9a464}{coeffs\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Coefficients (weights) that determine the method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+(Abstract) class for explicit multi-\/step solvers 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}\label{class_explicit_multi_step_solver_a854a6da1ea5ac11f02f15748ada8638d}} 
+\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}!ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+\index{ExplicitMultiStepSolver@{ExplicitMultiStepSolver}!ExplicitMultiStepSolver@{ExplicitMultiStepSolver}}
+\doxysubsubsection{\texorpdfstring{ExplicitMultiStepSolver()}{ExplicitMultiStepSolver()}}
+{\footnotesize\ttfamily Explicit\+Multi\+Step\+Solver\+::\+Explicit\+Multi\+Step\+Solver (\begin{DoxyParamCaption}\item[{int}]{steps,  }\item[{const std\+::string \&}]{init\+Method }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+This constructor sets the order and initial method of an explicit multi-\/step solver. 
+\begin{DoxyParams}{Parameters}
+{\em steps} & order of the solver \\
+\hline
+{\em init\+Method} & initial method to compute the initial values \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -49,14 +83,9 @@ Eigen\+::\+Vector\+Xd {\bfseries coeffs\+\_\+}
 
 
 
-Solves the O\+DE. 
+Overriden implementation of the solver. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em stream} & output stream to put the numerical solution. \\
-\hline
-\end{DoxyParams}
-
+The solver begins by calculating the initial values with an auxiliary method (initial method). Then the rest of the solution is found recursively as usual. 
 
 Reimplemented from \mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{Abstract\+Ode\+Solver}}.
 
@@ -90,4 +119,4 @@ Implemented in \mbox{\hyperlink{class_adams_bashforth_solver_ac4c59f0b1dfeaebe19
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/Explicit\+Multi\+Step\+Solver.\+h\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_explicit_multi_step_solver_8h}{Explicit\+Multi\+Step\+Solver.\+h}}\end{DoxyCompactItemize}

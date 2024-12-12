@@ -70,6 +70,11 @@ $(function() {
 <div class="title">ImplicitSolver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>(Abstract) class for implicit solvers.  
+ <a href="class_implicit_solver.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_implicit_solver_8h_source.html">ImplicitSolver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ImplicitSolver:</div>
 <div class="dyncontent">
@@ -77,20 +82,22 @@ Inheritance diagram for ImplicitSolver:</div>
   <img src="class_implicit_solver.png" usemap="#ImplicitSolver_map" alt=""/>
   <map id="ImplicitSolver_map" name="ImplicitSolver_map">
 <area href="class_abstract_ode_solver.html" title="Base solver class." alt="AbstractOdeSolver" shape="rect" coords="0,0,135,24"/>
-<area href="class_backward_euler_solver.html" alt="BackwardEulerSolver" shape="rect" coords="0,112,135,136"/>
+<area href="class_backward_euler_solver.html" title="Class for Backward Euler solver." alt="BackwardEulerSolver" shape="rect" coords="0,112,135,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0cda5780c1b11f3ec3e587879abf9e47"><td class="memItemLeft" align="right" valign="top"><a id="a0cda5780c1b11f3ec3e587879abf9e47"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ImplicitSolver</b> (double tol=<a class="el" href="utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2">TOL</a>, double n_max=<a class="el" href="utils_8h.html#a09cfa273ee18061e71f83944582b4cd1">MAX_ITER</a>)</td></tr>
+<tr class="memitem:a0cda5780c1b11f3ec3e587879abf9e47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a0cda5780c1b11f3ec3e587879abf9e47">ImplicitSolver</a> (double tol=<a class="el" href="utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2">TOL</a>, double n_max=<a class="el" href="utils_8h.html#a09cfa273ee18061e71f83944582b4cd1">MAX_ITER</a>)</td></tr>
+<tr class="memdesc:a0cda5780c1b11f3ec3e587879abf9e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple constructor.  <a href="class_implicit_solver.html#a0cda5780c1b11f3ec3e587879abf9e47">More...</a><br /></td></tr>
 <tr class="separator:a0cda5780c1b11f3ec3e587879abf9e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5539771d21b156db98ddfbd930ceb95"><td class="memItemLeft" align="right" valign="top"><a id="ac5539771d21b156db98ddfbd930ceb95"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTolerance</b> (double tol)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#ac5539771d21b156db98ddfbd930ceb95">SetTolerance</a> (double tol)</td></tr>
+<tr class="memdesc:ac5539771d21b156db98ddfbd930ceb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tolerance criteria for Newton. <br /></td></tr>
 <tr class="separator:ac5539771d21b156db98ddfbd930ceb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e9dc50173db44c3c2ab1f640382ed05"><td class="memItemLeft" align="right" valign="top"><a id="a6e9dc50173db44c3c2ab1f640382ed05"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetMaxIter</b> (double n_max)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a6e9dc50173db44c3c2ab1f640382ed05">SetMaxIter</a> (double n_max)</td></tr>
+<tr class="memdesc:a6e9dc50173db44c3c2ab1f640382ed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum iteration number for Newton. <br /></td></tr>
 <tr class="separator:a6e9dc50173db44c3c2ab1f640382ed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_ode_solver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_abstract_ode_solver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a></td></tr>
 <tr class="memitem:a03edbae822c8ff26c61f85dd6cfd3d71 inherit pub_methods_class_abstract_ode_solver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ode_solver.html#a03edbae822c8ff26c61f85dd6cfd3d71">AbstractOdeSolver</a> ()</td></tr>
@@ -143,8 +150,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3d773d7645e0f74f978eb0a7afa4e380"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a3d773d7645e0f74f978eb0a7afa4e380">step</a> (double y, double t)=0</td></tr>
 <tr class="separator:a3d773d7645e0f74f978eb0a7afa4e380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f6f44fec519212aeae6b71533419601"><td class="memItemLeft" align="right" valign="top"><a id="a7f6f44fec519212aeae6b71533419601"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>newton</b> (double yn, double tn1)</td></tr>
+<tr class="memitem:a7f6f44fec519212aeae6b71533419601"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_solver.html#a7f6f44fec519212aeae6b71533419601">newton</a> (double yn, double tn1)</td></tr>
+<tr class="memdesc:a7f6f44fec519212aeae6b71533419601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newton's method.  <a href="class_implicit_solver.html#a7f6f44fec519212aeae6b71533419601">More...</a><br /></td></tr>
 <tr class="separator:a7f6f44fec519212aeae6b71533419601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -159,7 +166,93 @@ std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERig
 <tr class="memdesc:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right hand side of the ODE. <br /></td></tr>
 <tr class="separator:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>(Abstract) class for implicit solvers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0cda5780c1b11f3ec3e587879abf9e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cda5780c1b11f3ec3e587879abf9e47">&#9670;&nbsp;</a></span>ImplicitSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImplicitSolver::ImplicitSolver </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em> = <code><a class="el" href="utils_8h.html#a826e1b6d8f7888032cded335c8f5a8b2">TOL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>n_max</em> = <code><a class="el" href="utils_8h.html#a09cfa273ee18061e71f83944582b4cd1">MAX_ITER</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simple constructor. </p>
+<p>This constructor sets the tolerance and maximum iterations variable, and use default parameters if they are unspecified. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tol</td><td>tolerance criteria for Newton's method, default: TOL (1e-6) </td></tr>
+    <tr><td class="paramname">n_max</td><td>maximum iterations for Newton's method, default: MAX_ITER (50) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="utils_8h.html" title="Type definitions and constants for the project.">utils.h</a> for the default parameters </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7f6f44fec519212aeae6b71533419601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f6f44fec519212aeae6b71533419601">&#9670;&nbsp;</a></span>newton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ImplicitSolver::newton </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>yn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tn1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Newton's method. </p>
+<p>This method implements Newton's algorithm for finding the zero of the following function: g(x) = x - yn - h*f(x, t_{n+1}), which is equivalent to solving y_{n+1} = y_n + h*f(y_{n+1}, t_{n+1}). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">yn</td><td>the current approximation of y(t_n) </td></tr>
+    <tr><td class="paramname">tn1</td><td>the time variable t_{n+1} = t0 + n*h </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3d773d7645e0f74f978eb0a7afa4e380"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d773d7645e0f74f978eb0a7afa4e380">&#9670;&nbsp;</a></span>step()</h2>
 
