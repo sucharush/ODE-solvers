@@ -70,49 +70,52 @@ $(function() {
 <div class="title">ButcherTableau.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by csy on 2024/11/29.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef BUTCHERTABLE_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define BUTCHERTABLE_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_butcher_tableau.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_butcher_tableau.html">ButcherTableau</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::vector&lt;double&gt; c;            <span class="comment">// Nodes (time coefficients)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Eigen::MatrixXd a;                <span class="comment">// Intermediate coefficients matrix</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;double&gt; b;            <span class="comment">// Weight coefficients for the final sum</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="struct_butcher_tableau.html">ButcherTableau</a> getButcherTableau(<span class="keyword">const</span> <span class="keywordtype">int</span> order) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (order == 2) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                {0.0, 0.5}, <span class="comment">// c values</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                (Eigen::MatrixXd(2, 2) &lt;&lt; 0.0, 0.0, 0.5, 0.0).finished(), <span class="comment">// a matrix</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                {0.0, 1.0} <span class="comment">// b values</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (order == 4) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {0.0, 0.5, 0.5, 1.0}, <span class="comment">// c values</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                (Eigen::MatrixXd(4, 4) &lt;&lt; 0.0, 0.0, 0.0, 0.0,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                          0.5, 0.0, 0.0, 0.0,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                          0.0, 0.5, 0.0, 0.0,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                          0.0, 0.0, 1.0, 0.0).finished(), <span class="comment">// a matrix</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} <span class="comment">// b values</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        };</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Here we can add more tables for different orders</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unsupported order: &quot;</span> + std::to_string(order) +</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="stringliteral">&quot;Please choose from &#39;RK2&#39;, &#39;RK4&#39; &quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif //BUTCHERTABLE_H</span></div>
+<a href="_butcher_tableau_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BUTCHERTABLE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BUTCHERTABLE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_butcher_tableau.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_butcher_tableau.html">ButcherTableau</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_butcher_tableau.html#a7c97bc8c0286ff2f918974eacc74d8f1">   20</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="struct_butcher_tableau.html#a7c97bc8c0286ff2f918974eacc74d8f1">c</a>;            </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_butcher_tableau.html#a8b3ca1e23acc290cdd673779f6b43ec2">   21</a></span>&#160;    Eigen::MatrixXd <a class="code" href="struct_butcher_tableau.html#a8b3ca1e23acc290cdd673779f6b43ec2">a</a>;                </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_butcher_tableau.html#a025b065fa46e1416588135aa1148f829">   22</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="struct_butcher_tableau.html#a025b065fa46e1416588135aa1148f829">b</a>;            </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_butcher_tableau_8h.html#a5ba0da2dd175e4a74f7ed00ff829fa9a">   30</a></span>&#160;<a class="code" href="struct_butcher_tableau.html">ButcherTableau</a> <a class="code" href="_butcher_tableau_8h.html#a5ba0da2dd175e4a74f7ed00ff829fa9a">getButcherTableau</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> order) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (order == 2) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                {0.0, 0.5}, <span class="comment">// c values</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                (Eigen::MatrixXd(2, 2) &lt;&lt; 0.0, 0.0, 0.5, 0.0).finished(), <span class="comment">// a matrix</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                {0.0, 1.0} <span class="comment">// b values</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (order == 4) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                {0.0, 0.5, 0.5, 1.0}, <span class="comment">// c values</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                (Eigen::MatrixXd(4, 4) &lt;&lt; 0.0, 0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                          0.5, 0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                          0.0, 0.5, 0.0, 0.0,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                          0.0, 0.0, 1.0, 0.0).finished(), <span class="comment">// a matrix</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} <span class="comment">// b values</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// Here we can add more tables for different orders</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unsupported order: &quot;</span> + std::to_string(order) +</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="stringliteral">&quot;Please choose from &#39;RK2&#39;, &#39;RK4&#39; &quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif //BUTCHERTABLE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_butcher_tableau_html"><div class="ttname"><a href="struct_butcher_tableau.html">ButcherTableau</a></div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:12</div></div>
+<div class="ttc" id="astruct_butcher_tableau_html_a025b065fa46e1416588135aa1148f829"><div class="ttname"><a href="struct_butcher_tableau.html#a025b065fa46e1416588135aa1148f829">ButcherTableau::b</a></div><div class="ttdeci">std::vector&lt; double &gt; b</div><div class="ttdoc">Weight coefficients for the final sum.</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:22</div></div>
+<div class="ttc" id="astruct_butcher_tableau_html_a7c97bc8c0286ff2f918974eacc74d8f1"><div class="ttname"><a href="struct_butcher_tableau.html#a7c97bc8c0286ff2f918974eacc74d8f1">ButcherTableau::c</a></div><div class="ttdeci">std::vector&lt; double &gt; c</div><div class="ttdoc">Nodes (time coefficients)</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:20</div></div>
+<div class="ttc" id="a_butcher_tableau_8h_html_a5ba0da2dd175e4a74f7ed00ff829fa9a"><div class="ttname"><a href="_butcher_tableau_8h.html#a5ba0da2dd175e4a74f7ed00ff829fa9a">getButcherTableau</a></div><div class="ttdeci">ButcherTableau getButcherTableau(const int order)</div><div class="ttdoc">Function to initializer a Butcher tableau.</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:30</div></div>
+<div class="ttc" id="astruct_butcher_tableau_html"><div class="ttname"><a href="struct_butcher_tableau.html">ButcherTableau</a></div><div class="ttdoc">Structure for Butcher Tableau for the Runge Kutta method.</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:19</div></div>
+<div class="ttc" id="astruct_butcher_tableau_html_a8b3ca1e23acc290cdd673779f6b43ec2"><div class="ttname"><a href="struct_butcher_tableau.html#a8b3ca1e23acc290cdd673779f6b43ec2">ButcherTableau::a</a></div><div class="ttdeci">Eigen::MatrixXd a</div><div class="ttdoc">Intermediate coefficients matrix.</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -70,28 +70,39 @@ $(function() {
 <div class="title">RungeKuttaSolver Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for Runge Kutta solvers.  
+ <a href="class_runge_kutta_solver.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_runge_kutta_solver_8h_source.html">RungeKuttaSolver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RungeKuttaSolver:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_runge_kutta_solver.png" usemap="#RungeKuttaSolver_map" alt=""/>
   <map id="RungeKuttaSolver_map" name="RungeKuttaSolver_map">
-<area href="class_explicit_single_step_solver.html" alt="ExplicitSingleStepSolver" shape="rect" coords="0,112,149,136"/>
+<area href="class_explicit_single_step_solver.html" title="Class for explicit single-step solvers." alt="ExplicitSingleStepSolver" shape="rect" coords="0,112,149,136"/>
 <area href="class_explicit_solver.html" title="Class for explicit solvers. It is an abstract class." alt="ExplicitSolver" shape="rect" coords="0,56,149,80"/>
-<area href="class_abstract_ode_solver.html" title="Base solver class." alt="AbstractOdeSolver" shape="rect" coords="0,0,149,24"/>
+<area href="class_abstract_ode_solver.html" title="(Abtrsact) base solver class." alt="AbstractOdeSolver" shape="rect" coords="0,0,149,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac43c3e17e727b6c00fc419243a50d422"><td class="memItemLeft" align="right" valign="top"><a id="ac43c3e17e727b6c00fc419243a50d422"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RungeKuttaSolver</b> (const int order)</td></tr>
+<tr class="memitem:ac43c3e17e727b6c00fc419243a50d422"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_runge_kutta_solver.html#ac43c3e17e727b6c00fc419243a50d422">RungeKuttaSolver</a> (const int order)</td></tr>
+<tr class="memdesc:ac43c3e17e727b6c00fc419243a50d422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_runge_kutta_solver.html#ac43c3e17e727b6c00fc419243a50d422">More...</a><br /></td></tr>
 <tr class="separator:ac43c3e17e727b6c00fc419243a50d422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e266e85f94176e9539e493e5dd510b8"><td class="memItemLeft" align="right" valign="top"><a id="a5e266e85f94176e9539e493e5dd510b8"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_runge_kutta_solver.html#a5e266e85f94176e9539e493e5dd510b8">~RungeKuttaSolver</a> ()</td></tr>
+<tr class="memdesc:a5e266e85f94176e9539e493e5dd510b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple destructor. <br /></td></tr>
+<tr class="separator:a5e266e85f94176e9539e493e5dd510b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd5f24bcf9ed3eb7b0419a3b4dba3da"><td class="memItemLeft" align="right" valign="top"><a id="a3fd5f24bcf9ed3eb7b0419a3b4dba3da"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetType</b> (const int order)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_runge_kutta_solver.html#a3fd5f24bcf9ed3eb7b0419a3b4dba3da">SetType</a> (const int order)</td></tr>
+<tr class="memdesc:a3fd5f24bcf9ed3eb7b0419a3b4dba3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the order of the solver. <br /></td></tr>
 <tr class="separator:a3fd5f24bcf9ed3eb7b0419a3b4dba3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b50c242246107bdf29b73a2aaed1ff"><td class="memItemLeft" align="right" valign="top"><a id="a04b50c242246107bdf29b73a2aaed1ff"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> () const</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_runge_kutta_solver.html#a04b50c242246107bdf29b73a2aaed1ff">GetType</a> () const</td></tr>
+<tr class="memdesc:a04b50c242246107bdf29b73a2aaed1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple accessor to the order. <br /></td></tr>
 <tr class="separator:a04b50c242246107bdf29b73a2aaed1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_explicit_solver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_explicit_solver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_explicit_solver.html">ExplicitSolver</a></td></tr>
 <tr class="memitem:a03edbae822c8ff26c61f85dd6cfd3d71 inherit pub_methods_class_explicit_solver"><td class="memItemLeft" align="right" valign="top"><a id="a03edbae822c8ff26c61f85dd6cfd3d71"></a>
@@ -162,6 +173,43 @@ std::unique_ptr&lt; <a class="el" href="class_o_d_e_right_hand_side.html">ODERig
 <tr class="memdesc:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right hand side of the ODE. <br /></td></tr>
 <tr class="separator:af73bcbe1180313a10d26998d9e6d5e06 inherit pro_attribs_class_abstract_ode_solver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for Runge Kutta solvers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac43c3e17e727b6c00fc419243a50d422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac43c3e17e727b6c00fc419243a50d422">&#9670;&nbsp;</a></span>RungeKuttaSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RungeKuttaSolver::RungeKuttaSolver </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>order</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<p>This constructor sets the order of the RUnge Kutta method. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">order</td><td>order of the method </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac26c010f84c9929d2cce316d1ad20007"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac26c010f84c9929d2cce316d1ad20007">&#9670;&nbsp;</a></span>step()</h2>

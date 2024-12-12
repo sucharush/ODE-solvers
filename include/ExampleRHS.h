@@ -1,9 +1,12 @@
-//
-// Created by csy on 2024/11/22.
-//
+/**
+ * @file ExampleRHS.h
+ * @brief Some example functions for the right hand side of the ODE
+ * @author csy
+ * @date 22.11.24.
+ */
 
-#ifndef EXANMPLERHS_H
-#define EXANMPLERHS_H
+#ifndef EXAMPLERHS_H
+#define EXAMPLERHS_H
 
 #include "KnownDerivativeRHS.h"
 
@@ -21,4 +24,4 @@ private:
     double k_;
 };
 
-#endif //EXANMPLERHS_H
+#endif //EXAMPLERHS_H

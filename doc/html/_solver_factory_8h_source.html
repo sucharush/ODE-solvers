@@ -70,48 +70,58 @@ $(function() {
 <div class="title">SolverFactory.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOLVERFACTORY_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SOLVERFACTORY_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_adams_bashforth_solver_8h.html">AdamsBashforthSolver.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_backward_euler_solver_8h.html">BackwardEulerSolver.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;ForwardEulerSolver.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;RungeKuttaSolver.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Struct for solver configuration</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_solver_config.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_solver_config.html">SolverConfig</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::string method;                      <span class="comment">// Solver method (e.g., &quot;RK&quot;, &quot;AB&quot;)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::map&lt;std::string, double&gt; globalParams;  <span class="comment">// Global parameters</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::map&lt;std::string, double&gt; methodParams;  <span class="comment">// Method-specific parameters</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> order = 4;                           <span class="comment">// Defaulted order for Runge-Kutta</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string initMethod = <span class="stringliteral">&quot;RK4&quot;</span>;          <span class="comment">// Defaulted init method for AB</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> steps = 2;                           <span class="comment">// Default steps for AB</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Validate the configuration</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> validate() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Factory class to create solvers</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_solver_factory.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_solver_factory.html">SolverFactory</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">static</span> std::unique_ptr&lt;AbstractOdeSolver&gt; createSolver(<span class="keyword">const</span> <a class="code" href="struct_solver_config.html">SolverConfig</a>&amp; config);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Helper function to configure global parameters</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> configureGlobalParams(<a class="code" href="class_abstract_ode_solver.html">AbstractOdeSolver</a>&amp; solver, <span class="keyword">const</span> std::map&lt;std::string, double&gt;&amp; params);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // SOLVERFACTORY_H</span></div>
+<a href="_solver_factory_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SOLVERFACTORY_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define SOLVERFACTORY_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_adams_bashforth_solver_8h.html">AdamsBashforthSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_backward_euler_solver_8h.html">BackwardEulerSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_forward_euler_solver_8h.html">ForwardEulerSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_runge_kutta_solver_8h.html">RungeKuttaSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_solver_config.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_solver_config.html">SolverConfig</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_solver_config.html#adfd0659c6aa960287d604eac5529962f">   22</a></span>&#160;    std::string <a class="code" href="struct_solver_config.html#adfd0659c6aa960287d604eac5529962f">method</a>;                      </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_solver_config.html#a32f5ace842799322b279aad66caa1f96">   23</a></span>&#160;    std::map&lt;std::string, double&gt; <a class="code" href="struct_solver_config.html#a32f5ace842799322b279aad66caa1f96">globalParams</a>;  </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_solver_config.html#ac39e36cec5758f873a84c52808d5a26b">   24</a></span>&#160;    std::map&lt;std::string, double&gt; <a class="code" href="struct_solver_config.html#ac39e36cec5758f873a84c52808d5a26b">methodParams</a>;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_solver_config.html#a27d0f5c2682b362929eeae90edf05554">   25</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_solver_config.html#a27d0f5c2682b362929eeae90edf05554">order</a> = 4;                           </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_solver_config.html#ad5b6bf22c286cd5196226e65272cc8e2">   26</a></span>&#160;    std::string <a class="code" href="struct_solver_config.html#ad5b6bf22c286cd5196226e65272cc8e2">initMethod</a> = <span class="stringliteral">&quot;RK4&quot;</span>;          </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_solver_config.html#af94aff203bec0917ff00f162b42ce869">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_solver_config.html#af94aff203bec0917ff00f162b42ce869">steps</a> = 2;                           </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="struct_solver_config.html#a047f72119bd68e61c7e1b751dafbf833">validate</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_solver_factory.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_solver_factory.html">SolverFactory</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> std::unique_ptr&lt;AbstractOdeSolver&gt; <a class="code" href="class_solver_factory.html#a7c863b4e4cc0b47eeb2920e0588f938c">createSolver</a>(<span class="keyword">const</span> <a class="code" href="struct_solver_config.html">SolverConfig</a>&amp; config);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> configureGlobalParams(<a class="code" href="class_abstract_ode_solver.html">AbstractOdeSolver</a>&amp; solver, <span class="keyword">const</span> std::map&lt;std::string, double&gt;&amp; params);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // SOLVERFACTORY_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="a_adams_bashforth_solver_8h_html"><div class="ttname"><a href="_adams_bashforth_solver_8h.html">AdamsBashforthSolver.h</a></div><div class="ttdoc">Header file for the Adams-Bashforth solvers.</div></div>
-<div class="ttc" id="astruct_solver_config_html"><div class="ttname"><a href="struct_solver_config.html">SolverConfig</a></div><div class="ttdef"><b>Definition:</b> SolverFactory.h:14</div></div>
-<div class="ttc" id="aclass_solver_factory_html"><div class="ttname"><a href="class_solver_factory.html">SolverFactory</a></div><div class="ttdef"><b>Definition:</b> SolverFactory.h:27</div></div>
-<div class="ttc" id="aclass_abstract_ode_solver_html"><div class="ttname"><a href="class_abstract_ode_solver.html">AbstractOdeSolver</a></div><div class="ttdoc">Base solver class.</div><div class="ttdef"><b>Definition:</b> AbstractOdeSolver.h:21</div></div>
-<div class="ttc" id="a_backward_euler_solver_8h_html"><div class="ttname"><a href="_backward_euler_solver_8h.html">BackwardEulerSolver.h</a></div><div class="ttdoc">Header file for the Backward Euler solver.</div></div>
+<div class="ttc" id="astruct_solver_config_html"><div class="ttname"><a href="struct_solver_config.html">SolverConfig</a></div><div class="ttdoc">Structure for solver configuration.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:21</div></div>
+<div class="ttc" id="aclass_solver_factory_html_a7c863b4e4cc0b47eeb2920e0588f938c"><div class="ttname"><a href="class_solver_factory.html#a7c863b4e4cc0b47eeb2920e0588f938c">SolverFactory::createSolver</a></div><div class="ttdeci">static std::unique_ptr&lt; AbstractOdeSolver &gt; createSolver(const SolverConfig &amp;config)</div><div class="ttdoc">Method to create a (pointer to a) solver from a configuration.</div></div>
+<div class="ttc" id="aclass_solver_factory_html"><div class="ttname"><a href="class_solver_factory.html">SolverFactory</a></div><div class="ttdoc">Factory class to create solvers.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:35</div></div>
+<div class="ttc" id="astruct_solver_config_html_a32f5ace842799322b279aad66caa1f96"><div class="ttname"><a href="struct_solver_config.html#a32f5ace842799322b279aad66caa1f96">SolverConfig::globalParams</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; globalParams</div><div class="ttdoc">Global parameters.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:23</div></div>
+<div class="ttc" id="aclass_abstract_ode_solver_html"><div class="ttname"><a href="class_abstract_ode_solver.html">AbstractOdeSolver</a></div><div class="ttdoc">(Abtrsact) base solver class.</div><div class="ttdef"><b>Definition:</b> AbstractOdeSolver.h:21</div></div>
+<div class="ttc" id="astruct_solver_config_html_af94aff203bec0917ff00f162b42ce869"><div class="ttname"><a href="struct_solver_config.html#af94aff203bec0917ff00f162b42ce869">SolverConfig::steps</a></div><div class="ttdeci">int steps</div><div class="ttdoc">Number of steps for Adams-Bashforth.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:27</div></div>
+<div class="ttc" id="astruct_solver_config_html_a27d0f5c2682b362929eeae90edf05554"><div class="ttname"><a href="struct_solver_config.html#a27d0f5c2682b362929eeae90edf05554">SolverConfig::order</a></div><div class="ttdeci">int order</div><div class="ttdoc">Order for Runge-Kutta.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:25</div></div>
+<div class="ttc" id="astruct_solver_config_html_ad5b6bf22c286cd5196226e65272cc8e2"><div class="ttname"><a href="struct_solver_config.html#ad5b6bf22c286cd5196226e65272cc8e2">SolverConfig::initMethod</a></div><div class="ttdeci">std::string initMethod</div><div class="ttdoc">Initial method for Adams-Bashforth.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:26</div></div>
+<div class="ttc" id="a_runge_kutta_solver_8h_html"><div class="ttname"><a href="_runge_kutta_solver_8h.html">RungeKuttaSolver.h</a></div><div class="ttdoc">Runge Kutta solver.</div></div>
+<div class="ttc" id="astruct_solver_config_html_ac39e36cec5758f873a84c52808d5a26b"><div class="ttname"><a href="struct_solver_config.html#ac39e36cec5758f873a84c52808d5a26b">SolverConfig::methodParams</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; methodParams</div><div class="ttdoc">Method-specific parameters.</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:24</div></div>
+<div class="ttc" id="a_forward_euler_solver_8h_html"><div class="ttname"><a href="_forward_euler_solver_8h.html">ForwardEulerSolver.h</a></div><div class="ttdoc">Forward Euler solver.</div></div>
+<div class="ttc" id="astruct_solver_config_html_adfd0659c6aa960287d604eac5529962f"><div class="ttname"><a href="struct_solver_config.html#adfd0659c6aa960287d604eac5529962f">SolverConfig::method</a></div><div class="ttdeci">std::string method</div><div class="ttdoc">Solver method (e.g., &quot;RK&quot;, &quot;AB&quot;)</div><div class="ttdef"><b>Definition:</b> SolverFactory.h:22</div></div>
+<div class="ttc" id="a_backward_euler_solver_8h_html"><div class="ttname"><a href="_backward_euler_solver_8h.html">BackwardEulerSolver.h</a></div><div class="ttdoc">Backward Euler solver.</div></div>
+<div class="ttc" id="astruct_solver_config_html_a047f72119bd68e61c7e1b751dafbf833"><div class="ttname"><a href="struct_solver_config.html#a047f72119bd68e61c7e1b751dafbf833">SolverConfig::validate</a></div><div class="ttdeci">void validate() const</div><div class="ttdoc">Method do validate the configuration.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -13,7 +13,7 @@
 
 class BackwardEulerSolver : public ImplicitSolver {
 public:
-    /// Contructor
+    /// Constructor
     /*!
     This constructor is empty as it used the parent's constructor but no new parameter have to be set.
     @see ImplicitSolver::ImplicitSolver()

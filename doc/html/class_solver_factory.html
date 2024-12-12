@@ -69,13 +69,55 @@ $(function() {
 <div class="title">SolverFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Factory class to create solvers.  
+ <a href="class_solver_factory.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_solver_factory_8h_source.html">SolverFactory.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7c863b4e4cc0b47eeb2920e0588f938c"><td class="memItemLeft" align="right" valign="top"><a id="a7c863b4e4cc0b47eeb2920e0588f938c"></a>
-static std::unique_ptr&lt; <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>createSolver</b> (const <a class="el" href="struct_solver_config.html">SolverConfig</a> &amp;config)</td></tr>
+<tr class="memitem:a7c863b4e4cc0b47eeb2920e0588f938c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solver_factory.html#a7c863b4e4cc0b47eeb2920e0588f938c">createSolver</a> (const <a class="el" href="struct_solver_config.html">SolverConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a7c863b4e4cc0b47eeb2920e0588f938c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to create a (pointer to a) solver from a configuration.  <a href="class_solver_factory.html#a7c863b4e4cc0b47eeb2920e0588f938c">More...</a><br /></td></tr>
 <tr class="separator:a7c863b4e4cc0b47eeb2920e0588f938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Factory class to create solvers. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7c863b4e4cc0b47eeb2920e0588f938c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c863b4e4cc0b47eeb2920e0588f938c">&#9670;&nbsp;</a></span>createSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::unique_ptr&lt;<a class="el" href="class_abstract_ode_solver.html">AbstractOdeSolver</a>&gt; SolverFactory::createSolver </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_solver_config.html">SolverConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method to create a (pointer to a) solver from a configuration. </p>
+<p>This method creates a solver from a given configuration </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>solver configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="_solver_factory_8h_source.html">SolverFactory.h</a></li>
 </ul>

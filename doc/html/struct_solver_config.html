@@ -70,35 +70,49 @@ $(function() {
 <div class="title">SolverConfig Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Structure for solver configuration.  
+ <a href="struct_solver_config.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_solver_factory_8h_source.html">SolverFactory.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a047f72119bd68e61c7e1b751dafbf833"><td class="memItemLeft" align="right" valign="top"><a id="a047f72119bd68e61c7e1b751dafbf833"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>validate</b> () const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#a047f72119bd68e61c7e1b751dafbf833">validate</a> () const</td></tr>
+<tr class="memdesc:a047f72119bd68e61c7e1b751dafbf833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method do validate the configuration. <br /></td></tr>
 <tr class="separator:a047f72119bd68e61c7e1b751dafbf833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:adfd0659c6aa960287d604eac5529962f"><td class="memItemLeft" align="right" valign="top"><a id="adfd0659c6aa960287d604eac5529962f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>method</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#adfd0659c6aa960287d604eac5529962f">method</a></td></tr>
+<tr class="memdesc:adfd0659c6aa960287d604eac5529962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solver method (e.g., "RK", "AB") <br /></td></tr>
 <tr class="separator:adfd0659c6aa960287d604eac5529962f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32f5ace842799322b279aad66caa1f96"><td class="memItemLeft" align="right" valign="top"><a id="a32f5ace842799322b279aad66caa1f96"></a>
-std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>globalParams</b></td></tr>
+std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#a32f5ace842799322b279aad66caa1f96">globalParams</a></td></tr>
+<tr class="memdesc:a32f5ace842799322b279aad66caa1f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global parameters. <br /></td></tr>
 <tr class="separator:a32f5ace842799322b279aad66caa1f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39e36cec5758f873a84c52808d5a26b"><td class="memItemLeft" align="right" valign="top"><a id="ac39e36cec5758f873a84c52808d5a26b"></a>
-std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>methodParams</b></td></tr>
+std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#ac39e36cec5758f873a84c52808d5a26b">methodParams</a></td></tr>
+<tr class="memdesc:ac39e36cec5758f873a84c52808d5a26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method-specific parameters. <br /></td></tr>
 <tr class="separator:ac39e36cec5758f873a84c52808d5a26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d0f5c2682b362929eeae90edf05554"><td class="memItemLeft" align="right" valign="top"><a id="a27d0f5c2682b362929eeae90edf05554"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>order</b> = 4</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#a27d0f5c2682b362929eeae90edf05554">order</a> = 4</td></tr>
+<tr class="memdesc:a27d0f5c2682b362929eeae90edf05554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Order for Runge-Kutta. <br /></td></tr>
 <tr class="separator:a27d0f5c2682b362929eeae90edf05554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b6bf22c286cd5196226e65272cc8e2"><td class="memItemLeft" align="right" valign="top"><a id="ad5b6bf22c286cd5196226e65272cc8e2"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>initMethod</b> = &quot;RK4&quot;</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#ad5b6bf22c286cd5196226e65272cc8e2">initMethod</a> = &quot;RK4&quot;</td></tr>
+<tr class="memdesc:ad5b6bf22c286cd5196226e65272cc8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial method for Adams-Bashforth. <br /></td></tr>
 <tr class="separator:ad5b6bf22c286cd5196226e65272cc8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af94aff203bec0917ff00f162b42ce869"><td class="memItemLeft" align="right" valign="top"><a id="af94aff203bec0917ff00f162b42ce869"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>steps</b> = 2</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_solver_config.html#af94aff203bec0917ff00f162b42ce869">steps</a> = 2</td></tr>
+<tr class="memdesc:af94aff203bec0917ff00f162b42ce869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps for Adams-Bashforth. <br /></td></tr>
 <tr class="separator:af94aff203bec0917ff00f162b42ce869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure for solver configuration. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="_solver_factory_8h_source.html">SolverFactory.h</a></li>
 </ul>
 </div><!-- contents -->

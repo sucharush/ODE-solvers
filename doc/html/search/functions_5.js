@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['implicitsolver_100',['ImplicitSolver',['../class_implicit_solver.html#a0cda5780c1b11f3ec3e587879abf9e47',1,'ImplicitSolver']]]
+  ['forwardeulersolver_130',['ForwardEulerSolver',['../class_forward_euler_solver.html#a56271b4e9c08874b64e20981f4004294',1,'ForwardEulerSolver']]]
 ];

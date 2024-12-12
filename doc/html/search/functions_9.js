@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printresults_104',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]]
+  ['newton_141',['newton',['../class_implicit_solver.html#a7f6f44fec519212aeae6b71533419601',1,'ImplicitSolver']]]
 ];

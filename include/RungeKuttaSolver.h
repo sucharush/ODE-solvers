@@ -1,5 +1,5 @@
 /**
- * @file Runge Kutta Solver.h
+ * @file RungeKuttaSolver.h
  * @brief Runge Kutta solver.
  * @author csy
  * @date 29.11.24.

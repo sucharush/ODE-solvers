@@ -69,20 +69,31 @@ $(function() {
 <div class="title">ButcherTableau Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Structure for Butcher Tableau for the Runge Kutta method.  
+ <a href="struct_butcher_tableau.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_butcher_tableau_8h_source.html">ButcherTableau.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7c97bc8c0286ff2f918974eacc74d8f1"><td class="memItemLeft" align="right" valign="top"><a id="a7c97bc8c0286ff2f918974eacc74d8f1"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>c</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_butcher_tableau.html#a7c97bc8c0286ff2f918974eacc74d8f1">c</a></td></tr>
+<tr class="memdesc:a7c97bc8c0286ff2f918974eacc74d8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodes (time coefficients) <br /></td></tr>
 <tr class="separator:a7c97bc8c0286ff2f918974eacc74d8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b3ca1e23acc290cdd673779f6b43ec2"><td class="memItemLeft" align="right" valign="top"><a id="a8b3ca1e23acc290cdd673779f6b43ec2"></a>
-Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>a</b></td></tr>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_butcher_tableau.html#a8b3ca1e23acc290cdd673779f6b43ec2">a</a></td></tr>
+<tr class="memdesc:a8b3ca1e23acc290cdd673779f6b43ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate coefficients matrix. <br /></td></tr>
 <tr class="separator:a8b3ca1e23acc290cdd673779f6b43ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025b065fa46e1416588135aa1148f829"><td class="memItemLeft" align="right" valign="top"><a id="a025b065fa46e1416588135aa1148f829"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>b</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_butcher_tableau.html#a025b065fa46e1416588135aa1148f829">b</a></td></tr>
+<tr class="memdesc:a025b065fa46e1416588135aa1148f829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weight coefficients for the final sum. <br /></td></tr>
 <tr class="separator:a025b065fa46e1416588135aa1148f829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure for Butcher Tableau for the Runge Kutta method. </p>
+<p>A Butcher tabeau stores the weights that determine a Runge-Kutta method. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="_butcher_tableau_8h_source.html">ButcherTableau.h</a></li>
 </ul>
 </div><!-- contents -->

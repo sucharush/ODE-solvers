@@ -1,6 +1,9 @@
-//
-// Created by csy on 2024/11/29.
-//
+/**
+ * @file ButcherTableau.h
+ * @brief Butcher Tableau (for Runge-Kutta method)
+ * @author csy
+ * @date 29.12.24.
+ */
 
 #ifndef BUTCHERTABLE_H
 #define BUTCHERTABLE_H
@@ -9,12 +12,21 @@
 #include <vector>
 #include <Eigen/Dense>
 
+//! Structure for Butcher Tableau for the Runge Kutta method
+/*!
+ A Butcher tabeau stores the weights that determine a Runge-Kutta method.
+ */
 struct ButcherTableau {
-    std::vector<double> c;            // Nodes (time coefficients)
-    Eigen::MatrixXd a;                // Intermediate coefficients matrix
-    std::vector<double> b;            // Weight coefficients for the final sum
+    std::vector<double> c;            //!< Nodes (time coefficients)
+    Eigen::MatrixXd a;                //!< Intermediate coefficients matrix
+    std::vector<double> b;            //!< Weight coefficients for the final sum
 };
 
+/// Function to initializer a Butcher tableau
+/*!
+ This function initializes a Butcher tableau for the associated RK method.
+ @param order order of the associated Runge-Kutta method
+ */
 ButcherTableau getButcherTableau(const int order) {
     if (order == 2) {
         return {
