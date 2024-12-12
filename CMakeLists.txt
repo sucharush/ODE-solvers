@@ -25,7 +25,14 @@ add_library(solvers
         src/ConfigParser.cc
         src/SolverFactory.cc
 )
-add_library(rhs src/ExampleRHS.cc src/KnownDerivativeRHS.cc src/ODERightHandSide.cc src/UnknownDerivativeRHS.cc)
+add_library(rhs
+        src/ExampleRHS.cc
+        src/KnownDerivativeRHS.cc
+        src/ODERightHandSide.cc
+        src/UnknownDerivativeRHS.cc
+        src/PolynomialRHS.cc
+        src/ModelProblemRHS.cc
+)
 
 add_subdirectory(eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/eigen)

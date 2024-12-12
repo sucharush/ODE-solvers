@@ -10,6 +10,8 @@
 #include "include/AdamsBashforthSolver.h"
 #include "include/RungeKuttaSolver.h"
 #include "src/ImplicitSolver.cc"
+#include "src/ModelProblemRHS.cc"
+#include "src/PolynomialRHS.cc"
 #include "ConfigParser.h"
 #include "ExampleRHS.h"
 #include "SolverFactory.h"
@@ -17,6 +19,10 @@
 double computeAnalyticalSolution(double t, double y0, double k) {
     return y0 * std::exp(-k * t); // define analytical solution if you know
 }
+// double computeAnalyticalSolution(double t, double y0) {
+//     double C = y0 + 0.5;  // Calculate the integration constant C
+//     return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
+// }
 int main() {
     try {
         std::filesystem::path projectRoot = std::filesystem::current_path().parent_path();
@@ -29,8 +35,8 @@ int main() {
 
         // set right hand side function
         double k = 0.3; // Decay constant
-        std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ExampleRHS>(k);
-        solver->SetRightHandSide(std::move(rhs));
+        // std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ExampleRHS>(k);
+        // solver->SetRightHandSide(std::move(rhs));
         solver->SolveEquation(std::cout);
 
         // print result
@@ -56,21 +62,22 @@ int main() {
 }
 
 // int main() {
-//
 //     double initialTime = 0.0;
-//     double finalTime = 10.0;
+//     double finalTime = 1.0;
 //     double initialValue = 1.0;
-//     double stepSize = 0.1;  // Change this as needed for accuracy
+//     double stepSize = 0.01;  // Change this as needed for accuracy
 //     double k = 0.3;  // Decay constant
 //
 //     // Set up the right-hand side function
-//     std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
-//
+//     // std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
+//     Eigen::VectorXd coeffs(2);
+//     coeffs << 1, 2;
+//     std::unique_ptr<ODERightHandSide> rhs = std::make_unique<PolynomialRHS>(coeffs);
 //     // Set up the solver
 //     // BackwardEulerSolver solver;
-//     // AdamsBashforthSolver solver(4, "RK4");
+//     AdamsBashforthSolver solver(4, "RK4");
 //     // ForwardEulerSolver solver;
-//     RungeKuttaSolver solver(4);
+//     // RungeKuttaSolver solver(4);
 //     solver.SetStepSize(stepSize);
 //     solver.SetTimeInterval(initialTime, finalTime);
 //     solver.SetInitialValue(initialValue);
@@ -87,12 +94,12 @@ int main() {
 //
 //     for (int i = 0; i < numSteps; ++i, t += stepSize) {
 //         double numerical = solver.results[i];
-//         double analytical = computeAnalyticalSolution(t, initialValue, k);
+//         double analytical = computeAnalyticalSolution(t, initialValue);
 //         double error = std::abs(numerical - analytical);
 //
 //         std::cout << t << "\t" << numerical << "\t" << analytical << "\t" << error << "\n";
 //     }
-//
+// }
 //
 //    //  FuncType func_test(
 //    //     [](double y, double t) { return y * y + std::cos(y)*t; } // f(y, t) = y^2 + t + cos(y)t
@@ -106,4 +113,3 @@ int main() {
 //    //      std::cout << "At (" <<i << ", "<< t_   << "), my der - true der =  " << F.derivative(i, t_) - Dfunc_test(i, t_) << std::endl;
 //    //  }
 //     return 0;
-// }

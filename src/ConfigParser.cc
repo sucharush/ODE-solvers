@@ -36,6 +36,21 @@ SolverConfig ConfigParser::parseConfig(const std::string& filePath) {
         }
     }
 
+    config.type = configJson["rhs"]["type"];
+    for (const auto& [key, value] : configJson["rhs"]["parameters"].items()) {
+        if (key == "decay") {
+            config.decay = value.get<double>();
+        }
+        if (key == "coefficients") {
+            std::vector<double> coeffs;
+            for (const auto& coeff : value) {
+                coeffs.push_back(coeff.get<double>());
+            }
+            config.coefficients = Eigen::VectorXd::Map(coeffs.data(), coeffs.size());
+        }
+    }
+
+
     return config;
 }
 

@@ -10,21 +10,28 @@
 
 #include <memory>
 #include <map>
+#include <Eigen/Dense>
 #include <string>
 #include <iostream>
 #include "AdamsBashforthSolver.h"
 #include "BackwardEulerSolver.h"
 #include "ForwardEulerSolver.h"
 #include "RungeKuttaSolver.h"
+#include "ModelProblemRHS.h"
+#include "PolynomialRHS.h"
 
 //! Structure for solver configuration
 struct SolverConfig {
     std::string method;                      //!< Solver method (e.g., "RK", "AB")
     std::map<std::string, double> globalParams;  //!< Global parameters
     std::map<std::string, double> methodParams;  //!< Method-specific parameters
+    // std::map<std::string, double> rhsParams;
     int order = 4;                           //!< Order for Runge-Kutta
     std::string initMethod = "RK4";          //!< Initial method for Adams-Bashforth
     int steps = 2;                           //!< Number of steps for Adams-Bashforth
+    std::string type = "model";
+    double decay = 0.3;
+    Eigen::VectorXd coefficients;
 
     /// Method do validate the configuration
     void validate() const;

@@ -14,7 +14,10 @@ void SolverConfig::validate() const {
     if (method.empty()) {
         throw std::invalid_argument("Solver method must be specified.");
     }
-}
+    if (type.empty()) {
+        throw std::invalid_argument("Right hand side function type must be specified.");
+    }
+};
 
 // Factory method to create solvers
 std::unique_ptr<AbstractOdeSolver> SolverFactory::createSolver(const SolverConfig& config) {
@@ -26,8 +29,12 @@ std::unique_ptr<AbstractOdeSolver> SolverFactory::createSolver(const SolverConfi
     std::string initMethod = config.initMethod;
     int order = config.order;
     int steps = config.steps;
+    std::string type = config.type;
+    double decay = config.decay;
+    Eigen::VectorXd coeffs = config.coefficients;
 
     std::unique_ptr<AbstractOdeSolver> solver;
+    std::unique_ptr<ODERightHandSide> rhs;
 
     // ForwardEuler fallback
     if ((method == "RK" && order == 1) ||
@@ -57,16 +64,34 @@ std::unique_ptr<AbstractOdeSolver> SolverFactory::createSolver(const SolverConfi
         throw std::invalid_argument("Unsupported solver method: " + method
                                     + ". Supported methods are: AB (AdamsBashforth), BE (BackwardEuler), FE (ForwardEuler), RK (RungeKutta).");
     }
+    // build rhs functions
+    if (type == "model") {
+        // std::cout << "rhs type: " << type << "." << std::endl;
+        rhs = std::make_unique<ModelProblemRHS>(decay);
+    } else if (type == "poly") {
+        // std::cout << "rhs type: " << type << "." << std::endl;
+        if (coeffs.size() == 0) {
+            throw std::invalid_argument("Polynomial coefficients must be provided for 'poly' rhs type.");
+        }
+        rhs = std::make_unique<PolynomialRHS>(coeffs);
+    } else {
+        throw std::invalid_argument("Unsupported rhs type: " + type);
+    }
+    // Set rhs
+    solver->SetRightHandSide(std::move(rhs));
 
     // Configure the solver
-    configureGlobalParams(*solver, globalParams);
+    // Configure global parameters directly here
+    if (globalParams.count("stepSize")) {
+        solver->SetStepSize(globalParams.at("stepSize"));
+    }
+    if (globalParams.count("t0") && globalParams.count("t1")) {
+        solver->SetTimeInterval(globalParams.at("t0"), globalParams.at("t1"));
+    }
+    if (globalParams.count("initialValue")) {
+        solver->SetInitialValue(globalParams.at("initialValue"));
+    }
 
     return solver;
 }
 
-// Helper function to configure global parameters
-void SolverFactory::configureGlobalParams(AbstractOdeSolver& solver, const std::map<std::string, double>& params) {
-    if (params.count("stepSize")) solver.SetStepSize(params.at("stepSize"));
-    if (params.count("t0") && params.count("t1")) solver.SetTimeInterval(params.at("t0"), params.at("t1"));
-    if (params.count("initialValue")) solver.SetInitialValue(params.at("initialValue"));
-}

@@ -1,8 +1,8 @@
 {
   "global": {
-    "stepSize": 0.05,
+    "stepSize": 0.01,
     "t0": 0.0,
-    "t1": 10.0,
+    "t1": 1.0,
     "initialValue": 1.0
   },
   "solver": {
@@ -13,6 +13,13 @@
       "initMethod": "RK4",
       "tolerance": 1e-6,
       "maxIter": 50
+    }
+  },
+  "rhs": {
+    "type": "model",
+    "parameters": {
+      "decay": 0.3,
+      "coefficients": [1, 2]
     }
   }
 }
