@@ -36,10 +36,8 @@ To represent the right-hand side function $f(t, y)$ in the ODE, the project prov
     - Describes a polynomial of the form $f(t, y) = a_0 + a_1 y + a_2 y^2 + \dots + a_n y^n$.
     - Requires a list of coefficients `[a_0, a_1, ..., a_n]`.
 
-These RHS functions can be selected and configured in the configuration file (`config/config.json`), 
-providing flexibility for different types of ODEs. 
-You can also implement custom RHS functions by modifying 
-the `ExampleRHS` classes.
+These RHS functions can be selected and configured in the configuration file (`config/config.json`), providing flexibility for different types of ODEs. 
+You can also implement custom RHS functions by modifying the `UserDefineRHS` classes.
 
 ## Structure
 The main structure of the project is as follows:
@@ -110,6 +108,9 @@ cmake ..
 make
 ./main
 ```
+Building should output all the process, in particular the documentation generation prints a lot of indications about the status but you don't need to worry about that.
+The main doesn't print anything, but generate an output file containing the solution.
+
 ### Read the output file
 ```
 cd ..
@@ -145,8 +146,7 @@ Modify the `config/config.json` file to set global parameters and solver-specifi
   }
 }
 ```
-**Note:** It will automatically build the forward Euler method when choosing `order = 1` for Runge Kutta
-or `steps = 1` for AdamsBashforth, as they are the same solvers.
+**Note:** It will automatically build the forward Euler method when choosing `order = 1` for Runge Kutta or `steps = 1` for AdamsBashforth, as they are the same solvers.
 
 ### Documentation
 Building the project also creates a folder 'doc', that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives:
@@ -161,6 +161,12 @@ Another executive file produced by the building concerns the googletests. They a
 
 All tests that consist of testing the solvers rely on testing the difference between the analytical solution and the approximated one. 
 The tests should pass, also the tolerance threshold for the error is quite high (1e-2). Note that some solvers are also more or less precise, and may require a smaller step size.
+
+To run the tests, you can execute either run the tests from your IDE, or write the following commands from the build folder:
+```
+./tests
+```
+It should output the tests status on the terminal (starting with `Running 14 tests from 4 test suites`).
 
 ## Limitations
 

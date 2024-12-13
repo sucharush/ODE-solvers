@@ -29,7 +29,7 @@ void ExplicitMultiStepSolver::SolveEquation(std::ostream& stream) {
     results[0] = y;
 
     // Print initial state
-    stream << "Time: " << t << " Value: " << y << "\n";
+    // stream << "Time: " << t << " Value: " << y << "\n";
 
     // Manually compute the first few steps using FE or RK4
     for (int i = 1; i < steps_ && i < numSteps; ++i) {
