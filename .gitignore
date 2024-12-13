@@ -9,7 +9,7 @@ starting_point
 *.tmp
 *.bak
 .DS_Store    # MacOS specific system file
-
+doc/
 
 # IDE-specific settings directories
 .idea/       # JetBrains IDEs like IntelliJ and PyCharm
