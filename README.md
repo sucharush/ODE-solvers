@@ -20,15 +20,32 @@ i.e. $y^{'}(t)=f(t,y(t))$. The solvers currently support the following methods:
 - **Backward Euler (BE)**: Implicit single-step solver with optional tolerance and iteration settings.
 
 The default implementation solves the model problem $y^{'} = -0.3y$ using a 4th-order Runge-Kutta method. 
-The project is modular, allowing customization of solvers, models, and configurations.
+The project is modular, allowing customization of solvers, functions, and configurations.
+### Right-Hand Side (RHS) Functions
+To represent the right-hand side function $f(t, y)$ in the ODE, the project provides the following built-in options:
 
+1. **Model Problem (`model`)**:
+    - Describes a simple exponential decay problem $f(t, y) = -k \cdot y$.
+    - Requires a positive decay constant `decay = k`.
+    - Given the initial condition $y(t) = y_0$, the analytical solution is $y(t) = y_0 e^{-k(t-t_0)}.$
+
+2. **Polynomial Function (`poly`)**:
+    - Describes a polynomial of the form $f(t, y) = a_0 + a_1 y + a_2 y^2 + \dots + a_n y^n$.
+    - Requires a list of coefficients `[a_0, a_1, ..., a_n]`.
+
+These RHS functions can be selected and configured in the configuration file (`config/config.json`), 
+providing flexibility for different types of ODEs. 
+You can also implement custom RHS functions by modifying 
+the `ExampleRHS` classes.
+
+## Structure
 The main structure of the project is as follows:
 - `/config`: configuration settings to run the main.
 - `/include`: contains all header files.
 - `/src`: contains all implementation files.
 - `/test`: contains test files, supported by googletest.
 
-The detailed structure of the project is shown below.
+[//]: # (The detailed structure of the project is shown below.)
 ```
     pcsc-project/
     ├── config/
@@ -47,7 +64,9 @@ The detailed structure of the project is shown below.
     │   ├── ImplicitSolver.h                          // Base class for implicit solvers
     │   ├── json.hpp                      
     │   ├── KnownDerivativeRHS.h                      // RHS with analytically known derivative
+    │   ├── ModelProblemRHS.h
     │   ├── ODERightHandSide.h                        // Base class for RHS functions
+    │   ├── PolynomialRHS.h
     │   ├── RungeKuttaSolver.h                       
     │   ├── SolverFactory.h                           
     │   └── UnknownDerivativeRHS.h                    // RHS with unknown derivative 
@@ -57,11 +76,14 @@ The detailed structure of the project is shown below.
     │   └── [Test files using googletest]
     ├── .gitignore
     ├── .gitmodules
-    ├── main.cc                                     
-    └── CMakeLists.txt                               
-
-
+    ├── main.cc     
+    ├── CMakeLists.txt                                
+    └── README.md                          
 ```
+Here is a brief sketch of the class hierarchy.
+
+<img src="hierarchy.png" alt="UML Diagram" width="700">
+
 ## How to
 ### Quick Start
 First, you need to clone the project repository on your local machine.
@@ -76,47 +98,62 @@ The project relies on *googletest* and *Eigen*, initialize them as submodules to
 git submodule update --init 
 ```
 
-You can build the project using your preferred IDE (e.g., CLion) or the terminal:
+You can build and run the project using your preferred IDE (e.g., CLion) or the terminal. Below are the steps for the terminal:
+
 ```
 mkdir build
 cd build
 cmake ..
 make
-```
-After these lines, executable files are produced. Simply run 'main' on your IDE, 
-or run the following lines on your terminal:
-
-```
-cd .. // or simply open your terminal in the root project folder
 ./main
 ```
-[//]: # (Instructions should appear to guide you. )
+
+[//]: # (After these lines, executable files are produced. Simply run 'main' on your IDE, )
+
+[//]: # (or run the following lines on your terminal:)
+
+[//]: # ()
+[//]: # (```)
+
+[//]: # (cd .. // or simply open your terminal in the root project folder)
+
+[//]: # (./main)
+
+[//]: # (```)
+
 [//]: # (TODO complete instructions if needed, typical execution)
 ###  Update the Configuration
 Modify the `config/config.json` file to set global parameters and solver-specific options. 
 ```
 {
   "global": {
-    "stepSize": The time step for the solver,
-    "t0": Start time of the simulation,
-    "t1": End time of the simulation,
-    "initialValue": Initial guess y_0,
+    "stepSize": The time step for the solver, e.g., 0.01,
+    "t0": Start time of the simulation, e.g., 0.0,
+    "t1": End time of the simulation, e.g., 1.0,
+    "initialValue": Initial guess y_0, e.g., 1.0
   },
   "solver": {
-    "method": Solver type, choosing from {"RK", "AB", "BE", "FE"},
+    "method": Solver type, choose from {"RK", "AB", "BE", "FE"},
     "parameters": {
-      "order": For Runge Kutta, choosing from {1, 2, 4}, 
-      "steps": For AdamsBashforth, choosing from {1, 2, 3, 4}, 
-      "initMethod": For AdamsBashforth, choosing from {"RK4", "FE"},
-      "tolerance": For Newton method in backward Euler, defaulted as 1e-6,
-      "maxIter": For Newton method in backward Euler, defaulted as 50
+      "order": For Runge Kutta, choose from {1, 2, 4},
+      "steps": For AdamsBashforth, choose from {1, 2, 3, 4},
+      "initMethod": For AdamsBashforth, choose from {"RK4", "FE"},
+      "tolerance": For Newton method in Backward Euler, default 1e-6,
+      "maxIter": For Newton method in Backward Euler, default 50
+    }
+  },
+  "rhs": {
+    "type": RHS type, choose from {"model", "poly"},
+    "parameters": {
+      "decay": Decay constant for model problem, e.g., 0.1,
+      "coefficients": For polynomials, a list of coefficients [a_0, a_1, ..., a_n]
     }
   }
 }
 ```
 **Note:** It will automatically build the forward Euler method when choosing `order = 1` for Runge Kutta
 or `steps = 1` for AdamsBashforth, as they are the same solvers.
-### Modify the RHS Function
+
 
 [//]: # (TODO logic)
 
@@ -150,7 +187,7 @@ The user would also need to specify if they want to use the known derivative for
 ### Dimension of the ODE
 The main limitation of our project is that it focuses strictly on ODEs that are from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$, i.e. $y,t$ are real and so is $f(t,y)$.
 Possible extensions could be 
-- allowing $y$ to be a vector, i.e. in $\mathbb{R}^n$
+- allowing $y$ to be a vector, i.e. $y \in \mathbb{R}^n$
 - allowing $f$ to be a vector-valued function, i.e. solve a system of ODEs
 - allowing $y$ to be a complex number, or a complex-valued vector, etc.
 

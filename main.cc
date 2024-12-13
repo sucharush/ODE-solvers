@@ -1,5 +1,6 @@
 #include <iostream>
 #include <filesystem>
+#include <fstream>
 #include <memory>
 #include <cmath>
 #include "include/ForwardEulerSolver.h"
@@ -16,9 +17,9 @@
 #include "ExampleRHS.h"
 #include "SolverFactory.h"
 
-double computeAnalyticalSolution(double t, double y0, double k) {
-    return y0 * std::exp(-k * t); // define analytical solution if you know
-}
+// double computeAnalyticalSolution(double t, double y0, double k) {
+//     return y0 * std::exp(-k * t); // define analytical solution if you know
+// }
 // double computeAnalyticalSolution(double t, double y0) {
 //     double C = y0 + 0.5;  // Calculate the integration constant C
 //     return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
@@ -33,26 +34,22 @@ int main() {
         SolverConfig config = ConfigParser::parseConfig(configPath.string());
         auto solver = SolverFactory::createSolver(config);
 
-        // set right hand side function
-        double k = 0.3; // Decay constant
-        // std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ExampleRHS>(k);
-        // solver->SetRightHandSide(std::move(rhs));
+        // solve equation
         solver->SolveEquation(std::cout);
 
-        // print result
-        double t = config.globalParams["t0"];
-        double stepSize = config.globalParams["stepSize"];
-        int numSteps = static_cast<int>((config.globalParams["t1"] - t) / stepSize) + 1;
-        double initialValue = config.globalParams["initialValue"];
-
-        std::cout << "\nComparison with Analytical Solution:\n";
-        std::cout << "t\tNumerical\tAnalytical\tError\n";
-        for (int i = 0; i < numSteps; ++i, t += stepSize) {
-            double numerical = solver->results[i];
-            double analytical = computeAnalyticalSolution(t, initialValue, k);
-            double error = std::abs(numerical - analytical);
-            std::cout << t << "\t" << numerical << "\t" << analytical << "\t" << error << "\n";
+        // generate output file from result
+        Eigen::VectorXd results = solver -> results;
+        std::filesystem::path outputPath = projectRoot / "output.txt";
+        std::ofstream outputFile(outputPath);
+        outputFile << std::fixed << std::setprecision(4);
+        if (!outputFile.is_open()) {
+            std::cerr << "Could not open output file " << outputPath.string() << std::endl;
+            return 1;
         }
+        for (int i = 0; i < results.size(); i++) {
+            outputFile << results[i] << std::endl;
+        }
+        outputFile.close();
     } catch (const std::exception& ex) {
         std::cerr << "Error: " << ex.what() << std::endl;
         return 1;
