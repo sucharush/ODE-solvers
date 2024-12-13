@@ -22,3 +22,6 @@ cmake-build-debug/
 Thumbs.db    # Windows thumbnail cache
 ehthumbs.db  # Windows Explorer thumbnail database (legacy)
 Desktop.ini  # Windows folders customization file
+
+# project specific
+draft.md

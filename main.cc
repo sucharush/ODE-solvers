@@ -6,7 +6,6 @@
 #include "include/ForwardEulerSolver.h"
 #include "include/BackwardEulerSolver.h"
 #include "src/ODERightHandSide.cc"
-#include "src/UserDefinedRHS.cc"
 #include "src/KnownDerivativeRHS.cc"
 #include "include/AdamsBashforthSolver.h"
 #include "include/RungeKuttaSolver.h"

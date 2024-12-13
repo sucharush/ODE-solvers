@@ -146,9 +146,6 @@ Modify the `config/config.json` file to set global parameters and solver-specifi
 **Note:** It will automatically build the forward Euler method when choosing `order = 1` for Runge Kutta
 or `steps = 1` for AdamsBashforth, as they are the same solvers.
 
-
-[//]: # (TODO logic)
-
 ### Documentation
 Building the project also creates a folder 'doc', that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives:
 - open the file 'index.html' located in doc/html/. This should open a window in your browser with our documentation.

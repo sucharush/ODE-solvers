@@ -44,8 +44,6 @@ protected:
     Eigen::VectorXd coeffs_; //!< Coefficients (weights) that determine the method.
 
 private:
-    /// Method to set-up the solver from an Explicit single-step solver
-    void setupSolver(ExplicitSingleStepSolver& solver);
     int steps_; //!< Number of steps of the method (order)
     std::string initMethod_; //!< Auxiliary method used for the computation of the initial values of the solution
 };
