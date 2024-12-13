@@ -80,7 +80,7 @@ TEST_F(PolyRHSTest, RK) {
     int numSteps = solver.results.size();
     // Loop over the defined orders (2,3,4)
     for (int order = 2; order <=4; ++order) {
-        solver.SetType(order);
+        solver.SetOrder(order);
         double t = initialTime;
         for (int i = 0; i < numSteps; ++i, t += stepSize) {
             double exp_val = AnalyticalSolutionPoly(t, initialValue);

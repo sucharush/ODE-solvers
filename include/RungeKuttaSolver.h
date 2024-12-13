@@ -23,9 +23,9 @@ public:
     /// Simple  destructor
     virtual ~RungeKuttaSolver() {}
     /// This sets the order of the solver
-    void SetType(const int order) {order_ = order;};
+    void SetOrder(const int order) {order_ = order;};
     /// This is a simple accessor to the order
-    int GetType() const {return order_;};
+    int GetOrder() const {return order_;};
 
   protected:
     double step(double y, double t) override;
