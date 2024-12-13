@@ -10,6 +10,9 @@ Project for MATH-458 Programming concepts in scientific computing (EPFL, 2024).
 - [Features](#features)
 - [Limitations](#limitations)
 
+## Disclaimer for latex
+The latex configuration is not entirely set for the Doxygen page, please use the preview on your editor or the preview from the Gitlab website to read the formulas easier.
+
 ## Project Overview
 This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs), 
 i.e. $y^{'}(t)=f(t,y(t))$. The solvers currently support the following methods:
@@ -109,11 +112,10 @@ make
 ```
 ### Read the output file
 ```
+cd ..
 cat output.txt
 ```
 
-
-[//]: # (TODO complete instructions if needed, typical execution)
 ###  Update the Configuration
 Modify the `config/config.json` file to set global parameters and solver-specific options. 
 ```
@@ -157,7 +159,7 @@ Another executive file produced by the building concerns the googletests. They a
 - `model_problem_test.cc`: contains tests focusing on the model problem. In each execution of this test, a random variable between 0 and 1 is produced, and then all solvers are tested on the model problem defined by this variable.
 - `polynomial_test.cc`: contains tests on a specific polynomial function, for all solvers.
 
-All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. 
+All tests that consist of testing the solvers rely on testing the difference between the analytical solution and the approximated one. 
 The tests should pass, also the tolerance threshold for the error is quite high (1e-2). Note that some solvers are also more or less precise, and may require a smaller step size.
 
 ## Limitations
@@ -180,7 +182,7 @@ We decided to create a base class (`ODERighHandSide`) and two child classes that
 If the derivative is unknown, it is approximated using centered differences.
 
 There are however a few limitations with our approach.
-- We only provided 2 type of built-in functions: `ModelProblemRHS` and `PolynomialRHS`.
+- We only provided 2 types of built-in functions: `ModelProblemRHS` and `PolynomialRHS`.
 - Despite the possibility of using arbitrary functions in `UserDefinedRHS`, we didn't manage to implement it in a way that allows the user to avoid recompilation.
   Additionally, the user needs to specify whether they want to use a known or unknown derivative for the function.
 

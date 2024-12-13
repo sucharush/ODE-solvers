@@ -10,7 +10,8 @@ Project for M\+A\+T\+H-\/458 Programming concepts in scientific computing (E\+P\
 \item \href{\#how-to}{\texttt{ How to}}
 \item \href{\#features}{\texttt{ Features}}
 \item \href{\#limitations}{\texttt{ Limitations}}
-\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Project Overview}\label{index_autotoc_md3}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Disclaimer for latex}\label{index_autotoc_md3}
+The latex configuration is not entirely set for the Doxygen page, please use the preview on your editor or the preview from the Gitlab website to read the formulas easier.\hypertarget{index_autotoc_md4}{}\doxysection{Project Overview}\label{index_autotoc_md4}
 This project provides an implementation of numerical solvers for solving ordinary differential equations (O\+D\+Es), i.\+e. \$y$^\wedge$\{\textquotesingle{}\}(t)=f(t,y(t))\$. The solvers currently support the following methods\+:
 
 
@@ -21,7 +22,7 @@ This project provides an implementation of numerical solvers for solving ordinar
 \item {\bfseries{Backward Euler (BE)}}\+: Implicit single-\/step solver with optional tolerance and iteration settings.
 \end{DoxyItemize}
 
-The default implementation solves the model problem \$y$^\wedge$\{\textquotesingle{}\} = -\/0.\+3y\$ using a 4th-\/order Runge-\/\+Kutta method. The project is modular, allowing customization of solvers, functions, and configurations. \hypertarget{index_autotoc_md4}{}\doxysubsection{Right-\/\+Hand Side (\+R\+H\+S) Functions}\label{index_autotoc_md4}
+The default implementation solves the model problem \$y$^\wedge$\{\textquotesingle{}\} = -\/0.\+3y\$ using a 4th-\/order Runge-\/\+Kutta method. The project is modular, allowing customization of solvers, functions, and configurations. \hypertarget{index_autotoc_md5}{}\doxysubsection{Right-\/\+Hand Side (\+R\+H\+S) Functions}\label{index_autotoc_md5}
 To represent the right-\/hand side function \$f(t, y)\$ in the O\+DE, the project provides the following built-\/in options\+:
 
 
@@ -39,7 +40,7 @@ To represent the right-\/hand side function \$f(t, y)\$ in the O\+DE, the projec
 \end{DoxyItemize}
 \end{DoxyEnumerate}
 
-These R\+HS functions can be selected and configured in the configuration file ({\ttfamily config/config.\+json}), providing flexibility for different types of O\+D\+Es. You can also implement custom R\+HS functions by modifying the {\ttfamily Example\+R\+HS} classes.\hypertarget{index_autotoc_md5}{}\doxysection{Structure}\label{index_autotoc_md5}
+These R\+HS functions can be selected and configured in the configuration file ({\ttfamily config/config.\+json}), providing flexibility for different types of O\+D\+Es. You can also implement custom R\+HS functions by modifying the {\ttfamily Example\+R\+HS} classes.\hypertarget{index_autotoc_md6}{}\doxysection{Structure}\label{index_autotoc_md6}
 The main structure of the project is as follows\+:
 \begin{DoxyItemize}
 \item {\ttfamily /config}\+: configuration settings to run the main.
@@ -87,14 +88,14 @@ The main structure of the project is as follows\+:
 
 Here is a brief sketch of the class hierarchy.
 
-\hypertarget{index_autotoc_md6}{}\doxysection{How to}\label{index_autotoc_md6}
-\hypertarget{index_autotoc_md7}{}\doxysubsection{Quick Start}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md7}{}\doxysection{How to}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{Quick Start}\label{index_autotoc_md8}
 First, you need to clone the project repository on your local machine. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{git clone git@gitlab.epfl.ch:ebaup/pcsc-\/project.git}
 \DoxyCodeLine{cd pcsc-\/project}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md8}{}\doxysubsection{Set-\/up and Building}\label{index_autotoc_md8}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{Set-\/up and Building}\label{index_autotoc_md9}
 The project relies on {\itshape googletest} and {\itshape Eigen}, initialize them as submodules to install these dependencies\+:
 
 
@@ -113,12 +114,12 @@ You can build and run the project using your preferred I\+DE (e.\+g., C\+Lion) o
 \DoxyCodeLine{make}
 \DoxyCodeLine{./main}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md9}{}\doxysubsection{Read the output file}\label{index_autotoc_md9}
+\hypertarget{index_autotoc_md10}{}\doxysubsection{Read the output file}\label{index_autotoc_md10}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{cat output.txt}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md10}{}\doxysubsection{Update the Configuration}\label{index_autotoc_md10}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{Update the Configuration}\label{index_autotoc_md11}
 Modify the {\ttfamily config/config.\+json} file to set global parameters and solver-\/specific options. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
@@ -149,12 +150,12 @@ Modify the {\ttfamily config/config.\+json} file to set global parameters and so
 \end{DoxyCode}
 
 
-{\bfseries{Note\+:}} It will automatically build the forward Euler method when choosing {\ttfamily order = 1} for Runge Kutta or {\ttfamily steps = 1} for Adams\+Bashforth, as they are the same solvers.\hypertarget{index_autotoc_md11}{}\doxysubsection{Documentation}\label{index_autotoc_md11}
+{\bfseries{Note\+:}} It will automatically build the forward Euler method when choosing {\ttfamily order = 1} for Runge Kutta or {\ttfamily steps = 1} for Adams\+Bashforth, as they are the same solvers.\hypertarget{index_autotoc_md12}{}\doxysubsection{Documentation}\label{index_autotoc_md12}
 Building the project also creates a folder \textquotesingle{}doc\textquotesingle{}, that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives\+:
 \begin{DoxyItemize}
 \item open the file \textquotesingle{}index.\+html\textquotesingle{} located in doc/html/. This should open a window in your browser with our documentation.
 \item use doxywizard (type {\ttfamily doxywizard} in your terminal) and select the Doxyfile located in the main folder of the project. Then you can run doxygen from doxywizard to generate the documentation.
-\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysubsection{Tests}\label{index_autotoc_md12}
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysubsection{Tests}\label{index_autotoc_md13}
 Another executive file produced by the building concerns the googletests. They are separated in 3 files\+:
 \begin{DoxyItemize}
 \item {\ttfamily auxiliary\+\_\+test.\+cc}\+: contains tests on auxiliary classes, mainly on the function class.
@@ -162,21 +163,28 @@ Another executive file produced by the building concerns the googletests. They a
 \item {\ttfamily polynomial\+\_\+test.\+cc}\+: contains tests on a specific polynomial function, for all solvers.
 \end{DoxyItemize}
 
-All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. The tests should pass, also the tolerance threshold for the error is quite high (1e-\/2). Note that some solvers are also more or less precise, and may require a smaller step size.\hypertarget{index_autotoc_md13}{}\doxysection{Limitations}\label{index_autotoc_md13}
-We encountered various challenges during the realisation of this project, some were taken care of, and some remain as limitations of our implementation.\hypertarget{index_autotoc_md14}{}\doxysubsection{Solvers classes}\label{index_autotoc_md14}
+All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. The tests should pass, also the tolerance threshold for the error is quite high (1e-\/2). Note that some solvers are also more or less precise, and may require a smaller step size.\hypertarget{index_autotoc_md14}{}\doxysection{Limitations}\label{index_autotoc_md14}
+We encountered various challenges during the realisation of this project, some were taken care of, and some remain as limitations of our implementation.\hypertarget{index_autotoc_md15}{}\doxysubsection{Solvers classes}\label{index_autotoc_md15}
 Our first main challenge was to find a suitable class organisation for the different solvers.
 
 A good knowledge of the methods was needed to understand how they relate with each other, and what were their common and specific characteristics. There are different approaches we thought about, and we decided to split the methods between two main categories\+: {\bfseries{explicit}} and {\bfseries{implicit}}. The explicit methods can be single-\/step or multi-\/step methods.
 
-Another approach we thought about was to separate in two other categories\+: Runge-\/\+Kutta and linear multi-\/step methods. Then linear multi-\/step methods could have been split between explicit and implicit and would have been determined by their weights.\hypertarget{index_autotoc_md15}{}\doxysubsection{Function class}\label{index_autotoc_md15}
-Our second main challenge was to create a function class, and handle the derivatives. We decided to create a base class ({\ttfamily O\+D\+E\+Righ\+Hand\+Side}) and two children that correspond to functions for which we know the derivative and for which we do not. If the derivative is not known, it is approximated with centered differences.
+Another approach we thought about was to separate in two other categories\+: Runge-\/\+Kutta and linear multi-\/step methods. Then linear multi-\/step methods could have been split between explicit and implicit and would have been determined by their weights.\hypertarget{index_autotoc_md16}{}\doxysubsection{Function classes}\label{index_autotoc_md16}
+Our second main challenge was to create a function class, and handle the derivatives. We decided to create a base class ({\ttfamily O\+D\+E\+Righ\+Hand\+Side}) and two child classes that correspond to functions for which we know the derivative and for which we do not. If the derivative is unknown, it is approximated using centered differences.
 
-There are however a few limitations with our approach. First, we can only use the functions that are in the file {\ttfamily Example\+R\+H\+S.\+h}. An improvement would be to have a parser that lets the user write their function. The user would also need to specify if they want to use the known derivative for the function. This could be done either by letting the user specify the derivative, or by having a derivative calculator accessible in the project.\hypertarget{index_autotoc_md16}{}\doxysubsection{Dimension of the O\+DE}\label{index_autotoc_md16}
-The main limitation of our project is that it focuses strictly on O\+D\+Es that are from \$\textbackslash{}mathbb\{R\} \textbackslash{}times \textbackslash{}mathbb\{R\}\$ to \$\textbackslash{}mathbb\{R\}\$, i.\+e. \$y,t\$ are real and so is \$f(t,y)\$. Possible extensions could be
+There are however a few limitations with our approach.
 \begin{DoxyItemize}
-\item allowing \$y\$ to be a vector, i.\+e. \$y \textbackslash{}in \textbackslash{}mathbb\{R\}$^\wedge$n\$
-\item allowing \$f\$ to be a vector-\/valued function, i.\+e. solve a system of O\+D\+Es
-\item allowing \$y\$ to be a complex number, or a complex-\/valued vector, etc.
+\item We only provided 2 types of built-\/in functions\+: {\ttfamily \mbox{\hyperlink{class_model_problem_r_h_s}{Model\+Problem\+R\+HS}}} and {\ttfamily \mbox{\hyperlink{class_polynomial_r_h_s}{Polynomial\+R\+HS}}}.
+\item Despite the possibility of using arbitrary functions in {\ttfamily \mbox{\hyperlink{class_user_defined_r_h_s}{User\+Defined\+R\+HS}}}, we didn\textquotesingle{}t manage to implement it in a way that allows the user to avoid recompilation. Additionally, the user needs to specify whether they want to use a known or unknown derivative for the function.
+\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysubsection{Dimension of the O\+DE}\label{index_autotoc_md17}
+The main limitation of our project is that it focuses strictly on ordinary differential equations (O\+D\+Es) that map from \$\textbackslash{}mathbb\{R\} \textbackslash{}times \textbackslash{}mathbb\{R\}\$ to \$\textbackslash{}mathbb\{R\}\$. In other words, both \$y\$ and \$t\$ are real numbers, and the function \$f\$, defined by \begin{DoxyParagraph}{f}
+\textbackslash{}mathbb\{R\} \textbackslash{}times \textbackslash{}mathbb\{R\} \textbackslash{}to \textbackslash{}mathbb\{R\}
+\end{DoxyParagraph}
+, is also real-\/valued. Possible extensions could include\+:
+\begin{DoxyItemize}
+\item Allowing \$y\$ to be a vector, i.\+e. \$y \textbackslash{}in \textbackslash{}mathbb\{R\}$^\wedge$n\$,
+\item Enabling \$\textbackslash{}mathbf\{f\}\$ to be a vector-\/valued function, allowing it to solve systems of O\+D\+Es by defining \$\textbackslash{}mathbf\{f\}\+: \textbackslash{}mathbb\{R\} \textbackslash{}times \textbackslash{}mathbb\{R\}$^\wedge$n \textbackslash{}to \textbackslash{}mathbb\{R\}$^\wedge$n\$,
+\item Extending \$y\$ to be a complex number or a complex-\/valued vector, altering the domain and range of \$f\$ to include complex dimensions.
 \end{DoxyItemize}
 
-For this a few solutions we thought about were to use template classes and/or Eigen vectors for \$y\$. 
+To implement these extensions, we are considering the use of template classes and/or Eigen vectors for variable types of \$y\$. 

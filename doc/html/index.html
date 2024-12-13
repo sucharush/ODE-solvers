@@ -82,6 +82,9 @@ Table of contents</h1>
 <li><a href="#limitations">Limitations</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
+Disclaimer for latex</h1>
+<p>The latex configuration is not entirely set for the Doxygen page, please use the preview on your editor or the preview from the Gitlab website to read the formulas easier.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Project Overview</h1>
 <p>This project provides an implementation of numerical solvers for solving ordinary differential equations (ODEs), i.e. $y^{'}(t)=f(t,y(t))$. The solvers currently support the following methods:</p>
 <ul>
@@ -91,7 +94,7 @@ Project Overview</h1>
 <li><b>Backward Euler (BE)</b>: Implicit single-step solver with optional tolerance and iteration settings.</li>
 </ul>
 <p>The default implementation solves the model problem $y^{'} = -0.3y$ using a 4th-order Runge-Kutta method. The project is modular, allowing customization of solvers, functions, and configurations. </p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Right-Hand Side (RHS) Functions</h2>
 <p>To represent the right-hand side function $f(t, y)$ in the ODE, the project provides the following built-in options:</p>
 <ol type="1">
@@ -108,7 +111,7 @@ Right-Hand Side (RHS) Functions</h2>
 </li>
 </ol>
 <p>These RHS functions can be selected and configured in the configuration file (<code>config/config.json</code>), providing flexibility for different types of ODEs. You can also implement custom RHS functions by modifying the <code>ExampleRHS</code> classes.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Structure</h1>
 <p>The main structure of the project is as follows:</p><ul>
 <li><code>/config</code>: configuration settings to run the main.</li>
@@ -150,13 +153,13 @@ Structure</h1>
 <div class="line">└── README.md                          </div>
 </div><!-- fragment --><p>Here is a brief sketch of the class hierarchy.</p>
 <p><img src="hierarchy.png" alt="UML Diagram" width="700" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 How to</h1>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Quick Start</h2>
 <p>First, you need to clone the project repository on your local machine. </p><div class="fragment"><div class="line">git clone git@gitlab.epfl.ch:ebaup/pcsc-project.git</div>
 <div class="line">cd pcsc-project</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Set-up and Building</h2>
 <p>The project relies on <em>googletest</em> and <em>Eigen</em>, initialize them as submodules to install these dependencies:</p>
 <div class="fragment"><div class="line">git submodule update --init </div>
@@ -166,10 +169,10 @@ Set-up and Building</h2>
 <div class="line">cmake ..</div>
 <div class="line">make</div>
 <div class="line">./main</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 Read the output file</h2>
 <div class="fragment"><div class="line">cat output.txt</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 Update the Configuration</h2>
 <p>Modify the <code>config/config.json</code> file to set global parameters and solver-specific options. </p><div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;global&quot;: {</div>
@@ -197,13 +200,13 @@ Update the Configuration</h2>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p><b>Note:</b> It will automatically build the forward Euler method when choosing <code>order = 1</code> for Runge Kutta or <code>steps = 1</code> for AdamsBashforth, as they are the same solvers.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Documentation</h2>
 <p>Building the project also creates a folder 'doc', that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives:</p><ul>
 <li>open the file 'index.html' located in doc/html/. This should open a window in your browser with our documentation.</li>
 <li>use doxywizard (type <code>doxywizard</code> in your terminal) and select the Doxyfile located in the main folder of the project. Then you can run doxygen from doxywizard to generate the documentation.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Tests</h2>
 <p>Another executive file produced by the building concerns the googletests. They are separated in 3 files:</p><ul>
 <li><code>auxiliary_test.cc</code>: contains tests on auxiliary classes, mainly on the function class.</li>
@@ -211,26 +214,30 @@ Tests</h2>
 <li><code>polynomial_test.cc</code>: contains tests on a specific polynomial function, for all solvers.</li>
 </ul>
 <p>All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. The tests should pass, also the tolerance threshold for the error is quite high (1e-2). Note that some solvers are also more or less precise, and may require a smaller step size.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Limitations</h1>
 <p>We encountered various challenges during the realisation of this project, some were taken care of, and some remain as limitations of our implementation.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Solvers classes</h2>
 <p>Our first main challenge was to find a suitable class organisation for the different solvers.</p>
 <p>A good knowledge of the methods was needed to understand how they relate with each other, and what were their common and specific characteristics. There are different approaches we thought about, and we decided to split the methods between two main categories: <b>explicit</b> and <b>implicit</b>. The explicit methods can be single-step or multi-step methods.</p>
 <p>Another approach we thought about was to separate in two other categories: Runge-Kutta and linear multi-step methods. Then linear multi-step methods could have been split between explicit and implicit and would have been determined by their weights.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Function class</h2>
-<p>Our second main challenge was to create a function class, and handle the derivatives. We decided to create a base class (<code>ODERighHandSide</code>) and two children that correspond to functions for which we know the derivative and for which we do not. If the derivative is not known, it is approximated with centered differences.</p>
-<p>There are however a few limitations with our approach. First, we can only use the functions that are in the file <code>ExampleRHS.h</code>. An improvement would be to have a parser that lets the user write their function. The user would also need to specify if they want to use the known derivative for the function. This could be done either by letting the user specify the derivative, or by having a derivative calculator accessible in the project.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
-Dimension of the ODE</h2>
-<p>The main limitation of our project is that it focuses strictly on ODEs that are from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$, i.e. $y,t$ are real and so is $f(t,y)$. Possible extensions could be</p><ul>
-<li>allowing $y$ to be a vector, i.e. $y \in \mathbb{R}^n$</li>
-<li>allowing $f$ to be a vector-valued function, i.e. solve a system of ODEs</li>
-<li>allowing $y$ to be a complex number, or a complex-valued vector, etc.</li>
+Function classes</h2>
+<p>Our second main challenge was to create a function class, and handle the derivatives. We decided to create a base class (<code>ODERighHandSide</code>) and two child classes that correspond to functions for which we know the derivative and for which we do not. If the derivative is unknown, it is approximated using centered differences.</p>
+<p>There are however a few limitations with our approach.</p><ul>
+<li>We only provided 2 types of built-in functions: <code><a class="el" href="class_model_problem_r_h_s.html" title="Class for the RHS of the model problem.">ModelProblemRHS</a></code> and <code><a class="el" href="class_polynomial_r_h_s.html" title="Class for polynomial functions.">PolynomialRHS</a></code>.</li>
+<li>Despite the possibility of using arbitrary functions in <code><a class="el" href="class_user_defined_r_h_s.html" title="Class for user-defined RHS.">UserDefinedRHS</a></code>, we didn't manage to implement it in a way that allows the user to avoid recompilation. Additionally, the user needs to specify whether they want to use a known or unknown derivative for the function.</li>
 </ul>
-<p>For this a few solutions we thought about were to use template classes and/or Eigen vectors for $y$. </p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Dimension of the ODE</h2>
+<p>The main limitation of our project is that it focuses strictly on ordinary differential equations (ODEs) that map from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$. In other words, both $y$ and $t$ are real numbers, and the function $f$, defined by </p><dl class="section rcs"><dt>f</dt><dd>\mathbb{R} \times \mathbb{R} \to \mathbb{R}</dd></dl>
+<p>, is also real-valued. Possible extensions could include:</p><ul>
+<li>Allowing $y$ to be a vector, i.e. $y \in \mathbb{R}^n$,</li>
+<li>Enabling $\mathbf{f}$ to be a vector-valued function, allowing it to solve systems of ODEs by defining $\mathbf{f}: \mathbb{R} \times \mathbb{R}^n \to \mathbb{R}^n$,</li>
+<li>Extending $y$ to be a complex number or a complex-valued vector, altering the domain and range of $f$ to include complex dimensions.</li>
+</ul>
+<p>To implement these extensions, we are considering the use of template classes and/or Eigen vectors for variable types of $y$. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

@@ -16,13 +16,7 @@
 #include "UserDefinedRHS.h"
 #include "SolverFactory.h"
 
-// double computeAnalyticalSolution(double t, double y0, double k) {
-//     return y0 * std::exp(-k * t); // define analytical solution if you know
-// }
-double computeAnalyticalSolution(double t, double y0) {
-    double C = y0 + 0.5;  // Calculate the integration constant C
-    return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
-}
+
 int main() {
     try {
         std::filesystem::path projectRoot = std::filesystem::current_path().parent_path();
@@ -56,43 +50,3 @@ int main() {
 
     return 0;
 }
-
-/*int main() {
-    double initialTime = 0.0;
-    double finalTime = 1.0;
-    double initialValue = 1.0;
-    double stepSize = 0.01;  // Change this as needed for accuracy
-    double k = 0.3;  // Decay constant
-
-    // Set up the right-hand side function
-    // std::unique_ptr<ODERightHandSide> rhs = std::make_unique<ModelProblemRHS>(k);
-    Eigen::VectorXd coeffs(2);
-    coeffs << 1, 2;
-    std::unique_ptr<ODERightHandSide> rhs = std::make_unique<PolynomialRHS>(coeffs);
-    // Set up the solver
-    // BackwardEulerSolver solver;
-    // AdamsBashforthSolver solver(4, "RK4");
-    ForwardEulerSolver solver;
-    // RungeKuttaSolver solver(4);
-    solver.SetStepSize(stepSize);
-    solver.SetTimeInterval(initialTime, finalTime);
-    solver.SetInitialValue(initialValue);
-
-    solver.SetRightHandSide(std::move(rhs));
-
-    // Solve the ODE
-    solver.SolveEquation(std::cout);  // Assuming SolveEquation outputs to a given stream
-    solver.PrintResults(std::cout);
-    double t = initialTime;
-    int numSteps = solver.results.size();
-    std::cout << "\nComparison with Analytical Solution:\n";
-    std::cout << "t\tNumerical\tAnalytical\tError\n";
-
-    for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double numerical = solver.results[i];
-        double analytical = computeAnalyticalSolution(t, initialValue);
-        double error = std::abs(numerical - analytical);
-
-        std::cout << t << "\t" << numerical << "\t" << analytical << "\t" << error << "\n";
-    }
-}*/

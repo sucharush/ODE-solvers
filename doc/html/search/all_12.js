@@ -9,5 +9,6 @@ var searchData=
   ['_7eoderighthandside_96',['~ODERightHandSide',['../class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb',1,'ODERightHandSide']]],
   ['_7epolynomialrhs_97',['~PolynomialRHS',['../class_polynomial_r_h_s.html#ae4e334747a41936ccce80edfacebc8ad',1,'PolynomialRHS']]],
   ['_7erungekuttasolver_98',['~RungeKuttaSolver',['../class_runge_kutta_solver.html#a5e266e85f94176e9539e493e5dd510b8',1,'RungeKuttaSolver']]],
-  ['_7eunknownderivativerhs_99',['~UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f',1,'UnknownDerivativeRHS']]]
+  ['_7eunknownderivativerhs_99',['~UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f',1,'UnknownDerivativeRHS']]],
+  ['_7euserdefinedrhs_100',['~UserDefinedRHS',['../class_user_defined_r_h_s.html#ae4c363567cbeabc885319891d60e1a26',1,'UserDefinedRHS']]]
 ];

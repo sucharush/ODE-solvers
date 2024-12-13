@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['_7eabstractodesolver_177',['~AbstractOdeSolver',['../class_abstract_ode_solver.html#aed085a5a3e3c7dbf734635b3006da453',1,'AbstractOdeSolver']]],
-  ['_7ebackwardeulersolver_178',['~BackwardEulerSolver',['../class_backward_euler_solver.html#a6f905fa948f3d00f314ebe34b38dbca5',1,'BackwardEulerSolver']]],
-  ['_7eexplicitmultistepsolver_179',['~ExplicitMultiStepSolver',['../class_explicit_multi_step_solver.html#a624aeaefaccb5fbc1a3a4912ccff3124',1,'ExplicitMultiStepSolver']]],
-  ['_7eforwardeulersolver_180',['~ForwardEulerSolver',['../class_forward_euler_solver.html#ab50ed62e0ddbbea785a5ff3c65157c03',1,'ForwardEulerSolver']]],
-  ['_7eknownderivativerhs_181',['~KnownDerivativeRHS',['../class_known_derivative_r_h_s.html#aded0388b6cbb0cf2cdc8b33f328dc01a',1,'KnownDerivativeRHS']]],
-  ['_7emodelproblemrhs_182',['~ModelProblemRHS',['../class_model_problem_r_h_s.html#a77c57abf9b6aa8c03f28bea28eb57168',1,'ModelProblemRHS']]],
-  ['_7eoderighthandside_183',['~ODERightHandSide',['../class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb',1,'ODERightHandSide']]],
-  ['_7epolynomialrhs_184',['~PolynomialRHS',['../class_polynomial_r_h_s.html#ae4e334747a41936ccce80edfacebc8ad',1,'PolynomialRHS']]],
-  ['_7erungekuttasolver_185',['~RungeKuttaSolver',['../class_runge_kutta_solver.html#a5e266e85f94176e9539e493e5dd510b8',1,'RungeKuttaSolver']]],
-  ['_7eunknownderivativerhs_186',['~UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f',1,'UnknownDerivativeRHS']]]
+  ['_7eabstractodesolver_179',['~AbstractOdeSolver',['../class_abstract_ode_solver.html#aed085a5a3e3c7dbf734635b3006da453',1,'AbstractOdeSolver']]],
+  ['_7ebackwardeulersolver_180',['~BackwardEulerSolver',['../class_backward_euler_solver.html#a6f905fa948f3d00f314ebe34b38dbca5',1,'BackwardEulerSolver']]],
+  ['_7eexplicitmultistepsolver_181',['~ExplicitMultiStepSolver',['../class_explicit_multi_step_solver.html#a624aeaefaccb5fbc1a3a4912ccff3124',1,'ExplicitMultiStepSolver']]],
+  ['_7eforwardeulersolver_182',['~ForwardEulerSolver',['../class_forward_euler_solver.html#ab50ed62e0ddbbea785a5ff3c65157c03',1,'ForwardEulerSolver']]],
+  ['_7eknownderivativerhs_183',['~KnownDerivativeRHS',['../class_known_derivative_r_h_s.html#aded0388b6cbb0cf2cdc8b33f328dc01a',1,'KnownDerivativeRHS']]],
+  ['_7emodelproblemrhs_184',['~ModelProblemRHS',['../class_model_problem_r_h_s.html#a77c57abf9b6aa8c03f28bea28eb57168',1,'ModelProblemRHS']]],
+  ['_7eoderighthandside_185',['~ODERightHandSide',['../class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb',1,'ODERightHandSide']]],
+  ['_7epolynomialrhs_186',['~PolynomialRHS',['../class_polynomial_r_h_s.html#ae4e334747a41936ccce80edfacebc8ad',1,'PolynomialRHS']]],
+  ['_7erungekuttasolver_187',['~RungeKuttaSolver',['../class_runge_kutta_solver.html#a5e266e85f94176e9539e493e5dd510b8',1,'RungeKuttaSolver']]],
+  ['_7eunknownderivativerhs_188',['~UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f',1,'UnknownDerivativeRHS']]],
+  ['_7euserdefinedrhs_189',['~UserDefinedRHS',['../class_user_defined_r_h_s.html#ae4c363567cbeabc885319891d60e1a26',1,'UserDefinedRHS']]]
 ];

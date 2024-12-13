@@ -3,13 +3,13 @@
 // Test file to test the solvers on the model problem.
 //
 #include <gtest/gtest.h>
-#include <Eigen/Dense>
 #include <iostream>
 #include <memory>
 #include <random>
 #include "ModelProblemRHS.h"
 #include "ODERightHandSide.h"
 #include "utils.h"
+
 /// Generate random distribution for tests
 std::random_device rd_k;
 std::mt19937 gen_k(rd_k()); //!< use specific engine for generation
@@ -17,8 +17,9 @@ std::mt19937 gen_k(rd_k()); //!< use specific engine for generation
 std::uniform_real_distribution<> dis_k(0.0, 1.0);
 double const k_test = dis_k(gen_k);
 
-double computeAnalyticalSolution(double t, double y0, double k) {
-    return y0 * std::exp(-k * t);
+/// Analytical solution for the test on the model problem
+double AnalyticalSolutionModel(double t, double y0, double k) {
+    return y0 * std::exp(-k * t); // define analytical solution if you know
 }
 
 class ModelProblemTest : public::testing::Test {
@@ -65,7 +66,7 @@ TEST_F(ModelProblemTest, FE) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        double exp_val = AnalyticalSolutionModel(t, initialValue, k_test);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
@@ -85,7 +86,7 @@ TEST_F(ModelProblemTest, BE) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        double exp_val = AnalyticalSolutionModel(t, initialValue, k_test);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
@@ -104,7 +105,7 @@ TEST_F(ModelProblemTest, RK) {
         solver.SetType(order);
         double t = initialTime;
         for (int i = 0; i < numSteps; ++i, t += stepSize) {
-            double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+            double exp_val = AnalyticalSolutionModel(t, initialValue, k_test);
             EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
         }
     }
@@ -124,7 +125,7 @@ TEST_F(ModelProblemTest, AB) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        double exp_val = AnalyticalSolutionModel(t, initialValue, k_test);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }

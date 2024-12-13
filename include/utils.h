@@ -14,6 +14,7 @@
 #define UTILS_H
 
 #include <functional>
+#include <cmath>
 // Useful constants
 double const TOL = 1e-6; //!< Default tolerance threshold (for Newton and difference scheme)
 double const MAX_ITER = 50; //!< Default maximum number of iterations for Newton method
@@ -27,11 +28,5 @@ typedef double var_y; //!< [unused] Typedef for the space parameter of the ODE
 /// Typedef for function type (right hand side object of the ODE)
 typedef std::function<double(double, double)> FuncType;
 
-double AnalyticalSolutionPoly(double t, double y0) {
- double C = y0 + 0.5;  // Calculate the integration constant C
- return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
-}
-double AnalyticalSolutionModel(double t, double y0, double k) {
-    return y0 * std::exp(-k * t); // define analytical solution if you know
-}
+
 #endif //UTILS_H

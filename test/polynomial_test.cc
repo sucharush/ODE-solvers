@@ -11,10 +11,12 @@
 #include "utils.h"
 
 Eigen::VectorXd coeffs = Eigen::VectorXd::Map((double[]){1, 2}, 2);
+double stepsize_euler = 1e-5; // FE and BE need smaller step size
 
-double computeAnalyticalSolution(double t, double y0) {
+/// Analytical solution for the test on a specific polynomial
+double AnalyticalSolutionPoly(double t, double y0) {
     double C = y0 + 0.5;  // Calculate the integration constant C
-    return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
+    return C * std::exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
 }
 
 class PolyRHSTest : public::testing::Test {
@@ -30,7 +32,6 @@ protected:
 
 // Test Forward Euler solver on model problem
 #include "ForwardEulerSolver.h"
-double stepsize_euler = 1e-5; // FE and BE need smaller step size
 
 TEST_F(PolyRHSTest, FE) {
     ForwardEulerSolver solver;
@@ -43,7 +44,7 @@ TEST_F(PolyRHSTest, FE) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepsize_euler) {
-        double exp_val = computeAnalyticalSolution(t, initialValue);
+        double exp_val = AnalyticalSolutionPoly(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
@@ -63,7 +64,7 @@ TEST_F(PolyRHSTest, BE) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepsize_euler) {
-        double exp_val = computeAnalyticalSolution(t, initialValue);
+        double exp_val = AnalyticalSolutionPoly(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
@@ -82,7 +83,7 @@ TEST_F(PolyRHSTest, RK) {
         solver.SetType(order);
         double t = initialTime;
         for (int i = 0; i < numSteps; ++i, t += stepSize) {
-            double exp_val = computeAnalyticalSolution(t, initialValue);
+            double exp_val = AnalyticalSolutionPoly(t, initialValue);
             EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
         }
     }
@@ -102,7 +103,7 @@ TEST_F(PolyRHSTest, AB) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue);
+        double exp_val = AnalyticalSolutionPoly(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
