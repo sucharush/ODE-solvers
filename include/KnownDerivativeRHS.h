@@ -23,12 +23,12 @@ public:
     @param func (pointer on) function object for the right hand side
     @param deriv (pointer on) function object for the derivative of the right hand side
     */
-    KnownDerivativeRHS(FuncType* func = nullptr, FuncType* deriv = nullptr);
+    KnownDerivativeRHS(std::shared_ptr<FuncType> func = nullptr, std::shared_ptr<FuncType> deriv = nullptr);
     /// Destructor
-    /*! This destructor deallocates the memory used by the derivative.
-     * The memory used by the function is deallocated in the parent's destructor.
+    /*!
+     The memory is automatically deallocated as we use smart pointers.
     */
-    virtual ~KnownDerivativeRHS();
+    virtual ~KnownDerivativeRHS() {}
     /// Overriden implementation of the derivative evaluation.
     /*!
     This computes the exact value of the derivative at (y,t) with the given df.
@@ -38,7 +38,7 @@ public:
     */
     virtual double derivative(double y, double t) const override;
 protected:
-    FuncType* df; //!< Pointer to the derivative (wrt t) of the right hand side function.
+    std::shared_ptr<FuncType> df; //!< Pointer to the derivative (wrt t) of the right hand side function.
 };
 
 #endif //KNOWNDERIVATIVERHS_H

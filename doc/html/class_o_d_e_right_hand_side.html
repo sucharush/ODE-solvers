@@ -81,17 +81,19 @@ Inheritance diagram for ODERightHandSide:</div>
  <div class="center">
   <img src="class_o_d_e_right_hand_side.png" usemap="#ODERightHandSide_map" alt=""/>
   <map id="ODERightHandSide_map" name="ODERightHandSide_map">
-<area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="0,56,146,80"/>
-<area href="class_unknown_derivative_r_h_s.html" title="Class for function with unknown derivative." alt="UnknownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
+<area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
+<area href="class_unknown_derivative_r_h_s.html" title="Class for function with unknown derivative." alt="UnknownDerivativeRHS" shape="rect" coords="312,56,458,80"/>
 <area href="class_example_r_h_s.html" alt="ExampleRHS" shape="rect" coords="0,112,146,136"/>
+<area href="class_model_problem_r_h_s.html" alt="ModelProblemRHS" shape="rect" coords="156,112,302,136"/>
+<area href="class_polynomial_r_h_s.html" alt="PolynomialRHS" shape="rect" coords="312,112,458,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92ede53374a8b9f244aeb013351a346e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e">ODERightHandSide</a> (<a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *fun=nullptr)</td></tr>
-<tr class="memdesc:a92ede53374a8b9f244aeb013351a346e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a function instance.  <a href="class_o_d_e_right_hand_side.html#a92ede53374a8b9f244aeb013351a346e">More...</a><br /></td></tr>
-<tr class="separator:a92ede53374a8b9f244aeb013351a346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a2bf7c41cd7d252cfba71bc98ef92c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a2a2bf7c41cd7d252cfba71bc98ef92c4">ODERightHandSide</a> (std::shared_ptr&lt; <a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> &gt; f_ptr=nullptr)</td></tr>
+<tr class="memdesc:a2a2bf7c41cd7d252cfba71bc98ef92c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a function instance.  <a href="class_o_d_e_right_hand_side.html#a2a2bf7c41cd7d252cfba71bc98ef92c4">More...</a><br /></td></tr>
+<tr class="separator:a2a2bf7c41cd7d252cfba71bc98ef92c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a9a664b62685ce7b0676015eeff5bcb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb">~ODERightHandSide</a> ()</td></tr>
 <tr class="memdesc:a2a9a664b62685ce7b0676015eeff5bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb">More...</a><br /></td></tr>
 <tr class="separator:a2a9a664b62685ce7b0676015eeff5bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,17 +106,17 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0e65199f1e085d986893693f4ed4058e"><td class="memItemLeft" align="right" valign="top"><a id="a0e65199f1e085d986893693f4ed4058e"></a>
-<a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a0e65199f1e085d986893693f4ed4058e">f</a></td></tr>
-<tr class="memdesc:a0e65199f1e085d986893693f4ed4058e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the right hand side function. <br /></td></tr>
-<tr class="separator:a0e65199f1e085d986893693f4ed4058e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01c50e1166ef2493ac9151aca746b2ba"><td class="memItemLeft" align="right" valign="top"><a id="a01c50e1166ef2493ac9151aca746b2ba"></a>
+std::shared_ptr&lt; <a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_d_e_right_hand_side.html#a01c50e1166ef2493ac9151aca746b2ba">f</a></td></tr>
+<tr class="memdesc:a01c50e1166ef2493ac9151aca746b2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the right hand side function. <br /></td></tr>
+<tr class="separator:a01c50e1166ef2493ac9151aca746b2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>(Abstract) base function class. </p>
 <p>This is the base function class, that allows us to represent a function (together with its derivative). </p><dl class="section note"><dt>Note</dt><dd>We kept the name <a class="el" href="class_o_d_e_right_hand_side.html" title="(Abstract) base function class.">ODERightHandSide</a>, but it could have been renamed simply to Function. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a92ede53374a8b9f244aeb013351a346e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92ede53374a8b9f244aeb013351a346e">&#9670;&nbsp;</a></span>ODERightHandSide()</h2>
+<a id="a2a2bf7c41cd7d252cfba71bc98ef92c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2bf7c41cd7d252cfba71bc98ef92c4">&#9670;&nbsp;</a></span>ODERightHandSide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,8 +127,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">ODERightHandSide::ODERightHandSide </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> *&#160;</td>
-          <td class="paramname"><em>fun</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c5440b6ca6">FuncType</a> &gt;&#160;</td>
+          <td class="paramname"><em>f_ptr</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -172,7 +174,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
-<p>This destructor deallocates the memory used by the right hand side. </p>
+<p>The memory doesn't need to be deallocated as we use smart pointers. </p>
 
 </div>
 </div>

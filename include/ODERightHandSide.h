@@ -9,7 +9,7 @@
 #define ODERIGHTHANDSIDE_H
 
 #include "utils.h"
-#include <iostream>
+#include <memory>
 
 //!  (Abstract) base function class.
 /*!
@@ -25,14 +25,12 @@ public:
     @param fun Pointer to a FuncType, by default: null pointer.
     @see FuncType in utils.h
     */
-    ODERightHandSide(FuncType* fun = nullptr): f(fun) {}
+    ODERightHandSide(std::shared_ptr<FuncType> f_ptr = nullptr): f(f_ptr) {}
     //! Destructor
     /*!
-    This destructor deallocates the memory used by the right hand side.
+    The memory doesn't need to be deallocated as we use smart pointers.
     */
-    virtual ~ODERightHandSide() {
-        delete f;
-    }
+    virtual ~ODERightHandSide() {}
 
     /// Computes the value at the function.
     /*!
@@ -51,7 +49,7 @@ public:
     */
     virtual double derivative(double y, double t) const = 0;
 protected:
-    FuncType* f; //!< Pointer to the right hand side function.
+    std::shared_ptr<FuncType> f; //!< Pointer to the right hand side function.
 };
 
 #endif //ODERIGHTHANDSIDE_H

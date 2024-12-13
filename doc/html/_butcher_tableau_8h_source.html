@@ -93,23 +93,31 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                (Eigen::MatrixXd(2, 2) &lt;&lt; 0.0, 0.0, 0.5, 0.0).finished(), <span class="comment">// a matrix</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                {0.0, 1.0} <span class="comment">// b values</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (order == 4) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (order == 3) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                {0.0, 0.5, 0.5, 1.0}, <span class="comment">// c values</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                (Eigen::MatrixXd(4, 4) &lt;&lt; 0.0, 0.0, 0.0, 0.0,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                          0.5, 0.0, 0.0, 0.0,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                          0.0, 0.5, 0.0, 0.0,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                          0.0, 0.0, 1.0, 0.0).finished(), <span class="comment">// a matrix</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} <span class="comment">// b values</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// Here we can add more tables for different orders</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unsupported order: &quot;</span> + std::to_string(order) +</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="stringliteral">&quot;Please choose from &#39;RK2&#39;, &#39;RK4&#39; &quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif //BUTCHERTABLE_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    {0.0, 0.5, 1.0}, <span class="comment">// c values</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    (Eigen::MatrixXd(3, 3) &lt;&lt; 0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                     0.5, 0.0, 0.0,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                     -1.0, 2.0, 0.0).finished(), <span class="comment">// a matrix</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    {1.0/6.0, 2.0/3.0, 1.0/6.0} <span class="comment">// b values</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (order == 4) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    {0.0, 0.5, 0.5, 1.0}, <span class="comment">// c values</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    (Eigen::MatrixXd(4, 4) &lt;&lt; 0.0, 0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                              0.5, 0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                              0.0, 0.5, 0.0, 0.0,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                              0.0, 0.0, 1.0, 0.0).finished(), <span class="comment">// a matrix</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0} <span class="comment">// b values</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// Here we can add more tables for different orders</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unsupported order: &quot;</span> + std::to_string(order) +</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="stringliteral">&quot;Please choose from &#39;RK2&#39;, &#39;RK4&#39; &quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif //BUTCHERTABLE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct_butcher_tableau_html_a025b065fa46e1416588135aa1148f829"><div class="ttname"><a href="struct_butcher_tableau.html#a025b065fa46e1416588135aa1148f829">ButcherTableau::b</a></div><div class="ttdeci">std::vector&lt; double &gt; b</div><div class="ttdoc">Weight coefficients for the final sum.</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:22</div></div>
 <div class="ttc" id="astruct_butcher_tableau_html_a7c97bc8c0286ff2f918974eacc74d8f1"><div class="ttname"><a href="struct_butcher_tableau.html#a7c97bc8c0286ff2f918974eacc74d8f1">ButcherTableau::c</a></div><div class="ttdeci">std::vector&lt; double &gt; c</div><div class="ttdoc">Nodes (time coefficients)</div><div class="ttdef"><b>Definition:</b> ButcherTableau.h:20</div></div>

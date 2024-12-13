@@ -14,9 +14,9 @@
 #define UTILS_H
 
 #include <functional>
-
+#include <random>
 // Useful constants
-double const TOL = 1e-6; //!< Default tolerance threshold for Newton method
+double const TOL = 1e-6; //!< Default tolerance threshold (for Newton and difference scheme)
 double const MAX_ITER = 50; //!< Default maximum number of iterations for Newton method
 
 double const TOL_SOLUTION = 1e-2; //!< Tolerance threshold for error
