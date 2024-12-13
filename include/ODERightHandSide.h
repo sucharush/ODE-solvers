@@ -22,7 +22,7 @@ public:
     //! Constructor of a function instance
     /*!
     This constructor sets the function object of the right hand side of the ODE.
-    @param fun Pointer to a FuncType, by default: null pointer.
+    @param f_ptr Pointer to a FuncType, by default: null pointer.
     @see FuncType in utils.h
     */
     ODERightHandSide(std::shared_ptr<FuncType> f_ptr = nullptr): f(f_ptr) {}
@@ -35,7 +35,7 @@ public:
     /// Computes the value at the function.
     /*!
     @param y space variable
-    @param t time varianle
+    @param t time variable
     @return f(y,t)
     */
     virtual double value(double y, double t) const;

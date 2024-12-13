@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['globalparams_0',['globalParams',['../struct_solver_config.html#a32f5ace842799322b279aad66caa1f96',1,'SolverConfig']]]
+  ['initmethod_197',['initMethod',['../struct_solver_config.html#ad5b6bf22c286cd5196226e65272cc8e2',1,'SolverConfig']]]
 ];

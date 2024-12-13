@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['examplerhs_17',['ExampleRHS',['../class_example_r_h_s.html',1,'']]],
-  ['examplerhs_2eh_18',['UserDefinedRHS.h',['../_example_r_h_s_8h.html',1,'']]],
   ['explicitmultistepsolver_19',['ExplicitMultiStepSolver',['../class_explicit_multi_step_solver.html',1,'ExplicitMultiStepSolver'],['../class_explicit_multi_step_solver.html#a854a6da1ea5ac11f02f15748ada8638d',1,'ExplicitMultiStepSolver::ExplicitMultiStepSolver()']]],
   ['explicitmultistepsolver_2eh_20',['ExplicitMultiStepSolver.h',['../_explicit_multi_step_solver_8h.html',1,'']]],
   ['explicitsinglestepsolver_21',['ExplicitSingleStepSolver',['../class_explicit_single_step_solver.html',1,'']]],

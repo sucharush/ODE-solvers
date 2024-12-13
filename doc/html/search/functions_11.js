@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['to_5fbjdata_0',['to_bjdata',['../classbasic__json.html#a0912e7738f47e604ac96fe8cdde1a96e',1,'basic_json::to_bjdata(const basic_json &amp;j, const bool use_size=false, const bool use_type=false)'],['../classbasic__json.html#a2736658c256401394059599f97139ee9',1,'basic_json::to_bjdata(const basic_json &amp;j, detail::output_adapter&lt; std::uint8_t &gt; o, const bool use_size=false, const bool use_type=false)'],['../classbasic__json.html#a1fa9828fcbe4e33c9a036834564f7dbd',1,'basic_json::to_bjdata(const basic_json &amp;j, detail::output_adapter&lt; char &gt; o, const bool use_size=false, const bool use_type=false)']]],
-  ['to_5fbson_1',['to_bson',['../classbasic__json.html#a4ea6478022ab79b47216fda4b53ae1d4',1,'basic_json::to_bson(const basic_json &amp;j)'],['../classbasic__json.html#afd718b745034da1f4eea4c69f45cebda',1,'basic_json::to_bson(const basic_json &amp;j, detail::output_adapter&lt; std::uint8_t &gt; o)'],['../classbasic__json.html#a71794547dde3dd67e444aa45131ca861',1,'basic_json::to_bson(const basic_json &amp;j, detail::output_adapter&lt; char &gt; o)']]],
-  ['to_5fcbor_2',['to_cbor',['../classbasic__json.html#a7c47280dbbb39288384058b771f8eec6',1,'basic_json::to_cbor(const basic_json &amp;j)'],['../classbasic__json.html#a706ccab0e47bd75cd36911db84451cd1',1,'basic_json::to_cbor(const basic_json &amp;j, detail::output_adapter&lt; std::uint8_t &gt; o)'],['../classbasic__json.html#af31f5ee23264fb21bd31e16bc27adab2',1,'basic_json::to_cbor(const basic_json &amp;j, detail::output_adapter&lt; char &gt; o)']]],
-  ['to_5fchars_3',['to_chars',['../namespacedetail.html#a3f0588f1a546b169113e6e1e293168f4',1,'detail']]],
-  ['to_5fjson_4',['to_json',['../structadl__serializer.html#a0216149429fe899cf45cbf14e08e2166',1,'adl_serializer']]],
-  ['to_5fmsgpack_5',['to_msgpack',['../classbasic__json.html#aea0ea0404f7ea72f66b0d5d0032b1367',1,'basic_json::to_msgpack(const basic_json &amp;j)'],['../classbasic__json.html#af46fdac62559d4c38e623d99ad7064e9',1,'basic_json::to_msgpack(const basic_json &amp;j, detail::output_adapter&lt; std::uint8_t &gt; o)'],['../classbasic__json.html#a51da13ff4e850d4ad1cf23ce4f3b9e4a',1,'basic_json::to_msgpack(const basic_json &amp;j, detail::output_adapter&lt; char &gt; o)']]],
-  ['to_5fstring_6',['to_string',['../classjson__pointer.html#a6b94e2003be4cd72c4f145bcea2578ec',1,'json_pointer']]],
-  ['to_5fubjson_7',['to_ubjson',['../classbasic__json.html#a906e81d488ebcac169960a1d48f6b065',1,'basic_json::to_ubjson(const basic_json &amp;j, const bool use_size=false, const bool use_type=false)'],['../classbasic__json.html#ada3d71f1dcfea24465d364b815d11445',1,'basic_json::to_ubjson(const basic_json &amp;j, detail::output_adapter&lt; std::uint8_t &gt; o, const bool use_size=false, const bool use_type=false)'],['../classbasic__json.html#ab8b6c6cc3ba1b49af628fe0ec8c73b77',1,'basic_json::to_ubjson(const basic_json &amp;j, detail::output_adapter&lt; char &gt; o, const bool use_size=false, const bool use_type=false)']]],
-  ['token_5ftype_5fname_8',['token_type_name',['../classdetail_1_1lexer__base.html#aadef66e89ad828e5f69479c85887fa6d',1,'detail::lexer_base']]],
-  ['type_9',['type',['../classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef',1,'basic_json']]],
-  ['type_5fname_10',['type_name',['../classbasic__json.html#a15b177614647598e238e15ab1cc889c7',1,'basic_json']]]
+  ['_7eabstractodesolver_177',['~AbstractOdeSolver',['../class_abstract_ode_solver.html#aed085a5a3e3c7dbf734635b3006da453',1,'AbstractOdeSolver']]],
+  ['_7ebackwardeulersolver_178',['~BackwardEulerSolver',['../class_backward_euler_solver.html#a6f905fa948f3d00f314ebe34b38dbca5',1,'BackwardEulerSolver']]],
+  ['_7eexplicitmultistepsolver_179',['~ExplicitMultiStepSolver',['../class_explicit_multi_step_solver.html#a624aeaefaccb5fbc1a3a4912ccff3124',1,'ExplicitMultiStepSolver']]],
+  ['_7eforwardeulersolver_180',['~ForwardEulerSolver',['../class_forward_euler_solver.html#ab50ed62e0ddbbea785a5ff3c65157c03',1,'ForwardEulerSolver']]],
+  ['_7eknownderivativerhs_181',['~KnownDerivativeRHS',['../class_known_derivative_r_h_s.html#aded0388b6cbb0cf2cdc8b33f328dc01a',1,'KnownDerivativeRHS']]],
+  ['_7emodelproblemrhs_182',['~ModelProblemRHS',['../class_model_problem_r_h_s.html#a77c57abf9b6aa8c03f28bea28eb57168',1,'ModelProblemRHS']]],
+  ['_7eoderighthandside_183',['~ODERightHandSide',['../class_o_d_e_right_hand_side.html#a2a9a664b62685ce7b0676015eeff5bcb',1,'ODERightHandSide']]],
+  ['_7epolynomialrhs_184',['~PolynomialRHS',['../class_polynomial_r_h_s.html#ae4e334747a41936ccce80edfacebc8ad',1,'PolynomialRHS']]],
+  ['_7erungekuttasolver_185',['~RungeKuttaSolver',['../class_runge_kutta_solver.html#a5e266e85f94176e9539e493e5dd510b8',1,'RungeKuttaSolver']]],
+  ['_7eunknownderivativerhs_186',['~UnknownDerivativeRHS',['../class_unknown_derivative_r_h_s.html#aeca0b89d37ede2e7f49ae4b8e8cc674f',1,'UnknownDerivativeRHS']]]
 ];

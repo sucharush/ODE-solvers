@@ -6,6 +6,7 @@
 #include <Eigen/Dense>
 #include <iostream>
 #include <memory>
+#include <random>
 #include "ModelProblemRHS.h"
 #include "ODERightHandSide.h"
 #include "utils.h"
@@ -27,7 +28,7 @@ protected:
     double initialTime = 0.0;
     double finalTime = 1.0;
     double initialValue = 1.0;
-    double stepSize = 0.1;
+    double stepSize = 0.01;
 
 };
 

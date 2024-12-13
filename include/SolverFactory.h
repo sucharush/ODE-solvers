@@ -29,9 +29,9 @@ struct SolverConfig {
     int order = 4;                           //!< Order for Runge-Kutta
     std::string initMethod = "RK4";          //!< Initial method for Adams-Bashforth
     int steps = 2;                           //!< Number of steps for Adams-Bashforth
-    std::string type = "model";
-    double decay = 0.3;
-    Eigen::VectorXd coefficients;
+    std::string type = "model";     //!< RHS type
+    double decay = 0.3;     //!< decay constant for model problem
+    Eigen::VectorXd coefficients; //!< List of coefficients for polynomial
 
     /// Method do validate the configuration
     void validate() const;

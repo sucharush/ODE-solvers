@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['parent_5fpointer_0',['parent_pointer',['../classjson__pointer.html#aa03c0c1206e171342d27a4583258858b',1,'json_pointer']]],
-  ['parse_1',['parse',['../classdetail_1_1parser.html#a59f4b745d4aa146bf7a60a30060f592f',1,'detail::parser']]],
-  ['parse_5ferror_2',['parse_error',['../structjson__sax.html#af165920966b60b78e57a2e4d92a63897',1,'json_sax']]],
-  ['parseconfig_3',['parseConfig',['../class_config_parser.html#aa2fb23ba1db0028a927bc27ced20f5a5',1,'ConfigParser']]],
-  ['parser_4',['parser',['../classdetail_1_1parser.html#a4bb9ea1b0fddb8f46ff987bbf9e54045',1,'detail::parser']]],
-  ['patch_5',['patch',['../classbasic__json.html#a145a004c0a2fa5be84b260ecc98ab5d9',1,'basic_json']]],
-  ['patch_5finplace_6',['patch_inplace',['../classbasic__json.html#a693812b31e106dec9166e93d8f6dd7d7',1,'basic_json']]],
-  ['pop_5fback_7',['pop_back',['../classjson__pointer.html#a662118b470c87a1b564946c2602c49ce',1,'json_pointer']]],
-  ['printresults_8',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]],
-  ['push_5fback_9',['push_back',['../classjson__pointer.html#adbe97f9c00a221fb7be88d940b39a24f',1,'json_pointer::push_back(const string_t &amp;token)'],['../classjson__pointer.html#a6fa4848eafc232ae1af91c3d2696897e',1,'json_pointer::push_back(string_t &amp;&amp;token)'],['../classbasic__json.html#a3d13acce4e49e0d5ee768643a7b89010',1,'basic_json::push_back(basic_json &amp;&amp;val)'],['../classbasic__json.html#aca01ca3a9bc310e5c5d067a39dca6933',1,'basic_json::push_back(const basic_json &amp;val)'],['../classbasic__json.html#af17fe93acad9b0b991600225dabd42be',1,'basic_json::push_back(const typename object_t::value_type &amp;val)'],['../classbasic__json.html#a4fcacc90f17b156f0b6c8e0430624853',1,'basic_json::push_back(initializer_list_t init)']]]
+  ['setcoeffs_162',['SetCoeffs',['../class_adams_bashforth_solver.html#a6cccd382df5b3e74e6aae7c1e905370c',1,'AdamsBashforthSolver']]],
+  ['setinitialvalue_163',['SetInitialValue',['../class_abstract_ode_solver.html#a0340b4da640c8c9131363d0525d9223b',1,'AbstractOdeSolver']]],
+  ['setinitmethod_164',['setInitMethod',['../class_explicit_multi_step_solver.html#ac762c34e8f32c03e4a8b8cf162be25bc',1,'ExplicitMultiStepSolver']]],
+  ['setmaxiter_165',['SetMaxIter',['../class_implicit_solver.html#a6e9dc50173db44c3c2ab1f640382ed05',1,'ImplicitSolver']]],
+  ['setrighthandside_166',['SetRightHandSide',['../class_abstract_ode_solver.html#a57b4afc9ef64780f3758461f45ec853e',1,'AbstractOdeSolver']]],
+  ['setsteps_167',['setSteps',['../class_explicit_multi_step_solver.html#a82160a1eafea81eaac1c0413184aaddb',1,'ExplicitMultiStepSolver']]],
+  ['setstepsize_168',['SetStepSize',['../class_abstract_ode_solver.html#a25158e31a950d0757fdb03b814e50d06',1,'AbstractOdeSolver']]],
+  ['settimeinterval_169',['SetTimeInterval',['../class_abstract_ode_solver.html#aa538dd3bcac6ba5c784dec442333686f',1,'AbstractOdeSolver']]],
+  ['settolerance_170',['SetTolerance',['../class_implicit_solver.html#ac5539771d21b156db98ddfbd930ceb95',1,'ImplicitSolver']]],
+  ['settype_171',['SetType',['../class_runge_kutta_solver.html#a3fd5f24bcf9ed3eb7b0419a3b4dba3da',1,'RungeKuttaSolver']]],
+  ['solveequation_172',['SolveEquation',['../class_abstract_ode_solver.html#aa2a8a3d7362918f63b9689b8e4e9c085',1,'AbstractOdeSolver::SolveEquation()'],['../class_explicit_multi_step_solver.html#af0655b872b4e0e5e4b360ce18d581ecc',1,'ExplicitMultiStepSolver::SolveEquation()']]],
+  ['step_173',['step',['../class_abstract_ode_solver.html#ac6202c4ed2f042e8a9381e3759a7e332',1,'AbstractOdeSolver::step()'],['../class_adams_bashforth_solver.html#ac4c59f0b1dfeaebe1988137e73e471cf',1,'AdamsBashforthSolver::step()'],['../class_backward_euler_solver.html#ada7bbe94179e6f45857c55f5f51b0e2b',1,'BackwardEulerSolver::step()'],['../class_explicit_multi_step_solver.html#af6328087b18b8e23d484dfb113acda19',1,'ExplicitMultiStepSolver::step()'],['../class_explicit_single_step_solver.html#ada3a420e30943f941d483820efbf585a',1,'ExplicitSingleStepSolver::step()'],['../class_explicit_solver.html#a8d8a93bb506f655979f0122ad06dcfdb',1,'ExplicitSolver::step()'],['../class_forward_euler_solver.html#a6cc4b4e80e9ef9f2c7990b5e33964cb1',1,'ForwardEulerSolver::step()'],['../class_implicit_solver.html#a3d773d7645e0f74f978eb0a7afa4e380',1,'ImplicitSolver::step()'],['../class_runge_kutta_solver.html#ac26c010f84c9929d2cce316d1ad20007',1,'RungeKuttaSolver::step()']]]
 ];

@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['newton_0',['newton',['../class_implicit_solver.html#a7f6f44fec519212aeae6b71533419601',1,'ImplicitSolver']]],
-  ['normalize_1',['normalize',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a5bad735c2cb50b194938a8a89b82f6ed',1,'detail::dtoa_impl::diyfp']]],
-  ['normalize_5fto_2',['normalize_to',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a5a9ce83c6c1663c9aaac7ffd9009b971',1,'detail::dtoa_impl::diyfp']]],
-  ['null_3',['null',['../structjson__sax.html#acbcc09c0ada2782cd73cc4135823181d',1,'json_sax']]],
-  ['number_5ffloat_4',['number_float',['../structjson__sax.html#a19eafa3a92fc75e0258a842283396aa9',1,'json_sax']]],
-  ['number_5finteger_5',['number_integer',['../structjson__sax.html#a46cc306b7677553d8f6bd8c9592eb1bd',1,'json_sax']]],
-  ['number_5funsigned_6',['number_unsigned',['../structjson__sax.html#a32f8a32794cb384f0de3d3a96a6bb696',1,'json_sax']]]
+  ['parseconfig_158',['parseConfig',['../class_config_parser.html#aa2fb23ba1db0028a927bc27ced20f5a5',1,'ConfigParser']]],
+  ['polynomialrhs_159',['PolynomialRHS',['../class_polynomial_r_h_s.html#a1eb5f8137923817cf2b0e6439e315076',1,'PolynomialRHS']]],
+  ['printresults_160',['PrintResults',['../class_abstract_ode_solver.html#aefe6a9a405d7dd1c00138f8e35b0e130',1,'AbstractOdeSolver']]]
 ];

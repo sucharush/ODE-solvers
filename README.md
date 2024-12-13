@@ -59,7 +59,7 @@ The main structure of the project is as follows:
     │   ├── ExampleRHS.h                              
     │   ├── ExplicitMultiStepSolver.h                 // Extends ExplicitSolver to multi-step
     │   ├── ExplicitSingleStepSolver.h                // Extends ExplicitSolver to single-step
-    │   ├── EXplicitSolver.h                          // Base class for all explicit solvers
+    │   ├── ExplicitSolver.h                          // Base class for all explicit solvers
     │   ├── ForwardEulerSolver.h                    
     │   ├── ImplicitSolver.h                          // Base class for implicit solvers
     │   ├── json.hpp                      
@@ -112,18 +112,6 @@ make
 cat output.txt
 ```
 
-[//]: # (After these lines, executable files are produced. Simply run 'main' on your IDE, )
-
-[//]: # (or run the following lines on your terminal:)
-
-[//]: # ()
-[//]: # (```)
-
-[//]: # (cd .. // or simply open your terminal in the root project folder)
-
-[//]: # (./main)
-
-[//]: # (```)
 
 [//]: # (TODO complete instructions if needed, typical execution)
 ###  Update the Configuration
@@ -161,6 +149,19 @@ or `steps = 1` for AdamsBashforth, as they are the same solvers.
 
 [//]: # (TODO logic)
 
+### Documentation
+Building the project also creates a folder 'doc', that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives:
+- open the file 'index.html' located in doc/html/. This should open a window in your browser with our documentation.
+- use doxywizard (type `doxywizard` in your terminal) and select the Doxyfile located in the main folder of the project. Then you can run doxygen from doxywizard to generate the documentation.
+
+### Tests
+Another executive file produced by the building concerns the googletests. They are separated in 3 files:
+- `auxiliary_test.cc`: contains tests on auxiliary classes, mainly on the function class.
+- `model_problem_test.cc`: contains tests focusing on the model problem. In each execution of this test, a random variable between 0 and 1 is produced, and then all solvers are tested on the model problem defined by this variable.
+- `polynomial_test.cc`: contains tests on a specific polynomial function, for all solvers.
+
+All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. 
+The tests should pass, also the tolerance threshold for the error is quite high (1e-2). Note that some solvers are also more or less precise, and may require a smaller step size.
 
 ## Limitations
 

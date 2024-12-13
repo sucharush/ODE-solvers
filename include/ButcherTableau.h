@@ -2,7 +2,7 @@
  * @file ButcherTableau.h
  * @brief Butcher Tableau (for Runge-Kutta method)
  * @author csy
- * @date 29.12.24.
+ * @date 29.11.24.
  */
 
 #ifndef BUTCHERTABLE_H

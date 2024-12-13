@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['f_0',['f',['../class_o_d_e_right_hand_side.html#a0e65199f1e085d986893693f4ed4058e',1,'ODERightHandSide']]],
-  ['f_5frhs_1',['f_rhs',['../class_abstract_ode_solver.html#af73bcbe1180313a10d26998d9e6d5e06',1,'AbstractOdeSolver']]]
+  ['globalparams_196',['globalParams',['../struct_solver_config.html#a32f5ace842799322b279aad66caa1f96',1,'SolverConfig']]]
 ];

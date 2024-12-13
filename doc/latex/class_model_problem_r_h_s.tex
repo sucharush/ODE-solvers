@@ -1,53 +1,62 @@
-\doxysection{Model\+Problem\+RHS Class Reference}
-\hypertarget{class_model_problem_r_h_s}{}\label{class_model_problem_r_h_s}\index{ModelProblemRHS@{ModelProblemRHS}}
-Inheritance diagram for Model\+Problem\+RHS\+:\begin{figure}[H]
+\hypertarget{class_model_problem_r_h_s}{}\doxysection{Model\+Problem\+R\+HS Class Reference}
+\label{class_model_problem_r_h_s}\index{ModelProblemRHS@{ModelProblemRHS}}
+
+
+Class for the R\+HS of the model problem.  
+
+
+
+
+{\ttfamily \#include $<$Model\+Problem\+R\+H\+S.\+h$>$}
+
+Inheritance diagram for Model\+Problem\+R\+HS\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=3.000000cm]{class_model_problem_r_h_s}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_model_problem_r_h_s_a4571641d5f8ec6e88876aca640ecd9ed}\label{class_model_problem_r_h_s_a4571641d5f8ec6e88876aca640ecd9ed} 
-{\bfseries Model\+Problem\+RHS} (double k)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_known_derivative_r_h_s}{Known\+Derivative\+RHS}}}
+\mbox{\Hypertarget{class_model_problem_r_h_s_a8ecc359b56bc90e86d0419c7056da585}\label{class_model_problem_r_h_s_a8ecc359b56bc90e86d0419c7056da585}} 
+\mbox{\hyperlink{class_model_problem_r_h_s_a8ecc359b56bc90e86d0419c7056da585}{Model\+Problem\+R\+HS}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (gives a zero function) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_problem_r_h_s_a4571641d5f8ec6e88876aca640ecd9ed}{Model\+Problem\+R\+HS}} (double k)
+\begin{DoxyCompactList}\small\item\em Constructor with specified parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_model_problem_r_h_s_a77c57abf9b6aa8c03f28bea28eb57168}\label{class_model_problem_r_h_s_a77c57abf9b6aa8c03f28bea28eb57168}} 
+\mbox{\hyperlink{class_model_problem_r_h_s_a77c57abf9b6aa8c03f28bea28eb57168}{$\sim$\+Model\+Problem\+R\+HS}} ()
+\begin{DoxyCompactList}\small\item\em Simple destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}{Known\+Derivative\+RHS}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} \texorpdfstring{$\ast$}{*}func=nullptr, \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} \texorpdfstring{$\ast$}{*}deriv=nullptr)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}{\texorpdfstring{$\sim$}{\string~}\+Known\+Derivative\+RHS}} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual double \mbox{\hyperlink{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}{derivative}} (double y, double t) const override
-\begin{DoxyCompactList}\small\item\em Overriden implementation of the derivative evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_o_d_e_right_hand_side}{ODERight\+Hand\+Side}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_o_d_e_right_hand_side_a92ede53374a8b9f244aeb013351a346e}{ODERight\+Hand\+Side}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} \texorpdfstring{$\ast$}{*}fun=nullptr)
-\begin{DoxyCompactList}\small\item\em Constructor of a function instance. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_o_d_e_right_hand_side_a2a9a664b62685ce7b0676015eeff5bcb}{\texorpdfstring{$\sim$}{\string~}\+ODERight\+Hand\+Side}} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual double \mbox{\hyperlink{class_o_d_e_right_hand_side_a1d8591f21b2a68624d6ef90bc167bbc5}{value}} (double y, double t) const
-\begin{DoxyCompactList}\small\item\em Computes the value at the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{class_model_problem_r_h_s_aef8e6c0df5fe7786e2b6784dd2e350fe}\label{class_model_problem_r_h_s_aef8e6c0df5fe7786e2b6784dd2e350fe} 
-double {\bfseries k\+\_\+}
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_known_derivative_r_h_s}{Known\+Derivative\+RHS}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} \texorpdfstring{$\ast$}{*} {\bfseries df}
-\begin{DoxyCompactList}\small\item\em Pointer to the derivative (wrt t) of the right hand side function. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_o_d_e_right_hand_side}{ODERight\+Hand\+Side}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} \texorpdfstring{$\ast$}{*} {\bfseries f}
-\begin{DoxyCompactList}\small\item\em Pointer to the right hand side function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_model_problem_r_h_s_aef8e6c0df5fe7786e2b6784dd2e350fe}\label{class_model_problem_r_h_s_aef8e6c0df5fe7786e2b6784dd2e350fe}} 
+double \mbox{\hyperlink{class_model_problem_r_h_s_aef8e6c0df5fe7786e2b6784dd2e350fe}{k\+\_\+}}
+\begin{DoxyCompactList}\small\item\em variable that defines the model problem and its R\+HS \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the R\+HS of the model problem. 
+
+The model problem is the O\+DE y\textquotesingle{}(t) = -\/ky(t) Its analytical solution is y = exp(-\/kt) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_problem_r_h_s_a4571641d5f8ec6e88876aca640ecd9ed}\label{class_model_problem_r_h_s_a4571641d5f8ec6e88876aca640ecd9ed}} 
+\index{ModelProblemRHS@{ModelProblemRHS}!ModelProblemRHS@{ModelProblemRHS}}
+\index{ModelProblemRHS@{ModelProblemRHS}!ModelProblemRHS@{ModelProblemRHS}}
+\doxysubsubsection{\texorpdfstring{ModelProblemRHS()}{ModelProblemRHS()}}
+{\footnotesize\ttfamily Model\+Problem\+R\+H\+S\+::\+Model\+Problem\+R\+HS (\begin{DoxyParamCaption}\item[{double}]{k }\end{DoxyParamCaption})}
+
+
+
+Constructor with specified parameter. 
+
+The constructor creates the function -\/k$\ast$y that defines a model problem. 
+\begin{DoxyParams}{Parameters}
+{\em k} & determines the right-\/hand side. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/Model\+Problem\+RHS.\+h\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_model_problem_r_h_s_8h}{Model\+Problem\+R\+H\+S.\+h}}\end{DoxyCompactItemize}

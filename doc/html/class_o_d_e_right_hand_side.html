@@ -81,11 +81,11 @@ Inheritance diagram for ODERightHandSide:</div>
  <div class="center">
   <img src="class_o_d_e_right_hand_side.png" usemap="#ODERightHandSide_map" alt=""/>
   <map id="ODERightHandSide_map" name="ODERightHandSide_map">
-<area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="156,56,302,80"/>
+<area href="class_known_derivative_r_h_s.html" title="Class for function with known derivative." alt="KnownDerivativeRHS" shape="rect" coords="78,56,224,80"/>
 <area href="class_unknown_derivative_r_h_s.html" title="Class for function with unknown derivative." alt="UnknownDerivativeRHS" shape="rect" coords="312,56,458,80"/>
-<area href="class_example_r_h_s.html" alt="ExampleRHS" shape="rect" coords="0,112,146,136"/>
-<area href="class_model_problem_r_h_s.html" alt="ModelProblemRHS" shape="rect" coords="156,112,302,136"/>
-<area href="class_polynomial_r_h_s.html" alt="PolynomialRHS" shape="rect" coords="312,112,458,136"/>
+<area href="class_model_problem_r_h_s.html" title="Class for the RHS of the model problem." alt="ModelProblemRHS" shape="rect" coords="0,112,146,136"/>
+<area href="class_polynomial_r_h_s.html" title="Class for polynomial functions." alt="PolynomialRHS" shape="rect" coords="156,112,302,136"/>
+<area href="class_user_defined_r_h_s.html" alt="UserDefinedRHS" shape="rect" coords="312,112,458,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -142,7 +142,7 @@ std::shared_ptr&lt; <a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c54
 <p>Constructor of a function instance. </p>
 <p>This constructor sets the function object of the right hand side of the ODE. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fun</td><td>Pointer to a FuncType, by default: null pointer. </td></tr>
+    <tr><td class="paramname">f_ptr</td><td>Pointer to a FuncType, by default: null pointer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +265,7 @@ std::shared_ptr&lt; <a class="el" href="utils_8h.html#a4f6bfdc8a2afc3edc1b432c54
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">y</td><td>space variable </td></tr>
-    <tr><td class="paramname">t</td><td>time varianle </td></tr>
+    <tr><td class="paramname">t</td><td>time variable </td></tr>
   </table>
   </dd>
 </dl>

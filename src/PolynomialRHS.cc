@@ -7,7 +7,6 @@
 #include <functional>
 
 
-
 PolynomialRHS::PolynomialRHS(const Eigen::VectorXd& coeffs):KnownDerivativeRHS(), coeffs_(coeffs){
     f = std::make_shared<FuncType>([this](double y, double /*t*/) -> double {
         // f = a_n*y^n + ... + a_1*y + a_0 = (...((a_n*y + a_{n-1})*y + a_{n-1})*y +...+a_1)*y + a_0

@@ -21,8 +21,25 @@ This project provides an implementation of numerical solvers for solving ordinar
 \item {\bfseries{Backward Euler (BE)}}\+: Implicit single-\/step solver with optional tolerance and iteration settings.
 \end{DoxyItemize}
 
-The default implementation solves the model problem \$y$^\wedge$\{\textquotesingle{}\} = -\/0.\+3y\$ using a 4th-\/order Runge-\/\+Kutta method. The project is modular, allowing customization of solvers, models, and configurations.
+The default implementation solves the model problem \$y$^\wedge$\{\textquotesingle{}\} = -\/0.\+3y\$ using a 4th-\/order Runge-\/\+Kutta method. The project is modular, allowing customization of solvers, functions, and configurations. \hypertarget{index_autotoc_md4}{}\doxysubsection{Right-\/\+Hand Side (\+R\+H\+S) Functions}\label{index_autotoc_md4}
+To represent the right-\/hand side function \$f(t, y)\$ in the O\+DE, the project provides the following built-\/in options\+:
 
+
+\begin{DoxyEnumerate}
+\item $\ast$$\ast$\+Model Problem ({\ttfamily model})$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item Describes a simple exponential decay problem \$f(t, y) = -\/k \textbackslash{}cdot y\$.
+\item Requires a positive decay constant {\ttfamily decay = k}.
+\item Given the initial condition \$y(t) = y\+\_\+0\$, the analytical solution is \$y(t) = y\+\_\+0 e$^\wedge$\{-\/k(t-\/t\+\_\+0)\}.\$
+\end{DoxyItemize}
+\item $\ast$$\ast$\+Polynomial Function ({\ttfamily poly})$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item Describes a polynomial of the form \$f(t, y) = a\+\_\+0 + a\+\_\+1 y + a\+\_\+2 y$^\wedge$2 + \textbackslash{}dots + a\+\_\+n y$^\wedge$n\$.
+\item Requires a list of coefficients {\ttfamily \mbox{[}a\+\_\+0, a\+\_\+1, ..., a\+\_\+n\mbox{]}}.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+These R\+HS functions can be selected and configured in the configuration file ({\ttfamily config/config.\+json}), providing flexibility for different types of O\+D\+Es. You can also implement custom R\+HS functions by modifying the {\ttfamily Example\+R\+HS} classes.\hypertarget{index_autotoc_md5}{}\doxysection{Structure}\label{index_autotoc_md5}
 The main structure of the project is as follows\+:
 \begin{DoxyItemize}
 \item {\ttfamily /config}\+: configuration settings to run the main.
@@ -31,7 +48,7 @@ The main structure of the project is as follows\+:
 \item {\ttfamily /test}\+: contains test files, supported by googletest.
 \end{DoxyItemize}
 
-The detailed structure of the project is shown below. 
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{pcsc-\/project/}
 \DoxyCodeLine{├── config/}
@@ -45,12 +62,14 @@ The detailed structure of the project is shown below.
 \DoxyCodeLine{│   ├── ExampleRHS.h                              }
 \DoxyCodeLine{│   ├── ExplicitMultiStepSolver.h                 // Extends ExplicitSolver to multi-\/step}
 \DoxyCodeLine{│   ├── ExplicitSingleStepSolver.h                // Extends ExplicitSolver to single-\/step}
-\DoxyCodeLine{│   ├── EXplicitSolver.h                          // Base class for all explicit solvers}
+\DoxyCodeLine{│   ├── ExplicitSolver.h                          // Base class for all explicit solvers}
 \DoxyCodeLine{│   ├── ForwardEulerSolver.h                    }
 \DoxyCodeLine{│   ├── ImplicitSolver.h                          // Base class for implicit solvers}
 \DoxyCodeLine{│   ├── json.hpp                      }
 \DoxyCodeLine{│   ├── KnownDerivativeRHS.h                      // RHS with analytically known derivative}
+\DoxyCodeLine{│   ├── ModelProblemRHS.h}
 \DoxyCodeLine{│   ├── ODERightHandSide.h                        // Base class for RHS functions}
+\DoxyCodeLine{│   ├── PolynomialRHS.h}
 \DoxyCodeLine{│   ├── RungeKuttaSolver.h                       }
 \DoxyCodeLine{│   ├── SolverFactory.h                           }
 \DoxyCodeLine{│   └── UnknownDerivativeRHS.h                    // RHS with unknown derivative }
@@ -60,17 +79,22 @@ The detailed structure of the project is shown below.
 \DoxyCodeLine{│   └── [Test files using googletest]}
 \DoxyCodeLine{├── .gitignore}
 \DoxyCodeLine{├── .gitmodules}
-\DoxyCodeLine{├── main.cc                                     }
-\DoxyCodeLine{└── CMakeLists.txt                               }
+\DoxyCodeLine{├── main.cc     }
+\DoxyCodeLine{├── CMakeLists.txt                                }
+\DoxyCodeLine{└── README.md                          }
 \end{DoxyCode}
-\hypertarget{index_autotoc_md4}{}\doxysection{How to}\label{index_autotoc_md4}
-\hypertarget{index_autotoc_md5}{}\doxysubsection{Quick Start}\label{index_autotoc_md5}
+
+
+Here is a brief sketch of the class hierarchy.
+
+\hypertarget{index_autotoc_md6}{}\doxysection{How to}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{Quick Start}\label{index_autotoc_md7}
 First, you need to clone the project repository on your local machine. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{git clone git@gitlab.epfl.ch:ebaup/pcsc-\/project.git}
 \DoxyCodeLine{cd pcsc-\/project}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{Set-\/up and Building}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{Set-\/up and Building}\label{index_autotoc_md8}
 The project relies on {\itshape googletest} and {\itshape Eigen}, initialize them as submodules to install these dependencies\+:
 
 
@@ -79,60 +103,78 @@ The project relies on {\itshape googletest} and {\itshape Eigen}, initialize the
 \end{DoxyCode}
 
 
-You can build the project using your preferred I\+DE (e.\+g., C\+Lion) or the terminal\+: 
+You can build and run the project using your preferred I\+DE (e.\+g., C\+Lion) or the terminal. Below are the steps for the terminal\+:
+
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{mkdir build}
 \DoxyCodeLine{cd build}
 \DoxyCodeLine{cmake ..}
 \DoxyCodeLine{make}
-\end{DoxyCode}
-
-
-After these lines, executable files are produced. Simply run \textquotesingle{}main\textquotesingle{} on your I\+DE, or run the following lines on your terminal\+:
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{cd .. // or simply open your terminal in the root project folder}
 \DoxyCodeLine{./main}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md7}{}\doxysubsection{Update the Configuration}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{Read the output file}\label{index_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cat output.txt}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md10}{}\doxysubsection{Update the Configuration}\label{index_autotoc_md10}
 Modify the {\ttfamily config/config.\+json} file to set global parameters and solver-\/specific options. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{  "global": \{}
-\DoxyCodeLine{    "stepSize": The time step for the solver,}
-\DoxyCodeLine{    "t0": Start time of the simulation,}
-\DoxyCodeLine{    "t1": End time of the simulation,}
-\DoxyCodeLine{    "initialValue": Initial guess y\_0,}
+\DoxyCodeLine{    "stepSize": The time step for the solver, e.g., 0.01,}
+\DoxyCodeLine{    "t0": Start time of the simulation, e.g., 0.0,}
+\DoxyCodeLine{    "t1": End time of the simulation, e.g., 1.0,}
+\DoxyCodeLine{    "initialValue": Initial guess y\_0, e.g., 1.0}
 \DoxyCodeLine{  \},}
 \DoxyCodeLine{  "solver": \{}
-\DoxyCodeLine{    "method": Solver type, choosing from \{"RK", "AB", "BE", "FE"\},}
+\DoxyCodeLine{    "method": Solver type, choose from \{"RK", "AB", "BE", "FE"\},}
 \DoxyCodeLine{    "parameters": \{}
-\DoxyCodeLine{      "order": For Runge Kutta, choosing from \{1, 2, 4\}, }
-\DoxyCodeLine{      "steps": For AdamsBashforth, choosing from \{1, 2, 3, 4\}, }
-\DoxyCodeLine{      "initMethod": For AdamsBashforth, choosing from \{"RK4", "FE"\},}
-\DoxyCodeLine{      "tolerance": For Newton method in backward Euler, defaulted as 1e-\/6,}
-\DoxyCodeLine{      "maxIter": For Newton method in backward Euler, defaulted as 50}
+\DoxyCodeLine{      "order": For Runge Kutta, choose from \{1, 2, 4\},}
+\DoxyCodeLine{      "steps": For AdamsBashforth, choose from \{1, 2, 3, 4\},}
+\DoxyCodeLine{      "initMethod": For AdamsBashforth, choose from \{"RK4", "FE"\},}
+\DoxyCodeLine{      "tolerance": For Newton method in Backward Euler, default 1e-\/6,}
+\DoxyCodeLine{      "maxIter": For Newton method in Backward Euler, default 50}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \},}
+\DoxyCodeLine{  "rhs": \{}
+\DoxyCodeLine{    "type": RHS type, choose from \{"model", "poly"\},}
+\DoxyCodeLine{    "parameters": \{}
+\DoxyCodeLine{      "decay": Decay constant for model problem, e.g., 0.1,}
+\DoxyCodeLine{      "coefficients": For polynomials, a list of coefficients [a\_0, a\_1, ..., a\_n]}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{  \}}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
 
 
-{\bfseries{Note\+:}} It will automatically build the forward Euler method when choosing {\ttfamily order = 1} for Runge Kutta or {\ttfamily steps = 1} for Adams\+Bashforth, as they are the same solvers. \hypertarget{index_autotoc_md8}{}\doxysubsection{Modify the R\+H\+S Function}\label{index_autotoc_md8}
-\hypertarget{index_autotoc_md9}{}\doxysection{Limitations}\label{index_autotoc_md9}
-We encountered various challenges during the realisation of this project, some were taken care of, and some remain as limitations of our implementation.\hypertarget{index_autotoc_md10}{}\doxysubsection{Solvers classes}\label{index_autotoc_md10}
+{\bfseries{Note\+:}} It will automatically build the forward Euler method when choosing {\ttfamily order = 1} for Runge Kutta or {\ttfamily steps = 1} for Adams\+Bashforth, as they are the same solvers.\hypertarget{index_autotoc_md11}{}\doxysubsection{Documentation}\label{index_autotoc_md11}
+Building the project also creates a folder \textquotesingle{}doc\textquotesingle{}, that contains the doxygen documentation of the project. To see this documentation, there are a few alternatives\+:
+\begin{DoxyItemize}
+\item open the file \textquotesingle{}index.\+html\textquotesingle{} located in doc/html/. This should open a window in your browser with our documentation.
+\item use doxywizard (type {\ttfamily doxywizard} in your terminal) and select the Doxyfile located in the main folder of the project. Then you can run doxygen from doxywizard to generate the documentation.
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysubsection{Tests}\label{index_autotoc_md12}
+Another executive file produced by the building concerns the googletests. They are separated in 3 files\+:
+\begin{DoxyItemize}
+\item {\ttfamily auxiliary\+\_\+test.\+cc}\+: contains tests on auxiliary classes, mainly on the function class.
+\item {\ttfamily model\+\_\+problem\+\_\+test.\+cc}\+: contains tests focusing on the model problem. In each execution of this test, a random variable between 0 and 1 is produced, and then all solvers are tested on the model problem defined by this variable.
+\item {\ttfamily polynomial\+\_\+test.\+cc}\+: contains tests on a specific polynomial function, for all solvers.
+\end{DoxyItemize}
+
+All tests that consist of testing the solvers rely on testing the difference between the actual solution and the approximated one. The tests should pass, also the tolerance threshold for the error is quite high (1e-\/2). Note that some solvers are also more or less precise, and may require a smaller step size.\hypertarget{index_autotoc_md13}{}\doxysection{Limitations}\label{index_autotoc_md13}
+We encountered various challenges during the realisation of this project, some were taken care of, and some remain as limitations of our implementation.\hypertarget{index_autotoc_md14}{}\doxysubsection{Solvers classes}\label{index_autotoc_md14}
 Our first main challenge was to find a suitable class organisation for the different solvers.
 
 A good knowledge of the methods was needed to understand how they relate with each other, and what were their common and specific characteristics. There are different approaches we thought about, and we decided to split the methods between two main categories\+: {\bfseries{explicit}} and {\bfseries{implicit}}. The explicit methods can be single-\/step or multi-\/step methods.
 
-Another approach we thought about was to separate in two other categories\+: Runge-\/\+Kutta and linear multi-\/step methods. Then linear multi-\/step methods could have been split between explicit and implicit and would have been determined by their weights.\hypertarget{index_autotoc_md11}{}\doxysubsection{Function class}\label{index_autotoc_md11}
+Another approach we thought about was to separate in two other categories\+: Runge-\/\+Kutta and linear multi-\/step methods. Then linear multi-\/step methods could have been split between explicit and implicit and would have been determined by their weights.\hypertarget{index_autotoc_md15}{}\doxysubsection{Function class}\label{index_autotoc_md15}
 Our second main challenge was to create a function class, and handle the derivatives. We decided to create a base class ({\ttfamily O\+D\+E\+Righ\+Hand\+Side}) and two children that correspond to functions for which we know the derivative and for which we do not. If the derivative is not known, it is approximated with centered differences.
 
-There are however a few limitations with our approach. First, we can only use the functions that are in the file {\ttfamily \mbox{\hyperlink{_example_r_h_s_8h}{Example\+R\+H\+S.\+h}}}. An improvement would be to have a parser that lets the user write their function. The user would also need to specify if they want to use the known derivative for the function. This could be done either by letting the user specify the derivative, or by having a derivative calculator accessible in the project.\hypertarget{index_autotoc_md12}{}\doxysubsection{Dimension of the O\+DE}\label{index_autotoc_md12}
+There are however a few limitations with our approach. First, we can only use the functions that are in the file {\ttfamily Example\+R\+H\+S.\+h}. An improvement would be to have a parser that lets the user write their function. The user would also need to specify if they want to use the known derivative for the function. This could be done either by letting the user specify the derivative, or by having a derivative calculator accessible in the project.\hypertarget{index_autotoc_md16}{}\doxysubsection{Dimension of the O\+DE}\label{index_autotoc_md16}
 The main limitation of our project is that it focuses strictly on O\+D\+Es that are from \$\textbackslash{}mathbb\{R\} \textbackslash{}times \textbackslash{}mathbb\{R\}\$ to \$\textbackslash{}mathbb\{R\}\$, i.\+e. \$y,t\$ are real and so is \$f(t,y)\$. Possible extensions could be
 \begin{DoxyItemize}
-\item allowing \$y\$ to be a vector, i.\+e. in \$\textbackslash{}mathbb\{R\}$^\wedge$n\$
+\item allowing \$y\$ to be a vector, i.\+e. \$y \textbackslash{}in \textbackslash{}mathbb\{R\}$^\wedge$n\$
 \item allowing \$f\$ to be a vector-\/valued function, i.\+e. solve a system of O\+D\+Es
 \item allowing \$y\$ to be a complex number, or a complex-\/valued vector, etc.
 \end{DoxyItemize}

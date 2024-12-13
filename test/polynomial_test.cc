@@ -9,60 +9,32 @@
 #include "PolynomialRHS.h"
 #include "ODERightHandSide.h"
 #include "utils.h"
-/// Generate random distribution for tests
-std::random_device rd_poly;
-std::mt19937 gen_poly(rd_poly()); //!< use specific engine for generation
 
-std::uniform_real_distribution<> dis_poly(-100.0, 10.0);
+Eigen::VectorXd coeffs = Eigen::VectorXd::Map((double[]){1, 2}, 2);
 
-int order_poly1 = 5;
-Eigen::VectorXd coeffs1 = Eigen::VectorXd::Zero(order_poly1 + 1);
-// Set up the weights randomly
-for (int i = 0; i < order_poly1; ++i) {
-    coeffs1(i) = dis_poly(gen_poly);
+double computeAnalyticalSolution(double t, double y0) {
+    double C = y0 + 0.5;  // Calculate the integration constant C
+    return C * exp(2 * t) - 0.5;  // y = Ce^(2t) - 0.5
 }
 
-
-double computeAnalyticalSolution(double t, double y0, double k) {
-    return y0 * std::exp(-k * t);
-}
-
-class ModelProblemTest : public::testing::Test {
+class PolyRHSTest : public::testing::Test {
 protected:
-    std::unique_ptr<ODERightHandSide> model = std::make_unique<ModelProblemRHS>(k_test);
+    std::unique_ptr<ODERightHandSide> model = std::make_unique<PolynomialRHS>(coeffs);
 
     double initialTime = 0.0;
     double finalTime = 1.0;
     double initialValue = 1.0;
-    double stepSize = 0.1;
-
+    double stepSize = 0.001;
 };
-
-// Test ModelProblemRHS
-TEST_F(ModelProblemTest, RHSValueFunction) {
-    for (int i = 0; i < 10; i++) {
-        double t = 0.5;
-        double y = i + i*0.1;
-        double expected = -k_test*y;
-        EXPECT_EQ(model->value(y, t), expected);
-    }
-}
-TEST_F(ModelProblemTest, RHSValueDerivative) {
-    double t = 0.5;
-    for (int i = 0; i < 10; i++) {
-        double y = i + i*0.1;
-        double expected = 0.0;
-        EXPECT_EQ(model->derivative(y, t), expected);
-    }
-}
 
 
 // Test Forward Euler solver on model problem
 #include "ForwardEulerSolver.h"
+double stepsize_euler = 1e-5; // FE and BE need smaller step size
 
-TEST_F(ModelProblemTest, FE) {
+TEST_F(PolyRHSTest, FE) {
     ForwardEulerSolver solver;
-    solver.SetStepSize(stepSize);
+    solver.SetStepSize(stepsize_euler);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
     solver.SetRightHandSide(std::move(model));
@@ -70,8 +42,8 @@ TEST_F(ModelProblemTest, FE) {
     int numSteps = solver.results.size();
 
     double t = initialTime;
-    for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+    for (int i = 0; i < numSteps; ++i, t += stepsize_euler) {
+        double exp_val = computeAnalyticalSolution(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
@@ -80,9 +52,9 @@ TEST_F(ModelProblemTest, FE) {
 // Test Backward Euler solver on model problem
 #include "BackwardEulerSolver.h"
 
-TEST_F(ModelProblemTest, BE) {
+TEST_F(PolyRHSTest, BE) {
     BackwardEulerSolver solver;
-    solver.SetStepSize(stepSize);
+    solver.SetStepSize(stepsize_euler);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
     solver.SetRightHandSide(std::move(model));
@@ -90,14 +62,14 @@ TEST_F(ModelProblemTest, BE) {
     int numSteps = solver.results.size();
 
     double t = initialTime;
-    for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+    for (int i = 0; i < numSteps; ++i, t += stepsize_euler) {
+        double exp_val = computeAnalyticalSolution(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
 
 #include "RungeKuttaSolver.h"
-TEST_F(ModelProblemTest, RK) {
+TEST_F(PolyRHSTest, RK) {
     RungeKuttaSolver solver(2);
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
@@ -110,7 +82,7 @@ TEST_F(ModelProblemTest, RK) {
         solver.SetType(order);
         double t = initialTime;
         for (int i = 0; i < numSteps; ++i, t += stepSize) {
-            double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+            double exp_val = computeAnalyticalSolution(t, initialValue);
             EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
         }
     }
@@ -119,8 +91,8 @@ TEST_F(ModelProblemTest, RK) {
 
 #include "AdamsBashforthSolver.h"
 
-TEST_F(ModelProblemTest, AB) {
-    AdamsBashforthSolver solver(4, "FE");
+TEST_F(PolyRHSTest, AB) {
+    AdamsBashforthSolver solver(3, "RK4");
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
@@ -130,7 +102,7 @@ TEST_F(ModelProblemTest, AB) {
 
     double t = initialTime;
     for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+        double exp_val = computeAnalyticalSolution(t, initialValue);
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }

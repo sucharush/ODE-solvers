@@ -14,7 +14,6 @@
 #define UTILS_H
 
 #include <functional>
-#include <random>
 // Useful constants
 double const TOL = 1e-6; //!< Default tolerance threshold (for Newton and difference scheme)
 double const MAX_ITER = 50; //!< Default maximum number of iterations for Newton method
