@@ -1,0 +1,26 @@
+\doxysection{Known\+Derivative\+RHS.\+h}
+\hypertarget{_known_derivative_r_h_s_8h_source}{}\label{_known_derivative_r_h_s_8h_source}\index{include/KnownDerivativeRHS.h@{include/KnownDerivativeRHS.h}}
+\mbox{\hyperlink{_known_derivative_r_h_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ KNOWNDERIVATIVERHS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ KNOWNDERIVATIVERHS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_right_hand_side_8h}{ODERightHandSide.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_known_derivative_r_h_s}{KnownDerivativeRHS}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_o_d_e_right_hand_side}{ODERightHandSide}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}{KnownDerivativeRHS}}(\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{FuncType}}*\ func\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{FuncType}}*\ deriv\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}{\string~KnownDerivativeRHS}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}{derivative}}(\textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ t)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{FuncType}}*\ \mbox{\hyperlink{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}{df}};\ }
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//KNOWNDERIVATIVERHS\_H}}
+
+\end{DoxyCode}

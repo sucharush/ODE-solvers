@@ -1,0 +1,54 @@
+\doxysection{Abstract\+Ode\+Solver.\+h}
+\hypertarget{_abstract_ode_solver_8h_source}{}\label{_abstract_ode_solver_8h_source}\index{include/AbstractOdeSolver.h@{include/AbstractOdeSolver.h}}
+\mbox{\hyperlink{_abstract_ode_solver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ ABSTRACTODESOLVER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ABSTRACTODESOLVER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_right_hand_side_8h}{ODERightHandSide.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstract_ode_solver}{AbstractOdeSolver}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_abstract_ode_solver_a03edbae822c8ff26c61f85dd6cfd3d71}{AbstractOdeSolver}}()\ :\ stepSize(0.0),\ initialTime(0.0),\ finalTime(0.0),\ initialValue(0.0),\ \mbox{\hyperlink{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}{f\_rhs}}(nullptr)\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_abstract_ode_solver_aed085a5a3e3c7dbf734635b3006da453}{\string~AbstractOdeSolver}}()\ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_a25158e31a950d0757fdb03b814e50d06}{SetStepSize}}(\textcolor{keywordtype}{double}\ h)\ \{\ stepSize\ =\ h;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_aa538dd3bcac6ba5c784dec442333686f}{SetTimeInterval}}(\textcolor{keywordtype}{double}\ t0,\ \textcolor{keywordtype}{double}\ t1)\ \{\ initialTime\ =\ t0;\ finalTime\ =\ t1;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_a0340b4da640c8c9131363d0525d9223b}{SetInitialValue}}(\textcolor{keywordtype}{double}\ y0)\ \{\ initialValue\ =\ y0;\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_a57b4afc9ef64780f3758461f45ec853e}{SetRightHandSide}}(std::unique\_ptr<ODERightHandSide>\ f)\ \{\ \mbox{\hyperlink{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}{f\_rhs}}\ =\ std::move(f);\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_ode_solver_ac0086075915c39f11a22845a7f2b2d11}{GetFinalTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ finalTime;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_ode_solver_a7339e2a431b3b8ca75e9ad40092267a6}{GetInitialTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ initialTime;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_ode_solver_a602d6b6170573d1216272c6963faac76}{GetInitialValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ initialValue;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_ode_solver_aae60901c523d49d3507d5b640ad67a73}{GetStepSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ stepSize;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_aa2a8a3d7362918f63b9689b8e4e9c085}{SolveEquation}}(std::ostream\&\ stream);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00061\ \ \ \ \ Eigen::VectorXd\ \mbox{\hyperlink{class_abstract_ode_solver_a908c0174d5f62852275bad7eb171e2b3}{results}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_ode_solver_aefe6a9a405d7dd1c00138f8e35b0e130}{PrintResults}}(std::ostream\&\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_ode_solver_ac6202c4ed2f042e8a9381e3759a7e332}{step}}(\textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ t)\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ std::unique\_ptr<ODERightHandSide>\ \mbox{\hyperlink{class_abstract_ode_solver_af73bcbe1180313a10d26998d9e6d5e06}{f\_rhs}};\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ stepSize;\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ initialTime;\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ finalTime;\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ initialValue;\ }
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ABSTRACTODESOLVER\_H}}
+
+\end{DoxyCode}

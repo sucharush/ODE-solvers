@@ -107,6 +107,10 @@ cmake ..
 make
 ./main
 ```
+### Read the output file
+```
+cat output.txt
+```
 
 [//]: # (After these lines, executable files are produced. Simply run 'main' on your IDE, )
 

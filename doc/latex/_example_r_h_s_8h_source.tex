@@ -1,0 +1,27 @@
+\doxysection{Example\+RHS.\+h}
+\hypertarget{_example_r_h_s_8h_source}{}\label{_example_r_h_s_8h_source}\index{include/ExampleRHS.h@{include/ExampleRHS.h}}
+\mbox{\hyperlink{_example_r_h_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ EXAMPLERHS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ EXAMPLERHS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_known_derivative_r_h_s_8h}{KnownDerivativeRHS.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ for\ model\ problem\ y'(t)\ =\ -\/ky(t)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ analytical\ solution:\ y\ =\ exp(-\/kt)}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_example_r_h_s}{ExampleRHS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_known_derivative_r_h_s}{KnownDerivativeRHS}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructor\ (default\ and\ with\ parameter\ k)}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_example_r_h_s}{ExampleRHS}}():\ k\_(0.0)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_example_r_h_s}{ExampleRHS}}(\textcolor{keywordtype}{double}\ k);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_example_r_h_s}{\string~ExampleRHS}}()\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ k\_;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//EXAMPLERHS\_H}}
+
+\end{DoxyCode}

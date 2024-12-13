@@ -1,0 +1,49 @@
+\doxysection{Solver\+Factory.\+h}
+\hypertarget{_solver_factory_8h_source}{}\label{_solver_factory_8h_source}\index{include/SolverFactory.h@{include/SolverFactory.h}}
+\mbox{\hyperlink{_solver_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SOLVERFACTORY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SOLVERFACTORY\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_adams_bashforth_solver_8h}{AdamsBashforthSolver.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_backward_euler_solver_8h}{BackwardEulerSolver.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_forward_euler_solver_8h}{ForwardEulerSolver.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_runge_kutta_solver_8h}{RungeKuttaSolver.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ModelProblemRHS.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}PolynomialRHS.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_solver_config}{SolverConfig}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_solver_config_adfd0659c6aa960287d604eac5529962f}{method}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{struct_solver_config_a32f5ace842799322b279aad66caa1f96}{globalParams}};\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{struct_solver_config_ac39e36cec5758f873a84c52808d5a26b}{methodParams}};\ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ std::map<std::string,\ double>\ rhsParams;}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_solver_config_a27d0f5c2682b362929eeae90edf05554}{order}}\ =\ 4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_solver_config_ad5b6bf22c286cd5196226e65272cc8e2}{initMethod}}\ =\ \textcolor{stringliteral}{"{}RK4"{}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_solver_config_af94aff203bec0917ff00f162b42ce869}{steps}}\ =\ 2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ type\ =\ \textcolor{stringliteral}{"{}model"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ decay\ =\ 0.3;}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::VectorXd\ coefficients;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_solver_config_a047f72119bd68e61c7e1b751dafbf833}{validate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_solver_factory}{SolverFactory}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<AbstractOdeSolver>\ \mbox{\hyperlink{class_solver_factory_abfc60fa571f575d4799176548ce057c9}{createSolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_solver_config}{SolverConfig}}\&\ config);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ configureGlobalParams(\mbox{\hyperlink{class_abstract_ode_solver}{AbstractOdeSolver}}\&\ solver,\ \textcolor{keyword}{const}\ std::map<std::string,\ double>\&\ params);}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SOLVERFACTORY\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,54 @@
+\doxysection{Butcher\+Tableau.\+h}
+\hypertarget{_butcher_tableau_8h_source}{}\label{_butcher_tableau_8h_source}\index{include/ButcherTableau.h@{include/ButcherTableau.h}}
+\mbox{\hyperlink{_butcher_tableau_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BUTCHERTABLE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BUTCHERTABLE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_butcher_tableau}{ButcherTableau}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{struct_butcher_tableau_a7c97bc8c0286ff2f918974eacc74d8f1}{c}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{struct_butcher_tableau_a8b3ca1e23acc290cdd673779f6b43ec2}{a}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{struct_butcher_tableau_a025b065fa46e1416588135aa1148f829}{b}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{struct_butcher_tableau}{ButcherTableau}}\ \mbox{\hyperlink{_butcher_tableau_8h_a5ba0da2dd175e4a74f7ed00ff829fa9a}{getButcherTableau}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ order)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ 2)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ 0.5\},\ \textcolor{comment}{//\ c\ values}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Eigen::MatrixXd(2,\ 2)\ <<\ 0.0,\ 0.0,\ 0.5,\ 0.0).finished(),\ \textcolor{comment}{//\ a\ matrix}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ 1.0\}\ \textcolor{comment}{//\ b\ values}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00037\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (order\ ==\ 3)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ 0.5,\ 1.0\},\ \textcolor{comment}{//\ c\ values}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Eigen::MatrixXd(3,\ 3)\ <<\ 0.0,\ 0.0,\ 0.0,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.5,\ 0.0,\ 0.0,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/1.0,\ 2.0,\ 0.0).finished(),\ \textcolor{comment}{//\ a\ matrix}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/6.0,\ 2.0/3.0,\ 1.0/6.0\}\ \textcolor{comment}{//\ b\ values}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (order\ ==\ 4)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{0.0,\ 0.5,\ 0.5,\ 1.0\},\ \textcolor{comment}{//\ c\ values}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Eigen::MatrixXd(4,\ 4)\ <<\ 0.0,\ 0.0,\ 0.0,\ 0.0,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.5,\ 0.0,\ 0.0,\ 0.0,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.0,\ 0.5,\ 0.0,\ 0.0,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.0,\ 0.0,\ 1.0,\ 0.0).finished(),\ \textcolor{comment}{//\ a\ matrix}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1.0/6.0,\ 1.0/3.0,\ 1.0/3.0,\ 1.0/6.0\}\ \textcolor{comment}{//\ b\ values}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Here\ we\ can\ add\ more\ tables\ for\ different\ orders}}
+\DoxyCodeLine{00055\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unsupported\ order:\ "{}}\ +\ std::to\_string(order)\ +}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Please\ choose\ from\ 'RK2',\ 'RK4'\ "{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BUTCHERTABLE\_H}}
+
+\end{DoxyCode}

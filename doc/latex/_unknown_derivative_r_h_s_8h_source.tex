@@ -1,0 +1,27 @@
+\doxysection{Unknown\+Derivative\+RHS.\+h}
+\hypertarget{_unknown_derivative_r_h_s_8h_source}{}\label{_unknown_derivative_r_h_s_8h_source}\index{include/UnknownDerivativeRHS.h@{include/UnknownDerivativeRHS.h}}
+\mbox{\hyperlink{_unknown_derivative_r_h_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ UNKNOWNDERIVATIVERHS\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ UNKNOWNDERIVATIVERHS\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_o_d_e_right_hand_side_8h}{ODERightHandSide.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unknown_derivative_r_h_s}{UnknownDerivativeRHS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_o_d_e_right_hand_side}{ODERightHandSide}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_unknown_derivative_r_h_s_a1dfc42ea7c896b81be2846655dcf89a0}{UnknownDerivativeRHS}}(\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{FuncType}}*\ func\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{double}\ h\ =\ 1e-\/8);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_unknown_derivative_r_h_s_aeca0b89d37ede2e7f49ae4b8e8cc674f}{\string~UnknownDerivativeRHS}}()\ \{\}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_unknown_derivative_r_h_s_ae54bbcf21738dbe0a6af12f09430e73a}{derivative}}(\textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ t)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ stepForDf;\ }
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

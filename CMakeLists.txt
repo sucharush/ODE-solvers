@@ -26,7 +26,7 @@ add_library(solvers
         src/SolverFactory.cc
 )
 add_library(rhs
-        src/ExampleRHS.cc
+        src/UserDefinedRHS.cc
         src/KnownDerivativeRHS.cc
         src/ODERightHandSide.cc
         src/UnknownDerivativeRHS.cc

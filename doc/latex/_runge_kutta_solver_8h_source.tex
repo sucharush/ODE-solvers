@@ -1,0 +1,28 @@
+\doxysection{Runge\+Kutta\+Solver.\+h}
+\hypertarget{_runge_kutta_solver_8h_source}{}\label{_runge_kutta_solver_8h_source}\index{include/RungeKuttaSolver.h@{include/RungeKuttaSolver.h}}
+\mbox{\hyperlink{_runge_kutta_solver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ RUNGEKUTTASOLVER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RUNGEKUTTASOLVER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_explicit_single_step_solver_8h}{ExplicitSingleStepSolver.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_runge_kutta_solver}{RungeKuttaSolver}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_explicit_single_step_solver}{ExplicitSingleStepSolver}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_runge_kutta_solver_ac43c3e17e727b6c00fc419243a50d422}{RungeKuttaSolver}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ order):\ order\_(order)\{\}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_runge_kutta_solver_a5e266e85f94176e9539e493e5dd510b8}{\string~RungeKuttaSolver}}()\ \{\}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_runge_kutta_solver_a3fd5f24bcf9ed3eb7b0419a3b4dba3da}{SetType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ order)\ \{order\_\ =\ order;\};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_runge_kutta_solver_a04b50c242246107bdf29b73a2aaed1ff}{GetType}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ order\_;\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_runge_kutta_solver_ac26c010f84c9929d2cce316d1ad20007}{step}}(\textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ t)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ order\_;\ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RUNGEKUTTASOLVER\_H}}
+
+\end{DoxyCode}

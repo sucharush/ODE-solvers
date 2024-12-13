@@ -1,0 +1,28 @@
+\doxysection{Model\+Problem\+RHS.\+h}
+\hypertarget{_model_problem_r_h_s_8h_source}{}\label{_model_problem_r_h_s_8h_source}\index{include/ModelProblemRHS.h@{include/ModelProblemRHS.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ csy\ on\ 2024/12/12.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ MODELPROBLEMRHS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MODELPROBLEMRHS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_known_derivative_r_h_s_8h}{KnownDerivativeRHS.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ for\ model\ problem\ y'(t)\ =\ -\/ky(t)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ analytical\ solution:\ y\ =\ exp(-\/kt)}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_model_problem_r_h_s}{ModelProblemRHS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_known_derivative_r_h_s}{KnownDerivativeRHS}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Constructor\ (default\ and\ with\ parameter\ k)}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_model_problem_r_h_s}{ModelProblemRHS}}():\ k\_(0.0)\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_model_problem_r_h_s}{ModelProblemRHS}}(\textcolor{keywordtype}{double}\ k);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_model_problem_r_h_s}{\string~ModelProblemRHS}}()\ \{\}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ k\_;}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MODELPROBLEMRHS\_H}}
+
+\end{DoxyCode}
