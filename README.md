@@ -177,23 +177,23 @@ The explicit methods can be single-step or multi-step methods.
 Another approach we thought about was to separate in two other categories: Runge-Kutta and linear multi-step methods.
 Then linear multi-step methods could have been split between explicit and implicit and would have been determined by their weights.
 
-### Function class
-Our second main challenge was to create a function class, and handle the derivatives. 
-We decided to create a base class (`ODERighHandSide`) and two children that correspond to functions for which we know the derivative and for which we do not.
-If the derivative is not known, it is approximated with centered differences.
+### Function classes
+Our second main challenge was to create a function class, and handle the derivatives.
+We decided to create a base class (`ODERighHandSide`) and two child classes that correspond to functions for which we know the derivative and for which we do not.
+If the derivative is unknown, it is approximated using centered differences.
 
-[//]: # (TODO function file)
-
-There are however a few limitations with our approach. First, we can only use the functions that are in the file `ExampleRHS.h`.
-An improvement would be to have a parser that lets the user write their function. 
-The user would also need to specify if they want to use the known derivative for the function. This could be done either by letting the user specify the derivative, or by having a derivative calculator accessible in the project.
+There are however a few limitations with our approach.
+- We only provided 2 type of built-in functions: `ModelProblemRHS` and `PolynomialRHS`.
+- Despite the possibility of using arbitrary functions in `UserDefinedRHS`, we didn't manage to implement it in a way that allows the user to avoid recompilation.
+  Additionally, the user needs to specify whether they want to use a known or unknown derivative for the function.
 
 
 ### Dimension of the ODE
-The main limitation of our project is that it focuses strictly on ODEs that are from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$, i.e. $y,t$ are real and so is $f(t,y)$.
-Possible extensions could be 
-- allowing $y$ to be a vector, i.e. $y \in \mathbb{R}^n$
-- allowing $f$ to be a vector-valued function, i.e. solve a system of ODEs
-- allowing $y$ to be a complex number, or a complex-valued vector, etc.
+The main limitation of our project is that it focuses strictly on ordinary differential equations (ODEs) that map from $\mathbb{R} \times \mathbb{R}$ to $\mathbb{R}$.
+In other words, both $y$ and $t$ are real numbers, and the function $f$, defined by $f: \mathbb{R} \times \mathbb{R} \to \mathbb{R}$, is also real-valued.
+Possible extensions could include:
+- Allowing $y$ to be a vector,  i.e. $y \in \mathbb{R}^n$,
+- Enabling $\mathbf{f}$ to be a vector-valued function, allowing it to solve systems of ODEs by defining $\mathbf{f}: \mathbb{R} \times \mathbb{R}^n \to \mathbb{R}^n$,
+- Extending $y$ to be a complex number or a complex-valued vector, altering the domain and range of $f$ to include complex dimensions.
 
-For this a few solutions we thought about were to use template classes and/or Eigen vectors for $y$.
+To implement these extensions, we are considering the use of template classes and/or Eigen vectors for variable types of $y$.

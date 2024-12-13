@@ -10,13 +10,18 @@
 
 #include "UnknownDerivativeRHS.h"
 
-// for model problem y'(t) = -ky(t)
-// analytical solution: y = exp(-kt)
-
 class UserDefinedRHS : public UnknownDerivativeRHS {
 public:
-    // Constructor (default and with parameter k)
-    UserDefinedRHS();
+    // Constructor (with arbitrary return value)
+    UserDefinedRHS() {
+    f = std::make_shared<FuncType>([this](double y, double t) {
+        return 0;
+    });
+    // // add the derivative if 'KnownDerivativeRHS'
+    // df = std::make_shared<FuncType>([this](double y, double t) {
+    //     return 0;
+    // });
+    }
     ~UserDefinedRHS() {}
 };
 
