@@ -4,11 +4,7 @@
 
 #include "KnownDerivativeRHS.h"
 
-KnownDerivativeRHS::KnownDerivativeRHS(FuncType* fun, FuncType* deriv) : ODERightHandSide(fun), df(deriv) {}
-
-KnownDerivativeRHS::~KnownDerivativeRHS() {
-    delete df;
-}
+KnownDerivativeRHS::KnownDerivativeRHS(std::shared_ptr<FuncType> func, std::shared_ptr<FuncType> deriv) : ODERightHandSide(func), df(deriv) {}
 
 double KnownDerivativeRHS::derivative(double y, double t) const{
     return (*df)(y, t);

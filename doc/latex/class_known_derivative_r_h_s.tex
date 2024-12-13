@@ -18,7 +18,7 @@ Inheritance diagram for Known\+Derivative\+R\+HS\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}{Known\+Derivative\+R\+HS}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$func=nullptr, \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$deriv=nullptr)
+\mbox{\hyperlink{class_known_derivative_r_h_s_a3619e167a01586d1ac2c06954bfa41ff}{Known\+Derivative\+R\+HS}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$ func=nullptr, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$ deriv=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_known_derivative_r_h_s_aded0388b6cbb0cf2cdc8b33f328dc01a}{$\sim$\+Known\+Derivative\+R\+HS}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -27,8 +27,8 @@ virtual double \mbox{\hyperlink{class_known_derivative_r_h_s_a0faa0a49f55702f6bc
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}\label{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}} 
-\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$ \mbox{\hyperlink{class_known_derivative_r_h_s_ad36ca5282cf79c4a41791727038c0419}{df}}
+\mbox{\Hypertarget{class_known_derivative_r_h_s_aa570263b6eeec09801bec567c9302d5c}\label{class_known_derivative_r_h_s_aa570263b6eeec09801bec567c9302d5c}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$ \mbox{\hyperlink{class_known_derivative_r_h_s_aa570263b6eeec09801bec567c9302d5c}{df}}
 \begin{DoxyCompactList}\small\item\em Pointer to the derivative (wrt t) of the right hand side function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -38,11 +38,11 @@ Class for function with known derivative.
 This is a class that represents function for which we know the derivative with respect to t. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}\label{class_known_derivative_r_h_s_a078aa62e6edc486247030c0774d4dc84}} 
+\mbox{\Hypertarget{class_known_derivative_r_h_s_a3619e167a01586d1ac2c06954bfa41ff}\label{class_known_derivative_r_h_s_a3619e167a01586d1ac2c06954bfa41ff}} 
 \index{KnownDerivativeRHS@{KnownDerivativeRHS}!KnownDerivativeRHS@{KnownDerivativeRHS}}
 \index{KnownDerivativeRHS@{KnownDerivativeRHS}!KnownDerivativeRHS@{KnownDerivativeRHS}}
 \doxysubsubsection{\texorpdfstring{KnownDerivativeRHS()}{KnownDerivativeRHS()}}
-{\footnotesize\ttfamily Known\+Derivative\+R\+H\+S\+::\+Known\+Derivative\+R\+HS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$}]{func = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$}]{deriv = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Known\+Derivative\+R\+H\+S\+::\+Known\+Derivative\+R\+HS (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$}]{func = {\ttfamily nullptr},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$}]{deriv = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
 
 
@@ -59,13 +59,13 @@ This constructor sets the function and its derivative. By default, non-\/specifi
 \index{KnownDerivativeRHS@{KnownDerivativeRHS}!````~KnownDerivativeRHS@{$\sim$KnownDerivativeRHS}}
 \index{````~KnownDerivativeRHS@{$\sim$KnownDerivativeRHS}!KnownDerivativeRHS@{KnownDerivativeRHS}}
 \doxysubsubsection{\texorpdfstring{$\sim$KnownDerivativeRHS()}{~KnownDerivativeRHS()}}
-{\footnotesize\ttfamily virtual Known\+Derivative\+R\+H\+S\+::$\sim$\+Known\+Derivative\+R\+HS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual Known\+Derivative\+R\+H\+S\+::$\sim$\+Known\+Derivative\+R\+HS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Destructor. 
 
-This destructor deallocates the memory used by the derivative. The memory used by the function is deallocated in the parent\textquotesingle{}s destructor. 
+The memory is automatically deallocated as we use smart pointers. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}\label{class_known_derivative_r_h_s_a0faa0a49f55702f6bca70eb1abd2cfb9}} 

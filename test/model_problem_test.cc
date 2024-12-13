@@ -6,30 +6,26 @@
 #include <Eigen/Dense>
 #include <iostream>
 #include <memory>
-#include "ExampleRHS.h"
+#include "ModelProblemRHS.h"
 #include "ODERightHandSide.h"
 #include "utils.h"
+/// Generate random distribution for tests
+std::random_device rd_k;
+std::mt19937 gen_k(rd_k()); //!< use specific engine for generation
 
-double const k_test = 0.3;
+std::uniform_real_distribution<> dis_k(0.0, 1.0);
+double const k_test = dis_k(gen_k);
+
 double computeAnalyticalSolution(double t, double y0, double k) {
     return y0 * std::exp(-k * t);
 }
 
 class ModelProblemTest : public::testing::Test {
 protected:
-    /*
-    void SetUp() override {
-        model = new ModelProblemRHS(k_test);
-    }
-    void TearDown() override {
-        delete model;
-    }
-    */
-    // Shared resource for tests
-    std::unique_ptr<ODERightHandSide> model = std::make_unique<ExampleRHS>(k_test);
+    std::unique_ptr<ODERightHandSide> model = std::make_unique<ModelProblemRHS>(k_test);
 
     double initialTime = 0.0;
-    double finalTime = 10.0;
+    double finalTime = 1.0;
     double initialValue = 1.0;
     double stepSize = 0.1;
 
@@ -37,15 +33,15 @@ protected:
 
 // Test ModelProblemRHS
 TEST_F(ModelProblemTest, RHSValueFunction) {
-    double t = 1.0;
     for (int i = 0; i < 10; i++) {
+        double t = 0.5;
         double y = i + i*0.1;
         double expected = -k_test*y;
         EXPECT_EQ(model->value(y, t), expected);
     }
 }
 TEST_F(ModelProblemTest, RHSValueDerivative) {
-    double t = 1.0;
+    double t = 0.5;
     for (int i = 0; i < 10; i++) {
         double y = i + i*0.1;
         double expected = 0.0;
@@ -94,7 +90,7 @@ TEST_F(ModelProblemTest, BE) {
 }
 
 #include "RungeKuttaSolver.h"
-TEST_F(ModelProblemTest, RK2) {
+TEST_F(ModelProblemTest, RK) {
     RungeKuttaSolver solver(2);
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
@@ -102,32 +98,22 @@ TEST_F(ModelProblemTest, RK2) {
     solver.SetRightHandSide(std::move(model));
     solver.SolveEquation(std::cout);
     int numSteps = solver.results.size();
-
-    double t = initialTime;
-    for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
-        EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
+    // Loop over the defined orders (2,3,4)
+    for (int order = 2; order <=4; ++order) {
+        solver.SetType(order);
+        double t = initialTime;
+        for (int i = 0; i < numSteps; ++i, t += stepSize) {
+            double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
+            EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
+        }
     }
+
 }
 
-TEST_F(ModelProblemTest, RK4) {
-    RungeKuttaSolver solver(4);
-    solver.SetStepSize(stepSize);
-    solver.SetTimeInterval(initialTime, finalTime);
-    solver.SetInitialValue(initialValue);
-    solver.SetRightHandSide(std::move(model));
-    solver.SolveEquation(std::cout);
-    int numSteps = solver.results.size();
+#include "AdamsBashforthSolver.h"
 
-    double t = initialTime;
-    for (int i = 0; i < numSteps; ++i, t += stepSize) {
-        double exp_val = computeAnalyticalSolution(t, initialValue, k_test);
-        EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
-    }
-}
-/*
 TEST_F(ModelProblemTest, AB) {
-    RungeKuttaSolver solver(4);
+    AdamsBashforthSolver solver(4, "FE");
     solver.SetStepSize(stepSize);
     solver.SetTimeInterval(initialTime, finalTime);
     solver.SetInitialValue(initialValue);
@@ -141,4 +127,3 @@ TEST_F(ModelProblemTest, AB) {
         EXPECT_NEAR(solver.results[i], exp_val, TOL_SOLUTION);
     }
 }
-*/

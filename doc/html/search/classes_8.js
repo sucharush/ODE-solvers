@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rungekuttasolver_103',['RungeKuttaSolver',['../class_runge_kutta_solver.html',1,'']]]
+  ['oderighthandside_105',['ODERightHandSide',['../class_o_d_e_right_hand_side.html',1,'']]]
 ];

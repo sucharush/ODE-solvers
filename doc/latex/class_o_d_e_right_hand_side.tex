@@ -18,7 +18,7 @@ Inheritance diagram for O\+D\+E\+Right\+Hand\+Side\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_o_d_e_right_hand_side_a92ede53374a8b9f244aeb013351a346e}{O\+D\+E\+Right\+Hand\+Side}} (\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$fun=nullptr)
+\mbox{\hyperlink{class_o_d_e_right_hand_side_a2a2bf7c41cd7d252cfba71bc98ef92c4}{O\+D\+E\+Right\+Hand\+Side}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$ f\+\_\+ptr=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor of a function instance. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_o_d_e_right_hand_side_a2a9a664b62685ce7b0676015eeff5bcb}{$\sim$\+O\+D\+E\+Right\+Hand\+Side}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -29,8 +29,8 @@ virtual double \mbox{\hyperlink{class_o_d_e_right_hand_side_a0f04d0ff1a1f165a173
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_o_d_e_right_hand_side_a0e65199f1e085d986893693f4ed4058e}\label{class_o_d_e_right_hand_side_a0e65199f1e085d986893693f4ed4058e}} 
-\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$ \mbox{\hyperlink{class_o_d_e_right_hand_side_a0e65199f1e085d986893693f4ed4058e}{f}}
+\mbox{\Hypertarget{class_o_d_e_right_hand_side_a01c50e1166ef2493ac9151aca746b2ba}\label{class_o_d_e_right_hand_side_a01c50e1166ef2493ac9151aca746b2ba}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$ \mbox{\hyperlink{class_o_d_e_right_hand_side_a01c50e1166ef2493ac9151aca746b2ba}{f}}
 \begin{DoxyCompactList}\small\item\em Pointer to the right hand side function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -43,11 +43,11 @@ We kept the name \mbox{\hyperlink{class_o_d_e_right_hand_side}{O\+D\+E\+Right\+H
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_o_d_e_right_hand_side_a92ede53374a8b9f244aeb013351a346e}\label{class_o_d_e_right_hand_side_a92ede53374a8b9f244aeb013351a346e}} 
+\mbox{\Hypertarget{class_o_d_e_right_hand_side_a2a2bf7c41cd7d252cfba71bc98ef92c4}\label{class_o_d_e_right_hand_side_a2a2bf7c41cd7d252cfba71bc98ef92c4}} 
 \index{ODERightHandSide@{ODERightHandSide}!ODERightHandSide@{ODERightHandSide}}
 \index{ODERightHandSide@{ODERightHandSide}!ODERightHandSide@{ODERightHandSide}}
 \doxysubsubsection{\texorpdfstring{ODERightHandSide()}{ODERightHandSide()}}
-{\footnotesize\ttfamily O\+D\+E\+Right\+Hand\+Side\+::\+O\+D\+E\+Right\+Hand\+Side (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $\ast$}]{fun = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily O\+D\+E\+Right\+Hand\+Side\+::\+O\+D\+E\+Right\+Hand\+Side (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{utils_8h_a4f6bfdc8a2afc3edc1b432c5440b6ca6}{Func\+Type}} $>$}]{f\+\_\+ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -71,7 +71,7 @@ This constructor sets the function object of the right hand side of the O\+DE.
 
 Destructor. 
 
-This destructor deallocates the memory used by the right hand side. 
+The memory doesn\textquotesingle{}t need to be deallocated as we use smart pointers. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_o_d_e_right_hand_side_a0f04d0ff1a1f165a1734b7210dcfad05}\label{class_o_d_e_right_hand_side_a0f04d0ff1a1f165a1734b7210dcfad05}} 

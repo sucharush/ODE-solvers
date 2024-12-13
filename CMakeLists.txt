@@ -56,7 +56,7 @@ set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 option(TESTS "Activate tests" ON)
 if (TESTS)
     add_subdirectory(googletest)
-    add_executable(tests ${TEST_DIR}/test.cc ${TEST_DIR}/auxiliary_test.cpp ${TEST_DIR}/model_problem_test.cpp)
+    add_executable(tests ${TEST_DIR}/auxiliary_test.cc ${TEST_DIR}/model_problem_test.cc ${TEST_DIR}/polynomial_test.cc)
     target_link_libraries(tests gtest_main gtest pthread solvers rhs)
 
     add_custom_target(test

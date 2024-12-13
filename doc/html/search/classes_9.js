@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solverconfig_104',['SolverConfig',['../struct_solver_config.html',1,'']]],
-  ['solverfactory_105',['SolverFactory',['../class_solver_factory.html',1,'']]]
+  ['polynomialrhs_106',['PolynomialRHS',['../class_polynomial_r_h_s.html',1,'']]]
 ];

@@ -24,7 +24,7 @@ public:
     @param func (pointer on) function object for the right hand side, default: null pointer
     @param h step size for the approximation scheme
     */
-    UnknownDerivativeRHS(FuncType* func = nullptr, double h = 1e-8);
+    UnknownDerivativeRHS(std::shared_ptr<FuncType> func = nullptr, double h = TOL);
     /// Destructor (the memory for f is deallocated in the parent's destructor)
     virtual ~UnknownDerivativeRHS() {}
     /// Overriden implementation of the derivative evaluation.
